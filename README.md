@@ -1,4 +1,4 @@
-# A Principle for the Equivalence of Language Encoders
+# On Homotopy of Similar Neural Networks using Non-linear Transformations
 
 Implementation code for the Master Thesis "On Homotopy of Similar Neural Networks using Non-linear Transformations"
 
