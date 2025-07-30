@@ -1,0 +1,5 @@
+/data/representaions-large/
+venv/
+output/
+cach_dir/
+logfile_*.log
