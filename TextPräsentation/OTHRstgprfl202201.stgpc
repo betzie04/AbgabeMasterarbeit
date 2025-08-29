@@ -1,0 +1,32 @@
+%
+% Author: Michael Niemetz 2022
+%
+%
+%\shorthandon{"}%
+\newcommand{\qtopictext}[1]{%
+  \stringcases
+    {#1}%
+    {%
+{F1}{Die angestrebten Lernergebnisse des Studiengangs stehen im Einklang mit dem Leitbild Lehre, dem Ausbildungsprofil und dem Qualitätsanspruch der OTH Regensburg.}
+{F2}{Studiengangbezeichnung, Abschlussgrad, Qualifikationsvoraussetzungen und Studienstruktur stehen in Einklang mit den Bildungszielen.}
+{F3}{Modulhandbuch: Die Modulbeschreibungen sind inhaltlich stimmig und werden regelmäßig aktualisiert.}
+{F4}{Die Angaben zu den zu erwerbenden Leistungspunkten sind modulbezogen und werden regelmäßig evaluiert und aktualisiert.}
+{F5}{Kooperative Studiengänge: Verträge sind vorhanden, rechtlich überprüft und gültig, Transparenz für Studierende und Lehrende ist gegeben, die Anrechnung von Kompetenzen ist geregelt.}
+{I1}{Der Studiengang befähigt zum wissenschaftlichen Arbeiten; die angestrebten Lernergebnisse und Qualifikationsziele des Studiengangs stehen im Einklang mit dem Kompetenzprofil des Hochschulqualifikationsrahmens (HQR).}
+{I2}{Der Studiengang befähigt zum selbständigen beruflichen Handeln in einem adäquaten Beschäftigungsfeld und vermittelt daran angepasste Kompetenzen aus dem Bereich der Digitalisierung.}
+{I3}{Der Studiengang befähigt zum gesellschaftlichen Engagement und fördert die Persönlichkeitsentwicklung.}
+{I4}{Ein stimmiges Curriculum und adäquate Lehr- und Lernformate sind festgelegt. Eine kontinuierliche Weiterentwicklung der fachlichen Inhalte und didaktischen Methoden ist gewährleistet.}
+{I5}{Das Studienprogramm berücksichtigt die hochschulinternen Vorgaben und Ziele im Bereich der Internationalisierung und beinhaltet ein Konzept zur Förderung der Mobilität der Studierenden.}
+{I6}{Die Prüfungen sind kompetenzorientiert gestaltet und ermöglichen eine aussagekräftige Überprüfung der Lernergebnisse.}
+{I7}{Studierbarkeit: Die Studien- und Prüfungsorganisation ermöglicht den Abschluss des Studiums in der Regelstudienzeit.}
+{I8}{Ressourcen und Aufnahmekapazität: Personal, fachlich und methodisch-didaktisch qualifiziertes Lehrpersonal, Räume sowie Sachausstattung stehen ausreichend zur Verfügung.}
+{I9a}{Duales praxisintegrierendes / ausbildungsintegrierendes Studium}
+{I9b}{Berufsbegleitendes Bachelorstudium}
+{I9c}{Weiterbildendendes Masterstudium}
+{Q1}{Der Studiengang unterliegt unter Beteiligung von Studierenden und Alumni einem kontinuierlichen Monitoring. Die Qualität der Lehrveranstaltungen wird regelmäßig nach dokumentiertem Verfahren durch die Studierenden beurteilt.}
+{Q2}{Das Studienkonzept berücksichtigt die Geschlechtergerechtigkeit und die Belange von Studierenden in unterschiedlichen Lebenslagen.}
+{Q3}{Studiengangbezogenes Qualitätsmanagement: Die Studiengangkommission ist eingerichtet und tagt regelmäßig; QM-relevante Unterlagen liegen vor und sind bekannt gemacht.}
+{Q4}{Die Qualität der Lehrmodule bei kooperativen, internationalen Studienprogrammen (auch Joint-Programms und Double-Degree-Programms) ist bei den Partnerhochschulen sichergestellt.}
+}{nada}%
+}%
+%

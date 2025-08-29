@@ -1,0 +1,9 @@
+\babel@toc {ngerman}{}\relax 
+\beamer@sectionintoc {1}{Motivation}{3}{0}{1}
+\beamer@sectionintoc {2}{Neuronale Netze}{9}{0}{2}
+\beamer@sectionintoc {3}{Natural Language Processing}{13}{0}{3}
+\beamer@sectionintoc {4}{Ähnlichkeitsanalyse Neuronaler Netze}{16}{0}{4}
+\beamer@sectionintoc {5}{Intrinsic Homotopy}{20}{0}{5}
+\beamer@sectionintoc {6}{Implementierung und Experimente}{45}{0}{6}
+\beamer@sectionintoc {7}{Zusammenfassung und Future Work}{66}{0}{7}
+\beamer@sectionintoc {8}{Literatur}{72}{1}{8}

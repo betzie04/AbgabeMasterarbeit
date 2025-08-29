@@ -1,0 +1,28 @@
+\begin{thebibliography}{1}
+
+\bibitem{antiga_deep_2020}
+Luca Antiga, Eli Stevens, and Thomas Viehmann.
+\newblock {\em Deep learning with {PyTorch}}.
+\newblock Manning, 2020.
+
+\bibitem{chan_affine_2024}
+Robin Chan, Reda Boumasmoud, Anej Svete, Yuxin Ren, Qipeng Guo, Zhijing Jin,
+  Shauli Ravfogel, Mrinmaya Sachan, Bernhard Sch{\"o}lkopf, Mennatallah
+  El-Assady, and Ryan Cotterell.
+\newblock On affine homotopy between language encoders.
+\newblock In {\em The Thirty-eighth Annual Conference on Neural Information
+  Processing Systems}, 2024.
+
+\bibitem{cybenko:hal-03753170}
+G.~Cybenko.
+\newblock {Approximation by superpositions of a sigmoidal function}.
+\newblock {\em {Mathematics of Control, Signals, and Systems}}, 2(4):303--314,
+  December 1989.
+
+\bibitem{klabunde_similarity_2024}
+Max Klabunde, Tobias Schumacher, Markus Strohmaier, and Florian Lemmerich.
+\newblock Similarity of neural network models: A survey of functional and
+  representational measures.
+\newblock {\em ACM Comput. Surv.}, 57(9), May 2025.
+
+\end{thebibliography}

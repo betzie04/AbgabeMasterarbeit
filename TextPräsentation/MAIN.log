@@ -1,0 +1,3492 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.11)  24 JUL 2025 11:46
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./MAIN.tex
+(MAIN.tex
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-06-09>
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamer.cls
+Document Class: beamer 2025/06/15 v3.74 A class for typesetting presentations
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasemod
+es.sty
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.st
+y
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count275
+)
+\beamer@tempbox=\box53
+\beamer@tempcount=\count276
+\c@beamerpauses=\count277
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasedec
+ode.sty
+\beamer@slideinframe=\count278
+\beamer@minimum=\count279
+\beamer@decode@box=\box54
+)
+\beamer@commentbox=\box55
+\beamer@modecount=\count280
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+)
+\headdp=\dimen148
+\footheight=\dimen149
+\sidebarheight=\dimen150
+\beamer@tempdim=\dimen151
+\beamer@finalheight=\dimen152
+\beamer@animht=\dimen153
+\beamer@animdp=\dimen154
+\beamer@animwd=\dimen155
+\beamer@leftmargin=\dimen156
+\beamer@rightmargin=\dimen157
+\beamer@leftsidebar=\dimen158
+\beamer@rightsidebar=\dimen159
+\beamer@boxsize=\dimen160
+\beamer@vboxoffset=\dimen161
+\beamer@descdefault=\dimen162
+\beamer@descriptionwidth=\dimen163
+\beamer@lastskip=\skip49
+\beamer@areabox=\box56
+\beamer@animcurrent=\box57
+\beamer@animshowbox=\box58
+\beamer@sectionbox=\box59
+\beamer@logobox=\box60
+\beamer@linebox=\box61
+\beamer@sectioncount=\count281
+\beamer@subsubsectionmax=\count282
+\beamer@subsectionmax=\count283
+\beamer@sectionmax=\count284
+\beamer@totalheads=\count285
+\beamer@headcounter=\count286
+\beamer@partstartpage=\count287
+\beamer@sectionstartpage=\count288
+\beamer@subsectionstartpage=\count289
+\beamer@animationtempa=\count290
+\beamer@animationtempb=\count291
+\beamer@xpos=\count292
+\beamer@ypos=\count293
+\beamer@ypos@offset=\count294
+\beamer@showpartnumber=\count295
+\beamer@currentsubsection=\count296
+\beamer@coveringdepth=\count297
+\beamer@sectionadjust=\count298
+\beamer@toclastsection=\count299
+\beamer@tocsectionnumber=\count300
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseopt
+ions.sty
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+))
+\beamer@paperwidth=\skip50
+\beamer@paperheight=\skip51
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.st
+y
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count301
+\Gm@cntv=\count302
+\c@Gm@tempcnt=\count303
+\Gm@bindingoffset=\dimen164
+\Gm@wd@mp=\dimen165
+\Gm@odd@mp=\dimen166
+\Gm@even@mp=\dimen167
+\Gm@layoutwidth=\dimen168
+\Gm@layoutheight=\dimen169
+\Gm@layouthoffset=\dimen170
+\Gm@layoutvoffset=\dimen171
+\Gm@dimlist=\toks18
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cf
+g))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs
+.sty
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfu
+til-common.tex
+\pgfutil@everybye=\toks19
+\pgfutil@tempdima=\dimen172
+\pgfutil@tempdimb=\dimen173
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfu
+til-latex.def
+\pgfutil@abb=\box62
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfr
+cs.code.tex
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.t
+ex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkey
+s.sty
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfk
+eys.code.tex
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfk
+eyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks22
+)))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.c
+ode.tex
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathut
+il.code.tex
+\pgf@x=\dimen174
+\pgf@xa=\dimen175
+\pgf@xb=\dimen176
+\pgf@xc=\dimen177
+\pgf@y=\dimen178
+\pgf@ya=\dimen179
+\pgf@yb=\dimen180
+\pgf@yc=\dimen181
+\c@pgf@counta=\count304
+\c@pgf@countb=\count305
+\c@pgf@countc=\count306
+\c@pgf@countd=\count307
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathpa
+rser.code.tex
+\pgfmath@dimen=\dimen182
+\pgfmath@count=\count308
+\pgfmath@box=\box63
+\pgfmath@toks=\toks23
+\pgfmath@stack@operand=\toks24
+\pgfmath@stack@operation=\toks25
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.code.tex)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.basic.code.tex)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.trigonometric.code.tex)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.random.code.tex)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.comparison.code.tex)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.base.code.tex)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.round.code.tex)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.misc.code.tex)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.integerarithmetics.code.tex)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathca
+lc.code.tex)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfl
+oat.code.tex
+\c@pgfmathroundto@lastzeros=\count309
+)))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
+File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfco
+re.sty
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.st
+y
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.st
+y
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphic
+s.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.
+def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen183
+\Gin@req@width=\dimen184
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfs
+ys.sty
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+fsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+\pgf@x=\dimen185
+\pgf@y=\dimen186
+\pgf@xa=\dimen187
+\pgf@ya=\dimen188
+\pgf@xb=\dimen189
+\pgf@yb=\dimen190
+\pgf@xc=\dimen191
+\pgf@yc=\dimen192
+\pgf@xd=\dimen193
+\pgf@yd=\dimen194
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count310
+\c@pgf@countb=\count311
+\c@pgf@countc=\count312
+\c@pgf@countd=\count313
+\t@pgf@toka=\toks26
+\t@pgf@tokb=\toks27
+\t@pgf@tokc=\toks28
+\pgf@sys@id@count=\count314
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+f.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+fsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+fsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+fsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count315
+\pgfsyssoftpath@bigbuffer@items=\count316
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+fsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.c
+fg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.l
+tx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+core.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.co
+de.tex)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen195
+\pgf@picmaxx=\dimen196
+\pgf@picminy=\dimen197
+\pgf@picmaxy=\dimen198
+\pgf@pathminx=\dimen199
+\pgf@pathmaxx=\dimen256
+\pgf@pathminy=\dimen257
+\pgf@pathmaxy=\dimen258
+\pgf@xx=\dimen259
+\pgf@xy=\dimen260
+\pgf@yx=\dimen261
+\pgf@yy=\dimen262
+\pgf@zx=\dimen263
+\pgf@zy=\dimen264
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen265
+\pgf@path@lasty=\dimen266
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen267
+\pgf@shorten@start@additional=\dimen268
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box64
+\pgf@hbox=\box65
+\pgf@layerbox@main=\box66
+\pgf@picture@serial@count=\count317
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen269
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen270
+\pgf@pt@y=\dimen271
+\pgf@pt@temp=\dimen272
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen273
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen274
+\pgf@sys@shading@range@num=\count318
+\pgf@shadingcount=\count319
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box67
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\xxcolo
+r.sty
+Package: xxcolor 2003/10/24 ver 0.1
+\XC@nummixins=\count320
+\XC@countmixins=\count321
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.st
+y
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.st
+y
+Package: hyperref 2025-06-21 v7.01n Hypertext links for LaTeX
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.
+sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdef
+inekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescap
+e.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.st
+y
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexc
+mds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarer
+r.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.st
+y
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\get
+titlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.
+sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count322
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringen
+c.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen275
+\Hy@linkcounter=\count323
+\Hy@pagecounter=\count324
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2025-06-21 v7.01n Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.st
+y
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count325
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2025-06-21 v7.01n Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 4052.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4052.
+Package hyperref Info: Option `implicit' set `false' on input line 4052.
+Package hyperref Info: Hyper figures OFF on input line 4181.
+Package hyperref Info: Link nesting OFF on input line 4186.
+Package hyperref Info: Hyper index ON on input line 4189.
+Package hyperref Info: Plain pages OFF on input line 4196.
+Package hyperref Info: Backreferencing OFF on input line 4201.
+Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
+Package hyperref Info: Bookmarks ON on input line 4448.
+\c@Hy@tempcnt=\count326
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4787.
+\XeTeXLinkMargin=\dimen276
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintc
+alc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count327
+\Field@Width=\dimen277
+\Fld@charsize=\dimen278
+Package hyperref Info: Hyper figures OFF on input line 6066.
+Package hyperref Info: Link nesting OFF on input line 6071.
+Package hyperref Info: Hyper index ON on input line 6074.
+Package hyperref Info: backreferencing OFF on input line 6081.
+Package hyperref Info: Link coloring OFF on input line 6086.
+Package hyperref Info: Link coloring with OCG OFF on input line 6091.
+Package hyperref Info: PDF/A mode OFF on input line 6096.
+\Hy@abspage=\count328
+
+
+Package hyperref Message: Stopped early.
+
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2025-06-21 v7.01n Hyperref driver for pdfTeX
+\Fld@listcount=\count329
+\c@bookmark@seq@number=\count330
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerun
+filecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniq
+uecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasereq
+uires.sty
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasecom
+patibility.sty)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasefon
+t.sty
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.st
+y
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks29
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\sansm
+athaccent.sty
+Package: sansmathaccent 2020/01/31
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile
+.sty
+Package: scrlfile 2025/06/04 v3.45 KOMA-Script package (file load hooks)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile
+-hook.sty
+Package: scrlfile-hook 2025/06/04 v3.45 KOMA-Script package (using LaTeX hooks)
+
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.
+sty
+Package: scrlogo 2025/06/04 v3.45 KOMA-Script package (logo)
+)))))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetra
+nslator.sty
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
+r.sty
+Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasemis
+c.sty)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetwo
+screens.sty)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseove
+rlay.sty
+\beamer@argscount=\count331
+\beamer@lastskipcover=\skip52
+\beamer@trivlistdepth=\count332
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetit
+le.sty)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasesec
+tion.sty
+\c@lecture=\count333
+\c@part=\count334
+\c@section=\count335
+\c@subsection=\count336
+\c@subsubsection=\count337
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasefra
+me.sty
+\beamer@framebox=\box68
+\beamer@frametitlebox=\box69
+\beamer@zoombox=\box70
+\beamer@zoomcount=\count338
+\beamer@zoomframecount=\count339
+\beamer@frametextheight=\dimen279
+\c@subsectionslide=\count340
+\beamer@frametopskip=\skip53
+\beamer@framebottomskip=\skip54
+\beamer@frametopskipautobreak=\skip55
+\beamer@framebottomskipautobreak=\skip56
+\beamer@envbody=\toks30
+\framewidth=\dimen280
+\c@framenumber=\count341
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasever
+batim.sty
+\beamer@verbatimfileout=\write4
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasefra
+mesize.sty
+\beamer@splitbox=\box71
+\beamer@autobreakcount=\count342
+\beamer@autobreaklastheight=\dimen281
+\beamer@frametitletoks=\toks31
+\beamer@framesubtitletoks=\toks32
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasefra
+mecomponents.sty
+\beamer@footins=\box72
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasecol
+or.sty)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasenot
+es.sty
+\beamer@frameboxcopy=\box73
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetoc
+.sty)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetem
+plates.sty
+\beamer@sbttoks=\toks33
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseaux
+templates.sty
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasebox
+es.sty
+\bmb@box=\box74
+\bmb@colorbox=\box75
+\bmb@boxwidth=\dimen282
+\bmb@boxheight=\dimen283
+\bmb@prevheight=\dimen284
+\bmb@temp=\dimen285
+\bmb@dima=\dimen286
+\bmb@dimb=\dimen287
+\bmb@prevheight=\dimen288
+)
+\beamer@blockheadheight=\dimen289
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseloc
+alstructure.sty
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tools\enumerate.sty
+Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
+\@enLab=\toks34
+)
+\beamer@bibiconwidth=\skip57
+\c@figure=\count343
+\c@table=\count344
+\abovecaptionskip=\skip58
+\belowcaptionskip=\skip59
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasenav
+igation.sty
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasenav
+igationsymbols.tex)
+\beamer@section@min@dim=\dimen290
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasethe
+orems.sty
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2025/06/16 v2.17y AMS math features
+\@mathmargin=\skip60
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks35
+\ex@=\dimen291
+)) (C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.st
+y
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen292
+) (C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count345
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count346
+\leftroot@=\count347
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count348
+\DOTSCASE@=\count349
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box76
+\strutbox@=\box77
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen293
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count350
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count351
+\dotsspace@=\muskip18
+\c@parentequation=\count352
+\dspbrk@lvl=\count353
+\tag@help=\toks36
+\row@=\count354
+\column@=\count355
+\maxfields@=\count356
+\andhelp@=\toks37
+\eqnshift@=\dimen294
+\alignsep@=\dimen295
+\tagshift@=\dimen296
+\tagwidth@=\dimen297
+\totwidth@=\dimen298
+\lineht@=\dimen299
+\@envbody=\toks38
+\multlinegap=\skip61
+\multlinetaggap=\skip62
+\mathdisplay@stack=\toks39
+LaTeX Info: Redefining \[ on input line 2949.
+LaTeX Info: Redefining \] on input line 2950.
+) (C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks40
+\thm@bodyfont=\toks41
+\thm@headfont=\toks42
+\thm@notefont=\toks43
+\thm@headpunct=\toks44
+\thm@preskip=\skip63
+\thm@postskip=\skip64
+\thm@headsep=\skip65
+\dth@everypar=\toks45
+)
+\c@theorem=\count357
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasethe
+mes.sty))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerthemede
+fault.sty
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerfontthe
+medefault.sty)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamercolorth
+emedefault.sty)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerinnerth
+emedefault.sty
+\beamer@dima=\dimen300
+\beamer@dimb=\dimen301
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerouterth
+emedefault.sty))) (beamerthemeOTHR.sty
+Package: beamerthemeOTHR 2015/12/03 v0.1
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\screxten
+d.sty
+Package: scrextend 2025/06/04 v3.45 KOMA-Script package (extend other classes w
+ith features of KOMA-Script classes)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrkbase
+.sty
+Package: scrkbase 2025/06/04 v3.45 KOMA-Script package (KOMA-Script-dependent b
+asics and keyval usage)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbase.
+sty
+Package: scrbase 2025/06/04 v3.45 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line
+ 370.
+))
+Package scrextend Info: unexpected definition of `\@makefnmark'.
+(scrextend)             Trying to patch it on input line 1768.
+Package scrextend Info: patch seems to be successfull on input line 1768.
+)
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <22> not available
+(Font)              size <20.74> substituted on input line 29.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <16> not available
+(Font)              size <17.28> substituted on input line 55.
+
+(OTHR_colors.sty
+Package: OTHR_colors 2022/3/01
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.te
+x
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.t
+ex
+\XKV@toks=\toks46
+\XKV@tempa@toks=\toks47
+)
+\XKV@depth=\count358
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))) (OTHR_fonts.sty
+Package: OTHR_fonts 2019/05/01
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
+
+
+LaTeX Font Warning: Font shape `T1/cmss/m/n' in size <16> not available
+(Font)              size <17.28> substituted on input line 116.
+
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/dejavu\DejaVuSans.st
+y
+Package: DejaVuSans 2011/06/01 Style file for DejaVuSans.
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/dejavu\DejaVuSansMon
+o.sty
+Package: DejaVuSansMono 2011/06/01 Style file for DejaVuSansMono.
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/dejavu\DejaVuSerif.s
+ty
+Package: DejaVuSerif 2011/06/01 Style file for DejaVuSerif.
+) (OTHR_logos.sty
+Package: OTHR_logos 2022/03/01
+\faklogosmall=\skip66
+\faklogonormal=\skip67
+\faklogolarge=\skip68
+\faklogohuge=\skip69
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/textpos\textpos.sty
+Package: textpos 2022/07/23 v1.10.1
+Package textpos Info: choosing support for LaTeX3 on input line 60.
+\TP@textbox=\box78
+\TP@holdbox=\box79
+\TPHorizModule=\dimen302
+\TPVertModule=\dimen303
+\TP@margin=\dimen304
+\TP@absmargin=\dimen305
+
+Grid set 16 x 16 = 28.45274pt x 16.00467pt
+\TPboxrulesize=\dimen306
+\TP@ox=\dimen307
+\TP@oy=\dimen308
+\TP@tbargs=\toks48
+TextBlockOrigin set to 0pt x 0pt
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen309
+\captionmargin=\dimen310
+\caption@leftmargin=\dimen311
+\caption@rightmargin=\dimen312
+\caption@width=\dimen313
+\caption@indent=\dimen314
+\caption@parindent=\dimen315
+\caption@hangindent=\dimen316
+Package caption Info: beamer document class detected.
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption-beam
+er.sto
+File: caption-beamer.sto 2022/01/06 v2.0c Adaption of the caption package to th
+e beamer document classes (AR)
+))
+\c@caption@flags=\count359
+\c@continuedfloat=\count360
+Package caption Info: hyperref package is loaded.
+Package caption Info: Hyperref support is turned off
+(caption)             because hyperref has stopped early.
+Package caption Info: scrextend package is loaded.
+\caption@addmargin@hsize=\dimen317
+\caption@addmargin@linewidth=\dimen318
+) (beamerouterthemeothr.sty
+Package: beamerouterthemeothr 2015/12/03 v0.1
+\beamerHeaderHeight=\skip70
+) (beamerinnerthemeothr.sty
+Package: beamerinnerthemeothr 2015/12/03 v0.1
+\c@cont=\count361
+)
+(beamerfontthemeothr.sty
+Package: beamerfontthemeothr 2015/12/03 v0.1
+) (beamercolorthemeothr.sty
+Package: beamercolorthemeothr 2015/12/03 v0.1
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2025/05/14 v25.9 The multilingual framework for pdfLaTeX, LuaLaT
+eX and XeLaTeX
+\babel@savecnt=\count362
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
+ne 2043.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
+ne 2045.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
+e 2047.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
+e 2048.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
+on input line 2049.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
+on input line 2051.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
+on input line 2076.
+\U@D=\dimen319
+\l@unhyphenated=\language79
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def
+)
+\bbl@readstream=\read3
+LaTeX Info: Redefining \textlatin on input line 3887.
+\bbl@dirlevel=\count363
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/babel-german\ngerman
+.ldf
+Language: ngerman 2024/12/10 v2.15 German support for babel (post-1996 orthogra
+phy)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/de\ba
+bel-ngerman.tex
+Package babel Info: Importing font and identification data for ngerman
+(babel)             from babel-de.ini. Reported on input line 11.
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/babel-german\ngerman
+b.ldf
+Language: ngermanb 2024/12/10 v2.15 German support for babel (post-1996 orthogr
+aphy)
+Package babel Info: Making " an active character on input line 122.
+)))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/lualatex/luainputenc\luain
+putenc.sty
+Package: luainputenc 2010/11/19 v0.973 inputenc package for LuaTeX
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+) (C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks49
+\inpenc@posthook=\toks50
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/filecontents\filecon
+tents.sty
+Package: filecontents 2023/04/02 v1.5a Create an external file from within a La
+TeX document
+
+
+Package filecontents Warning: This package is obsolete. Disabling it and
+(filecontents)                passing control to the filecontents environment
+(filecontents)                defined by the LaTeX kernel.
+
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subfigure.
+sty
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip71
+\subfigcapskip=\skip72
+\subfigcaptopadj=\dimen320
+\subfigbottomskip=\skip73
+\subfigcapmargin=\dimen321
+\subfiglabelskip=\skip74
+\c@subfigure=\count364
+\c@lofdepth=\count365
+\c@subtable=\count366
+\c@lotdepth=\count367
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subfigure.
+cfg)
+\subfig@top=\skip75
+\subfig@bottom=\skip76
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/numprint\numprint.st
+y
+Package: numprint 2012/08/20 v1.39 Print numbers (HH)
+ (C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
+\col@sep=\dimen322
+\ar@mcellbox=\box80
+\extrarowheight=\dimen323
+\NC@list=\toks51
+\extratabsurround=\skip77
+\backup@length=\skip78
+\ar@cellbox=\box81
+)
+\c@nprt@mantissa@digitsbefore=\count368
+\c@nprt@mantissa@digitsafter=\count369
+\c@nprt@exponent@digitsbefore=\count370
+\c@nprt@exponent@digitsafter=\count371
+\nprt@digitwidth=\skip79
+\nprt@sepwidth=\skip80
+\nprt@decimalwidth=\skip81
+\nprt@blockwidth=\skip82
+\nprt@digittoks=\toks52
+\nprt@pretoks=\toks53
+\nprt@posttoks=\toks54
+\nprt@thisdigit=\count372
+\nprt@curpos=\count373
+\nprt@rndpos=\count374
+\c@nprt@digitsfirstblock=\count375
+\c@nprt@blockcnt=\count376
+\c@nprt@cntprint=\count377
+
+No configuration file `numprint.cfg' found.)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\ti
+kz.sty
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.s
+ty
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
+uleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box82
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
+uleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pg
+fcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen324
+\pgf@nodesepend=\dimen325
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pg
+fcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor
+.sty
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgff
+or.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen326
+\pgffor@skip=\dimen327
+\pgffor@stack=\toks55
+\pgffor@toks=\toks56
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz\tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfl
+ibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count378
+\pgfplotmarksize=\dimen328
+)
+\tikz@lastx=\dimen329
+\tikz@lasty=\dimen330
+\tikz@lastxsaved=\dimen331
+\tikz@lastysaved=\dimen332
+\tikz@lastmovetox=\dimen333
+\tikz@lastmovetoy=\dimen334
+\tikzleveldistance=\dimen335
+\tikzsiblingdistance=\dimen336
+\tikz@figbox=\box83
+\tikz@figbox@bg=\box84
+\tikz@tempbox=\box85
+\tikz@tempbox@bg=\box86
+\tikztreelevel=\count379
+\tikznumberofchildren=\count380
+\tikznumberofcurrentchild=\count381
+\tikz@fig@count=\count382
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
+ulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count383
+\pgfmatrixcurrentcolumn=\count384
+\pgf@matrix@numberofcolumns=\count385
+)
+\tikz@expandcount=\count386
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tikzpagenodes\tikzpa
+genodes.sty
+Package: tikzpagenodes 2012/09/16 v1.1 Special PGF/TikZ nodes for areas of the 
+page
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.
+sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count387
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shap
+es\pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shap
+es\pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shap
+es\pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shap
+es\pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryshapes.callouts.code.tex
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shap
+es\pgflibraryshapes.callouts.code.tex))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shap
+es\pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodepartlowerbox=\box87
+\pgfnodeparttwobox=\box88
+\pgfnodepartthreebox=\box89
+\pgfnodepartfourbox=\box90
+\pgfnodeparttwentybox=\box91
+\pgfnodepartnineteenbox=\box92
+\pgfnodeparteighteenbox=\box93
+\pgfnodepartseventeenbox=\box94
+\pgfnodepartsixteenbox=\box95
+\pgfnodepartfifteenbox=\box96
+\pgfnodepartfourteenbox=\box97
+\pgfnodepartthirteenbox=\box98
+\pgfnodeparttwelvebox=\box99
+\pgfnodepartelevenbox=\box100
+\pgfnodeparttenbox=\box101
+\pgfnodepartninebox=\box102
+\pgfnodeparteightbox=\box103
+\pgfnodepartsevenbox=\box104
+\pgfnodepartsixbox=\box105
+\pgfnodepartfivebox=\box106
+)))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@layerbox@background=\box107
+\pgf@layerboxsaved@background=\box108
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfl
+ibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\arrowsize=\dimen337
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/ragged2e\ragged2e.st
+y
+Package: ragged2e 2023/06/22 v3.6 ragged2e Package
+\CenteringLeftskip=\skip83
+\RaggedLeftLeftskip=\skip84
+\RaggedRightLeftskip=\skip85
+\CenteringRightskip=\skip86
+\RaggedLeftRightskip=\skip87
+\RaggedRightRightskip=\skip88
+\CenteringParfillskip=\skip89
+\RaggedLeftParfillskip=\skip90
+\RaggedRightParfillskip=\skip91
+\JustifyingParfillskip=\skip92
+\CenteringParindent=\skip93
+\RaggedLeftParindent=\skip94
+\RaggedRightParindent=\skip95
+\JustifyingParindent=\skip96
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/blindtext\blindtext.
+sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+ (C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count388
+\c@Blindtext=\count389
+\c@blind@countparstart=\count390
+\blind@countxx=\count391
+\blindtext@numBlindtext=\count392
+\blind@countyy=\count393
+\c@blindlist=\count394
+\c@blindlistlevel=\count395
+\c@blindlist@level=\count396
+\blind@listitem=\count397
+\c@blind@listcount=\count398
+\c@blind@levelcount=\count399
+\blind@mathformula=\count400
+\blind@Mathformula=\count401
+\c@blind@randomcount=\count402
+\c@blind@randommax=\count403
+\c@blind@pangramcount=\count404
+\c@blind@pangrammax=\count405
+) (C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count406
+\calc@Bcount=\count407
+\calc@Adimen=\dimen338
+\calc@Bdimen=\dimen339
+\calc@Askip=\skip97
+\calc@Bskip=\skip98
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count408
+\calc@Cskip=\skip99
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm
+.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+ (C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count409
+\float@exts=\toks57
+\float@box=\box109
+\@float@everytoks=\toks58
+\@floatcapt=\box110
+) (C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks59
+\c@algorithm=\count410
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseu
+docode.sty
+Package: algpseudocode 
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algorit
+hmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count411
+\c@ALG@rem=\count412
+\c@ALG@nested=\count413
+\ALG@tlm=\skip100
+\ALG@thistlm=\skip101
+\c@ALG@Lnr=\count414
+\c@ALG@blocknr=\count415
+\c@ALG@storecount=\count416
+\c@ALG@tmpcounter=\count417
+\ALG@tmplength=\skip102
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.st
+y
+\lst@mode=\count418
+\lst@gtempboxa=\box111
+\lst@token=\toks60
+\lst@length=\count419
+\lst@currlwidth=\dimen340
+\lst@column=\count420
+\lst@pos=\count421
+\lst@lostspace=\dimen341
+\lst@width=\dimen342
+\lst@newlines=\count422
+\lst@lineno=\count423
+\lst@maxwidth=\dimen343
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.st
+y
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count424
+\lst@skipnumbers=\count425
+\lst@framebox=\box112
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cf
+g
+File: listings.cfg 2024/09/23 1.10c listings configuration
+))
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.st
+y
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen344
+\lightrulewidth=\dimen345
+\cmidrulewidth=\dimen346
+\belowrulesep=\dimen347
+\belowbottomsep=\dimen348
+\aboverulesep=\dimen349
+\abovetopsep=\dimen350
+\cmidrulesep=\dimen351
+\cmidrulekern=\dimen352
+\defaultaddspace=\dimen353
+\@cmidla=\count426
+\@cmidlb=\count427
+\@aboverulesep=\dimen354
+\@belowrulesep=\dimen355
+\@thisruleclass=\count428
+\@lastruleclass=\count429
+\@thisrulewidth=\dimen356
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.st
+y
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip103
+\multirow@cntb=\count430
+\multirow@dima=\skip104
+\bigstrutjot=\dimen357
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.
+sty
+Package: tcolorbox 2025/06/04 version 6.6.0 text color boxes
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks61
+\verbatim@line=\toks62
+\verbatim@in@stream=\read4
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspace
+s.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box113
+\tcb@upperbox=\box114
+\tcb@lowerbox=\box115
+\tcb@phantombox=\box116
+\c@tcbbreakpart=\count431
+\c@tcblayer=\count432
+\c@tcolorbox@number=\count433
+\l__tcobox_tmpa_box=\box117
+\l__tcobox_tmpa_dim=\dimen358
+\tcb@temp=\box118
+\tcb@temp=\box119
+\tcb@temp=\box120
+\tcb@temp=\box121
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbraster.
+code.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '6.6.0'
+\c@tcbrastercolumn=\count434
+\c@tcbrasterrow=\count435
+\c@tcbrasternum=\count436
+\c@tcbraster=\count437
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskins.c
+ode.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.6.0'
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzfill.im
+age.sty
+Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzfill-co
+mmon.sty
+Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzlibrary
+fill.image.code.tex
+File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
+\l__tikzfill_img_box=\box122
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskinsji
+gsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.6.0'
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbbreakab
+le.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.6.0'
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/pdfcol\pdfcol.sty
+Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
+)
+Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
+\tcb@testbox=\box123
+\tcb@totalupperbox=\box124
+\tcb@totallowerbox=\box125
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbhooks.c
+ode.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.6.0'
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbtheorem
+s.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.6.0'
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbfitting
+.code.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '6.6.0'
+\tcbfitdim=\dimen359
+\tcb@lowerfitdim=\dimen360
+\tcb@upperfitdim=\dimen361
+\tcb@cur@hbadness=\count438
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcblisting
+sutf8.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.6.0'
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcblisting
+s.code.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '6.6.0'
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcblisting
+score.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '6.6.0'
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbprocess
+ing.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '6.6.0'
+)
+\c@tcblisting=\count439
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/listingsutf8\listing
+sutf8.sty
+Package: listingsutf8 2019-12-10 v1.5 Allow UTF-8 in listings input (HO)
+))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbexterna
+l.code.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '6.6.0'
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbmagazin
+e.code.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '6.6.0'
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbvignett
+e.code.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '6.6.0'
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfl
+ibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbposter.
+code.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '6.6.0'
+))
+LaTeX Font Info:    Trying to load font information for T1+DejaVuSans-TLF on in
+put line 97.
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/dejavu\t1dejavusans-
+tlf.fd
+File: T1DejaVuSans-TLF.fd 2011/10/30 Font definitions for T1/DejaVuSans-TLF.
+)
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 14.56006pt on input line 97.
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-
+pdftex.def
+File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count440
+) (MAIN.aux
+Package babel Info: 'ngerman' activates 'ngerman' shorthands.
+(babel)             Reported  on input line 11.
+)
+\openout1 = `MAIN.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(28.45274pt, 398.3386pt, 28.45274pt)
+* v-part:(T,H,B)=(0.0pt, 256.0748pt, 0.0pt)
+* \paperwidth=455.24408pt
+* \paperheight=256.0748pt
+* \textwidth=398.3386pt
+* \textheight=227.62207pt
+* \oddsidemargin=-43.81725pt
+* \evensidemargin=-43.81725pt
+* \topmargin=-72.26999pt
+* \headheight=14.22636pt
+* \headsep=0.0pt
+* \topskip=11.0pt
+* \footskip=14.22636pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=14.39996pt plus 6.39929pt minus 3.20067pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf
+.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count441
+\scratchdimen=\dimen362
+\scratchbox=\box126
+\nofMPsegments=\count442
+\nofMParguments=\count443
+\everyMPshowfont=\toks63
+\MPscratchCnt=\count444
+\MPscratchDim=\dimen363
+\MPnumerator=\count445
+\makeMPintoPDFobject=\count446
+\everyMPtoPDFconversion=\toks64
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopd
+f-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sy
+s.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package hyperref Info: Link coloring OFF on input line 97.
+ (MAIN.out) (MAIN.out)
+\@outlinefile=\write5
+\openout5 = `MAIN.out'.
+
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
+r-basic-dictionary-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
+r-bibliography-dictionary-English.dict
+Dictionary: translator-bibliography-dictionary, Language: English 
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
+r-environment-dictionary-English.dict
+Dictionary: translator-environment-dictionary, Language: English 
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
+r-months-dictionary-English.dict
+Dictionary: translator-months-dictionary, Language: English 
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
+r-numbers-dictionary-English.dict
+Dictionary: translator-numbers-dictionary, Language: English 
+)
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
+r-theorem-dictionary-English.dict
+Dictionary: translator-theorem-dictionary, Language: English 
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: subfigure package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count447
+ (MAIN.nav)
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 7.28003pt on input line 97.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 7.00702pt on input line 97.
+
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 97--97
+[]  
+ []
+
+<OTHR_OTHR_Logo.pdf, id=85, 1092.08pt x 189.70876pt>
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 97.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 10.01004pt on input line 97.
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.st
+y
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
+
+Package hyperref Warning: Option `pdfauthor' has already been used,
+(hyperref)                setting the option has no effect on input line 116.
+
+<BilderPräsentation/aisec_logo.pdf, id=86, 242.9075pt x 67.25125pt>
+File: BilderPräsentation/aisec_logo.pdf Graphic file (type pdf)
+<use BilderPräsentation/aisec_logo.pdf>
+Package pdftex.def Info: BilderPräsentation/aisec_logo.pdf  used on input line
+ 119.
+(pdftex.def)             Requested size: 99.5842pt x 27.5701pt.
+
+LaTeX Info: File `MAIN.bib' already exists on the system.
+            Not generating it from this source.
+
+
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 142--142
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 142.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 20.9665pt on input line 142.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 9.70677pt on input line 142.
+
+
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 3.64001pt on input line 142.
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 142.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[1
+
+{C:/Users/bet61969/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/b
+et61969/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/dejavu/dejavusans_t1-type
+1.enc} <./OTHR_OTHR_Logo.pdf> <./BilderPräsentation/aisec_logo.pdf>]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 143--143
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 143.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+(MAIN.toc
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 12.13353pt on input line 2.
+)
+File: BilderPräsentation/aisec_logo.pdf Graphic file (type pdf)
+<use BilderPräsentation/aisec_logo.pdf>
+Package pdftex.def Info: BilderPräsentation/aisec_logo.pdf  used on input line
+ 145.
+(pdftex.def)             Requested size: 99.5842pt x 27.5701pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 145.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[2
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 148--148
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 148.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 8.19003pt on input line 148.
+(MAIN.toc)
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 148.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[3
+
+] (Praesentation/Motivation.tex
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 19--19
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 19.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+<BilderPräsentation/AISEC.png, id=146, 3491.0425pt x 1064.97874pt>
+File: BilderPräsentation/AISEC.png Graphic file (type png)
+<use BilderPräsentation/AISEC.png>
+Package pdftex.def Info: BilderPräsentation/AISEC.png  used on input line 19.
+(pdftex.def)             Requested size: 278.83578pt x 85.05379pt.
+LaTeX Font Info:    Calculating math sizes for size <13.3335> on input line 19.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13.3335> not available
+(Font)              size <14.4> substituted on input line 19.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <13.3335> not available
+(Font)              size <14.4> substituted on input line 19.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13.3335> not available
+(Font)              size <14.4> substituted on input line 19.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
+
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Calculating math sizes for size <10.66675> on input line 19
+.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <7.46669> not available
+(Font)              size <7> substituted on input line 19.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.46669> not available
+(Font)              size <7> substituted on input line 19.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.46669> not available
+(Font)              size <7> substituted on input line 19.
+
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 19.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[4
+
+ <./BilderPräsentation/AISEC.png>]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 59--59
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 59.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+<BilderPräsentation/image.png, id=160, 1284.8pt x 1145.27875pt>
+File: BilderPräsentation/image.png Graphic file (type png)
+<use BilderPräsentation/image.png>
+Package pdftex.def Info: BilderPräsentation/image.png  used on input line 59.
+(pdftex.def)             Requested size: 10.88046pt x 9.70677pt.
+<BilderPräsentation/alert.png, id=161, 1284.8pt x 1132.23pt>
+File: BilderPräsentation/alert.png Graphic file (type png)
+<use BilderPräsentation/alert.png>
+Package pdftex.def Info: BilderPräsentation/alert.png  used on input line 59.
+(pdftex.def)             Requested size: 10.9981pt x 9.70677pt.
+<BilderPräsentation/text.png, id=162, 1284.8pt x 1284.8pt>
+File: BilderPräsentation/text.png Graphic file (type png)
+<use BilderPräsentation/text.png>
+Package pdftex.def Info: BilderPräsentation/text.png  used on input line 59.
+(pdftex.def)             Requested size: 9.7042pt x 9.70677pt.
+<BilderPräsentation/predict.png, id=163, 1278.7775pt x 1284.8pt>
+File: BilderPräsentation/predict.png Graphic file (type png)
+<use BilderPräsentation/predict.png>
+Package pdftex.def Info: BilderPräsentation/predict.png  used on input line 59
+.
+(pdftex.def)             Requested size: 9.6587pt x 9.70677pt.
+<BilderPräsentation/network.png, id=164, 1284.8pt x 902.37125pt>
+File: BilderPräsentation/network.png Graphic file (type png)
+<use BilderPräsentation/network.png>
+Package pdftex.def Info: BilderPräsentation/network.png  used on input line 59
+.
+(pdftex.def)             Requested size: 17.27151pt x 12.13353pt.
+<BilderPräsentation/question.png, id=166, 915.42pt x 1284.8pt>
+File: BilderPräsentation/question.png Graphic file (type png)
+<use BilderPräsentation/question.png>
+Package pdftex.def Info: BilderPräsentation/question.png  used on input line 5
+9.
+(pdftex.def)             Requested size: 8.63232pt x 12.13353pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 59.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[5
+
+ <./BilderPräsentation/image.png> <./BilderPräsentation/alert.png> <./BilderP
+räsentation/text.png> <./BilderPräsentation/predict.png> <./BilderPräsentati
+on/network.png> <./BilderPräsentation/question.png>]
+File: BilderPräsentation/image.png Graphic file (type png)
+<use BilderPräsentation/image.png>
+Package pdftex.def Info: BilderPräsentation/image.png  used on input line 59.
+(pdftex.def)             Requested size: 10.88046pt x 9.70677pt.
+File: BilderPräsentation/alert.png Graphic file (type png)
+<use BilderPräsentation/alert.png>
+Package pdftex.def Info: BilderPräsentation/alert.png  used on input line 59.
+(pdftex.def)             Requested size: 10.9981pt x 9.70677pt.
+File: BilderPräsentation/text.png Graphic file (type png)
+<use BilderPräsentation/text.png>
+Package pdftex.def Info: BilderPräsentation/text.png  used on input line 59.
+(pdftex.def)             Requested size: 9.7042pt x 9.70677pt.
+File: BilderPräsentation/predict.png Graphic file (type png)
+<use BilderPräsentation/predict.png>
+Package pdftex.def Info: BilderPräsentation/predict.png  used on input line 59
+.
+(pdftex.def)             Requested size: 9.6587pt x 9.70677pt.
+File: BilderPräsentation/network.png Graphic file (type png)
+<use BilderPräsentation/network.png>
+Package pdftex.def Info: BilderPräsentation/network.png  used on input line 59
+.
+(pdftex.def)             Requested size: 17.27151pt x 12.13353pt.
+File: BilderPräsentation/question.png Graphic file (type png)
+<use BilderPräsentation/question.png>
+Package pdftex.def Info: BilderPräsentation/question.png  used on input line 5
+9.
+(pdftex.def)             Requested size: 8.63232pt x 12.13353pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 59.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[6
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 77--77
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 77.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/b/n' will be
+(Font)              scaled to size 12.13353pt on input line 77.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/b/n' will be
+(Font)              scaled to size 9.70677pt on input line 77.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/it' will be
+(Font)              scaled to size 12.13353pt on input line 77.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 77.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[7
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 90--90
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 90.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/b/n' will be
+(Font)              scaled to size 14.56006pt on input line 90.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 90.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[8
+
+])
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 151--151
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 151.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+(MAIN.toc)
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 151.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[9
+
+] (Praesentation/NLP.tex
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 22--22
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 22.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+LaTeX Font Info:    Calculating math sizes for size <16> on input line 22.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <16> not available
+(Font)              size <17.28> substituted on input line 22.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <16> not available
+(Font)              size <17.28> substituted on input line 22.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <16> not available
+(Font)              size <17.28> substituted on input line 22.
+
+
+
+pdfTeX warning: pdflatex.exe (file ./BilderPräsentation/NN_ausgerichtet.drawio
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<BilderPräsentation/NN_ausgerichtet.drawio.pdf, id=233, 231.74579pt x 117.3183
+pt>
+File: BilderPräsentation/NN_ausgerichtet.drawio.pdf Graphic file (type pdf)
+<use BilderPräsentation/NN_ausgerichtet.drawio.pdf>
+Package pdftex.def Info: BilderPräsentation/NN_ausgerichtet.drawio.pdf  used o
+n input line 22.
+(pdftex.def)             Requested size: 166.5059pt x 84.29367pt.
+
+
+[10
+
+ <./BilderPräsentation/NN_ausgerichtet.drawio.pdf>]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 52--52
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 52.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 13.28613pt on input line 52.
+LaTeX Font Info:    Calculating math sizes for size <14.6001> on input line 52.
+
+<BilderPräsentation/magic_hat.png, id=259, 1284.8pt x 1146.2825pt>
+File: BilderPräsentation/magic_hat.png Graphic file (type png)
+<use BilderPräsentation/magic_hat.png>
+Package pdftex.def Info: BilderPräsentation/magic_hat.png  used on input line 
+52.
+(pdftex.def)             Requested size: 62.59596pt x 55.83075pt.
+
+
+[11
+
+ <./BilderPräsentation/magic_hat.png>]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 80--80
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 80.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+File: BilderPräsentation/magic_hat.png Graphic file (type png)
+<use BilderPräsentation/magic_hat.png>
+Package pdftex.def Info: BilderPräsentation/magic_hat.png  used on input line 
+80.
+(pdftex.def)             Requested size: 65.44142pt x 58.38441pt.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/it' will be
+(Font)              scaled to size 7.28003pt on input line 80.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 80.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[12
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 87--87
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 87.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+(MAIN.toc)
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 87.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[13
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 104--104
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 104.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/b/n' will be
+(Font)              scaled to size 13.28613pt on input line 104.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 104.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[14
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 120--120
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 120.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./BilderPräsentation/encoder_decoder.pdf): 
+PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<BilderPräsentation/encoder_decoder.pdf, id=309, 185.73389pt x 145.50359pt>
+File: BilderPräsentation/encoder_decoder.pdf Graphic file (type pdf)
+<use BilderPräsentation/encoder_decoder.pdf>
+Package pdftex.def Info: BilderPräsentation/encoder_decoder.pdf  used on input
+ line 120.
+(pdftex.def)             Requested size: 159.333pt x 124.8309pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 120.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[15
+
+ <./BilderPräsentation/encoder_decoder.pdf>])
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 154--154
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 154.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+(MAIN.toc)
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 154.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[16
+
+] (Praesentation/Similarity.tex
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 29--29
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 29.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./BilderPräsentation/Similarity90Deg.drawio
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<BilderPräsentation/Similarity90Deg.drawio.pdf, id=343, 341.35529pt x 256.0766
+9pt>
+File: BilderPräsentation/Similarity90Deg.drawio.pdf Graphic file (type pdf)
+<use BilderPräsentation/Similarity90Deg.drawio.pdf>
+Package pdftex.def Info: BilderPräsentation/Similarity90Deg.drawio.pdf  used o
+n input line 29.
+(pdftex.def)             Requested size: 234.22511pt x 175.71234pt.
+
+Overfull \hbox (39.03702pt too wide) in paragraph at lines 29--29
+[][] 
+ []
+
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 29.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[17
+
+ <./BilderPräsentation/Similarity90Deg.drawio.pdf>]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 56--56
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 56.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \vbox (1.85039pt too high) detected at line 56
+ []
+
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 56.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[18
+
+]
+Overfull \vbox (1.85039pt too high) detected at line 56
+ []
+
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 56.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[19
+
+])
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 157--157
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 157.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+(MAIN.toc)
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 157.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[20
+
+] (Praesentation/IntrinsicHomotopy.tex
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 51--51
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 51.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 5.46002pt on input line 51.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 4.55002pt on input line 51.
+
+Overfull \hbox (8.05208pt too wide) in paragraph at lines 51--51
+ [][] 
+ []
+
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 51.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[21
+
+]
+Overfull \hbox (8.05208pt too wide) in paragraph at lines 51--51
+ [][] 
+ []
+
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 51.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[22
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 78--78
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 78.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 78.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[23
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 78.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[24
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 78.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[25
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 78.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[26
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 145--145
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 145.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 8.49342pt on input line 145.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 6.06676pt on input line 145.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 145.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[27
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 145.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[28
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 159--159
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 159.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 10.19199pt on input line 159.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/it' will be
+(Font)              scaled to size 10.19199pt on input line 159.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/it' will be
+(Font)              scaled to size 8.49342pt on input line 159.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 159.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[29
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 175--175
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 175.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 175.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[30
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 198--198
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 198.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 198.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 198.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
+(Font)              size <5> substituted on input line 198.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 198.
+
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/b/n' will be
+(Font)              scaled to size 7.28003pt on input line 198.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 198.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[31
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 244--244
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 244.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 7.00699pt on input line 244.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 5.00502pt on input line 244.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 244.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[32
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 244.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[33
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 244.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[34
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 244.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[35
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 244.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[36
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 305--305
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 305.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 305.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[37
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 305.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[38
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 305.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[39
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 305.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[40
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 305.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[41
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 305.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[42
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 325--325
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 325.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/it' will be
+(Font)              scaled to size 14.56006pt on input line 325.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 325.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[43
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 325.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[44
+
+])
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 160--160
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 160.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+(MAIN.toc)
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 160.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[45
+
+] (Praesentation/ImplementationResults.tex
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 19--19
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 19.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+LaTeX Font Info:    Trying to load font information for T1+DejaVuSansMono-TLF o
+n input line 19.
+
+(C:\Users\bet61969\AppData\Local\Programs\MiKTeX\tex/latex/dejavu\t1dejavusansm
+ono-tlf.fd
+File: T1DejaVuSansMono-TLF.fd 2011/06/01 Font definitions for T1/DejaVuSansMono
+-TLF.
+)
+LaTeX Font Info:    Font shape `T1/DejaVuSansMono-TLF/m/n' will be
+(Font)              scaled to size 9.70677pt on input line 19.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 6.79471pt on input line 19.
+LaTeX Font Info:    Font shape `T1/DejaVuSans-TLF/m/n' will be
+(Font)              scaled to size 4.85338pt on input line 19.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 19.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[46
+
+{C:/Users/bet61969/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/dejavu/dejavum
+ono_t1-type1.enc}]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 49--49
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 49.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+<BilderPräsentation/New_all_in_one_scatter_praes.png, id=649, 852.3042pt x 582
+.4962pt>
+File: BilderPräsentation/New_all_in_one_scatter_praes.png Graphic file (type p
+ng)
+<use BilderPräsentation/New_all_in_one_scatter_praes.png>
+Package pdftex.def Info: BilderPräsentation/New_all_in_one_scatter_praes.png  
+used on input line 49.
+(pdftex.def)             Requested size: 239.00558pt x 163.3378pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 49.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[47
+
+ <./BilderPräsentation/New_all_in_one_scatter_praes.png>]
+File: BilderPräsentation/New_all_in_one_scatter_praes.png Graphic file (type p
+ng)
+<use BilderPräsentation/New_all_in_one_scatter_praes.png>
+Package pdftex.def Info: BilderPräsentation/New_all_in_one_scatter_praes.png  
+used on input line 49.
+(pdftex.def)             Requested size: 239.00558pt x 163.3378pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 49.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[48
+
+]
+File: BilderPräsentation/New_all_in_one_scatter_praes.png Graphic file (type p
+ng)
+<use BilderPräsentation/New_all_in_one_scatter_praes.png>
+Package pdftex.def Info: BilderPräsentation/New_all_in_one_scatter_praes.png  
+used on input line 49.
+(pdftex.def)             Requested size: 239.00558pt x 163.3378pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 49.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[49
+
+]
+File: BilderPräsentation/New_all_in_one_scatter_praes.png Graphic file (type p
+ng)
+<use BilderPräsentation/New_all_in_one_scatter_praes.png>
+Package pdftex.def Info: BilderPräsentation/New_all_in_one_scatter_praes.png  
+used on input line 49.
+(pdftex.def)             Requested size: 239.00558pt x 163.3378pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 49.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[50
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 70--70
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 70.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+<BilderPräsentation/intrinsic_distance_all_tasksPräsi.png, id=685, 722.7pt x 
+433.62pt>
+File: BilderPräsentation/intrinsic_distance_all_tasksPräsi.png Graphic file (
+type png)
+<use BilderPräsentation/intrinsic_distance_all_tasksPräsi.png>
+Package pdftex.def Info: BilderPräsentation/intrinsic_distance_all_tasksPräsi
+.png  used on input line 70.
+(pdftex.def)             Requested size: 262.9076pt x 157.74397pt.
+
+Overfull \hbox (23.90201pt too wide) in paragraph at lines 70--70
+[][][][]  
+ []
+
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 70.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[51
+
+ <./BilderPräsentation/intrinsic_distance_all_tasksPräsi.png>]
+File: BilderPräsentation/intrinsic_distance_all_tasksPräsi.png Graphic file (
+type png)
+<use BilderPräsentation/intrinsic_distance_all_tasksPräsi.png>
+Package pdftex.def Info: BilderPräsentation/intrinsic_distance_all_tasksPräsi
+.png  used on input line 70.
+(pdftex.def)             Requested size: 262.9076pt x 157.74397pt.
+
+Overfull \hbox (23.90201pt too wide) in paragraph at lines 70--70
+[][][][][][]  
+ []
+
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 70.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[52
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 97--97
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 97.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+LaTeX Font Info:    Font shape `T1/DejaVuSansMono-TLF/m/n' will be
+(Font)              scaled to size 7.28003pt on input line 97.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 97.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[53
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 97.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[54
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 97.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[55
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 97.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[56
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 129--129
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 129.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+<BilderPräsentation/PräsiHeatmap_linear_distance_all_lrs_mrpc_homotopy.png, i
+d=735, 1004.0712pt x 352.4367pt>
+File: BilderPräsentation/PräsiHeatmap_linear_distance_all_lrs_mrpc_homotopy.p
+ng Graphic file (type png)
+<use BilderPräsentation/PräsiHeatmap_linear_distance_all_lrs_mrpc_homotopy.pn
+g>
+Package pdftex.def Info: BilderPräsentation/PräsiHeatmap_linear_distance_all_
+lrs_mrpc_homotopy.png  used on input line 129.
+(pdftex.def)             Requested size: 239.00558pt x 83.8928pt.
+<BilderPräsentation/PräsiHeatmap_nonlinear_distance_all_lrs_mrpc_homotopy.png
+, id=736, 1004.0712pt x 352.4367pt>
+File: BilderPräsentation/PräsiHeatmap_nonlinear_distance_all_lrs_mrpc_homotop
+y.png Graphic file (type png)
+<use BilderPräsentation/PräsiHeatmap_nonlinear_distance_all_lrs_mrpc_homotopy
+.png>
+Package pdftex.def Info: BilderPräsentation/PräsiHeatmap_nonlinear_distance_a
+ll_lrs_mrpc_homotopy.png  used on input line 129.
+(pdftex.def)             Requested size: 239.00558pt x 83.8928pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 129.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[57
+
+ <./BilderPräsentation/PräsiHeatmap_linear_distance_all_lrs_mrpc_homotopy.png
+> <./BilderPräsentation/PräsiHeatmap_nonlinear_distance_all_lrs_mrpc_homotopy
+.png>]
+File: BilderPräsentation/PräsiHeatmap_linear_distance_all_lrs_mrpc_homotopy.p
+ng Graphic file (type png)
+<use BilderPräsentation/PräsiHeatmap_linear_distance_all_lrs_mrpc_homotopy.pn
+g>
+Package pdftex.def Info: BilderPräsentation/PräsiHeatmap_linear_distance_all_
+lrs_mrpc_homotopy.png  used on input line 129.
+(pdftex.def)             Requested size: 239.00558pt x 83.8928pt.
+File: BilderPräsentation/PräsiHeatmap_nonlinear_distance_all_lrs_mrpc_homotop
+y.png Graphic file (type png)
+<use BilderPräsentation/PräsiHeatmap_nonlinear_distance_all_lrs_mrpc_homotopy
+.png>
+Package pdftex.def Info: BilderPräsentation/PräsiHeatmap_nonlinear_distance_a
+ll_lrs_mrpc_homotopy.png  used on input line 129.
+(pdftex.def)             Requested size: 239.00558pt x 83.8928pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 129.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[58
+
+]
+File: BilderPräsentation/PräsiHeatmap_linear_distance_all_lrs_mrpc_homotopy.p
+ng Graphic file (type png)
+<use BilderPräsentation/PräsiHeatmap_linear_distance_all_lrs_mrpc_homotopy.pn
+g>
+Package pdftex.def Info: BilderPräsentation/PräsiHeatmap_linear_distance_all_
+lrs_mrpc_homotopy.png  used on input line 129.
+(pdftex.def)             Requested size: 239.00558pt x 83.8928pt.
+File: BilderPräsentation/PräsiHeatmap_nonlinear_distance_all_lrs_mrpc_homotop
+y.png Graphic file (type png)
+<use BilderPräsentation/PräsiHeatmap_nonlinear_distance_all_lrs_mrpc_homotopy
+.png>
+Package pdftex.def Info: BilderPräsentation/PräsiHeatmap_nonlinear_distance_a
+ll_lrs_mrpc_homotopy.png  used on input line 129.
+(pdftex.def)             Requested size: 239.00558pt x 83.8928pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 129.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[59
+
+]
+File: BilderPräsentation/PräsiHeatmap_linear_distance_all_lrs_mrpc_homotopy.p
+ng Graphic file (type png)
+<use BilderPräsentation/PräsiHeatmap_linear_distance_all_lrs_mrpc_homotopy.pn
+g>
+Package pdftex.def Info: BilderPräsentation/PräsiHeatmap_linear_distance_all_
+lrs_mrpc_homotopy.png  used on input line 129.
+(pdftex.def)             Requested size: 239.00558pt x 83.8928pt.
+File: BilderPräsentation/PräsiHeatmap_nonlinear_distance_all_lrs_mrpc_homotop
+y.png Graphic file (type png)
+<use BilderPräsentation/PräsiHeatmap_nonlinear_distance_all_lrs_mrpc_homotopy
+.png>
+Package pdftex.def Info: BilderPräsentation/PräsiHeatmap_nonlinear_distance_a
+ll_lrs_mrpc_homotopy.png  used on input line 129.
+(pdftex.def)             Requested size: 239.00558pt x 83.8928pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 129.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[60
+
+]
+File: BilderPräsentation/PräsiHeatmap_linear_distance_all_lrs_mrpc_homotopy.p
+ng Graphic file (type png)
+<use BilderPräsentation/PräsiHeatmap_linear_distance_all_lrs_mrpc_homotopy.pn
+g>
+Package pdftex.def Info: BilderPräsentation/PräsiHeatmap_linear_distance_all_
+lrs_mrpc_homotopy.png  used on input line 129.
+(pdftex.def)             Requested size: 239.00558pt x 83.8928pt.
+File: BilderPräsentation/PräsiHeatmap_nonlinear_distance_all_lrs_mrpc_homotop
+y.png Graphic file (type png)
+<use BilderPräsentation/PräsiHeatmap_nonlinear_distance_all_lrs_mrpc_homotopy
+.png>
+Package pdftex.def Info: BilderPräsentation/PräsiHeatmap_nonlinear_distance_a
+ll_lrs_mrpc_homotopy.png  used on input line 129.
+(pdftex.def)             Requested size: 239.00558pt x 83.8928pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 129.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[61
+
+]
+File: BilderPräsentation/PräsiHeatmap_linear_distance_all_lrs_mrpc_homotopy.p
+ng Graphic file (type png)
+<use BilderPräsentation/PräsiHeatmap_linear_distance_all_lrs_mrpc_homotopy.pn
+g>
+Package pdftex.def Info: BilderPräsentation/PräsiHeatmap_linear_distance_all_
+lrs_mrpc_homotopy.png  used on input line 129.
+(pdftex.def)             Requested size: 239.00558pt x 83.8928pt.
+File: BilderPräsentation/PräsiHeatmap_nonlinear_distance_all_lrs_mrpc_homotop
+y.png Graphic file (type png)
+<use BilderPräsentation/PräsiHeatmap_nonlinear_distance_all_lrs_mrpc_homotopy
+.png>
+Package pdftex.def Info: BilderPräsentation/PräsiHeatmap_nonlinear_distance_a
+ll_lrs_mrpc_homotopy.png  used on input line 129.
+(pdftex.def)             Requested size: 239.00558pt x 83.8928pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 129.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[62
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 149--149
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 149.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+<BilderPräsentation/intrinsicVSextrinsic/PräsiDist_extr_intr_subplots_qnli.pn
+g, id=785, 1775.1921pt x 345.4506pt>
+File: BilderPräsentation/intrinsicVSextrinsic/PräsiDist_extr_intr_subplots_qn
+li.png Graphic file (type png)
+<use BilderPräsentation/intrinsicVSextrinsic/PräsiDist_extr_intr_subplots_qnl
+i.png>
+Package pdftex.def Info: BilderPräsentation/intrinsicVSextrinsic/PräsiDist_ex
+tr_intr_subplots_qnli.png  used on input line 149.
+(pdftex.def)             Requested size: 398.3386pt x 77.51218pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 149.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[63
+
+ <./BilderPräsentation/intrinsicVSextrinsic/PräsiDist_extr_intr_subplots_qnli
+.png>]
+File: BilderPräsentation/intrinsicVSextrinsic/PräsiDist_extr_intr_subplots_qn
+li.png Graphic file (type png)
+<use BilderPräsentation/intrinsicVSextrinsic/PräsiDist_extr_intr_subplots_qnl
+i.png>
+Package pdftex.def Info: BilderPräsentation/intrinsicVSextrinsic/PräsiDist_ex
+tr_intr_subplots_qnli.png  used on input line 149.
+(pdftex.def)             Requested size: 398.3386pt x 77.51218pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 149.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[64
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 167--167
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 167.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+<BilderPräsentation/intrinsicVSextrinsic/PräsiDist_extr_intr_subplots_mrpc.pn
+g, id=804, 1757.8473pt x 345.4506pt>
+File: BilderPräsentation/intrinsicVSextrinsic/PräsiDist_extr_intr_subplots_mr
+pc.png Graphic file (type png)
+<use BilderPräsentation/intrinsicVSextrinsic/PräsiDist_extr_intr_subplots_mrp
+c.png>
+Package pdftex.def Info: BilderPräsentation/intrinsicVSextrinsic/PräsiDist_ex
+tr_intr_subplots_mrpc.png  used on input line 167.
+(pdftex.def)             Requested size: 398.3386pt x 78.28177pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 167.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[65
+
+ <./BilderPräsentation/intrinsicVSextrinsic/PräsiDist_extr_intr_subplots_mrpc
+.png>])
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 163--163
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 163.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+(MAIN.toc)
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 163.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[66
+
+] (Praesentation/Diskussion.tex
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 10--10
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 10.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 10.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[67
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 10.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[68
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 10.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[69
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 23--23
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 23.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 23.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[70
+
+]
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 23.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[71
+
+])
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 174--174
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 174.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+(MAIN.bbl)
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 174.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[72
+
+]
+Overfull \hbox (0.49431pt too wide) in paragraph at lines 178--178
+[]  
+ []
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 178.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+
+File: OTHR_OTHR_Logo.pdf Graphic file (type pdf)
+<use OTHR_OTHR_Logo.pdf>
+Package pdftex.def Info: OTHR_OTHR_Logo.pdf  used on input line 178.
+(pdftex.def)             Requested size: 147.40778pt x 25.60728pt.
+
+Overfull \hbox (0.99431pt too wide) has occurred while \output is active
+[] [] 
+ []
+
+[73
+
+]
+\tf@nav=\write6
+\openout6 = `MAIN.nav'.
+
+\tf@toc=\write7
+\openout7 = `MAIN.toc'.
+
+\tf@snm=\write8
+\openout8 = `MAIN.snm'.
+
+ (MAIN.aux)
+ ***********
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-06-09>
+ ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.28pt have occurred.
+
+Package rerunfilecheck Info: File `MAIN.out' has not changed.
+(rerunfilecheck)             Checksum: 7584CC687485CCFA21E911856434E60C;1344.
+ ) 
+Here is how much of TeX's memory you used:
+ 41353 strings out of 468221
+ 884720 string characters out of 5431439
+ 1497409 words of memory out of 5000000
+ 68845 multiletter control sequences out of 15000+600000
+ 723539 words of font info for 171 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 128i,16n,139p,1208b,995s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/bet61969/AppData/Local/Programs/MiKTeX/fonts/type1/public/dejavu/De
+jaVuSans-Bold.pfb><C:/Users/bet61969/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/dejavu/DejaVuSans-Oblique.pfb><C:/Users/bet61969/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/dejavu/DejaVuSans.pfb><C:/Users/bet61969/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/dejavu/DejaVuSansMono.pfb><C:/Users/bet619
+69/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
+Users/bet61969/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextr
+a/cmex8.pfb><C:/Users/bet61969/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb><C:/Users/bet61969/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/bet61969/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/bet61969/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/bet61969/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/
+bet61969/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb
+><C:/Users/bet61969/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmr10.pfb><C:/Users/bet61969/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmr12.pfb><C:/Users/bet61969/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmr17.pfb><C:/Users/bet61969/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/bet61969/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/bet61969/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/bet61
+969/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/U
+sers/bet61969/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9
+.pfb><C:/Users/bet61969/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb><C:/Users/bet61969/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmsy5.pfb><C:/Users/bet61969/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/bet61969/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/bet61969/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/bet61969
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Use
+rs/bet61969/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/m
+sam10.pfb><C:/Users/bet61969/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/symbols/msbm10.pfb>
+Output written on MAIN.pdf (73 pages, 10606853 bytes).
+PDF statistics:
+ 1040 PDF objects out of 1200 (max. 8388607)
+ 162 named destinations out of 1000 (max. 500000)
+ 354 words of extra memory for PDF output out of 10000 (max. 10000000)
+

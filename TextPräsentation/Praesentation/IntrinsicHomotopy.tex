@@ -1,0 +1,328 @@
+
+%\begin{frame}
+%	\textbf{Was ist Intrinsic Homotopy?}\\
+%	\begin{itemize}
+%		\item Nichtlineare Transformation zwischen Repräsentationen zweier Modelle
+%		\item Idee: Modell A kann in Modell B deformiert werden
+%		\item Formalisierung über Hemi-Metriken und Homotopie-Pfade
+%	\end{itemize}
+%\end{frame}
+
+\begingroup
+\frametitle{Zwei Perspektiven auf Homotopie}
+\begin{frame}
+	\centering
+	\begin{tikzpicture}[node distance=0.8cm and 8cm, on grid]
+		
+		% Intrinsic box (immer sichtbar ab Folie 1)
+		\uncover<1->{
+			\node[draw=blue!70!black, fill=blue!10, rounded corners=3pt, thick, 
+			minimum width=4cm, minimum height=2.8cm, align=center] (intrinsic) {
+				{\scriptsize \textbf{Intrinsic Homotopy}} \\[0.2em]
+				{\tiny Representational Similarity} \\[0.2em]
+				{\tiny Ziel: Vergleich \emph{ohne} Downstream-Task} \\[0.3em]
+				{\tiny  Lerne Transformation $\psi \in \text{Aff}$ mit $\psi(g(x)) \approx h(x)$}\\[0.2em]
+				{\tiny  Deformation von Model \(g\) in \(h\)} \\[0.3em]
+			};
+		}
+		
+		% Extrinsic box (erst ab Folie 2)
+		\uncover<2>{
+			\node[draw=orange!80!black, fill=orange!15, rounded corners=3pt, thick, 
+			minimum width=2.8cm, minimum height=2.8cm, align=center, right=of intrinsic] (extrinsic) {
+				{\scriptsize \textbf{Extrinsic Homotopy}} \\[0.2em]
+				{\tiny Functional Similarity} \\[0.2em]
+				{\tiny Ziel: Vergleich auf Downstream-Task} \\[0.3em]
+				{\tiny Finde $\psi, \varphi \in \mathcal{V}_C$, sodass $\psi(h(x)) \approx \varphi(g(x))$}\\[0.3em]
+				{\tiny  Deformation von Model \(g\) und \(h\)} 
+
+			};
+			
+			% Pfeil erscheint ebenfalls ab Folie 2
+			\draw[->, thick] (intrinsic.east) -- (extrinsic.west);
+		}
+		
+	\end{tikzpicture}
+	
+	\vspace{0.6em}
+	%\uncover<1->{\scriptsize Chan et al.~\cite{chan_affine_2024} unterscheiden zwischen zwei komplementären Konzepten: \textit{Representational} und \textit{Functional}.}
+	\vfill
+	{\tiny Quelle: Chan et al., “On Affine Homotopy between Language Encoders”, NeurIPS 2024~\cite{chan_affine_2024}}
+\end{frame}
+\endgroup
+
+\begingroup
+\frametitle{Ziel?}
+\begin{frame}
+	\begin{itemize}
+		\uncover<1->{\item Ziel: Vergleich von Encoder \( h, g \in \mathcal{E}_V \) bzgl.\ ihrer \textbf{approximativen Ähnlichkeit}.}
+		
+		\uncover<2->{\footnotesize \item Wie gut kann \( h \) durch eine Transformation \( \psi \in \mathcal{F} \) von \( g \) approximiert werden:
+		\[
+		d_{\mathcal{F}}(h, g) := \inf_{\psi \in \mathcal{F}} \| h - \psi \circ g \|_\infty
+		\]}
+		
+		\uncover<3->{\item \footnotesize Specialization-Quasiordering \( h \gtrsim_{\mathcal{F}} g \) besagt:
+		\begin{itemize}
+			\item \( h \) lässt sich \textbf{beliebig gut durch transformiertes \( g \)} approximieren.
+			\item Jede \( \ell^\infty \)-Umgebung von \( h \) enthält ein \( \psi \circ g \)
+		\end{itemize}}
+		\footnotesize		
+		\uncover<4->{\item Diese Relation ist eine \textbf{Preorder}:
+		\begin{itemize}
+
+			\item \textbf{Reflexiv:} \( h \gtrsim h \) %via \(\psi = \mathrm{id} \)
+			\item \textbf{Transitiv:} \( h \gtrsim g,  g \gtrsim f \Longrightarrow h \gtrsim f  \) %via Dreiecksungleichung
+		\end{itemize}}
+	\end{itemize}
+\end{frame}
+\endgroup
+
+
+%\begingroup
+%\frametitle{Intrinsic Nonlinear Homotopy: Strukturvergleich}
+%\begin{frame}
+%\begin{itemize}
+%	\item \textbf{Neuer Ansatz:} Vergleich durch \emph{nichtlineare}, stetige Transformationen (z.\,B. Neuronale Netze)
+%	\item Fokus auf \textbf{interne Repräsentationen}(letzter Hidden Layer)
+
+%\end{itemize}
+
+%\begin{block}{Definition (Nichtlinear intrinsisch homotop)}
+%	Zwei Encoder $h, g$ sind genau dann \emph{nichtlinear intrinsisch homotop} ($h \simeq_{\text{Lip}_1} g$), wenn gilt:
+%	\[
+	%\inf_{\psi \in \mathcal{F}_{\text{Lip}_1}_{\text{Lip}_1}} \| h - \psi \circ g \|_\infty = 0 \quad \text{und} \quad
+%	\inf_{\phi \in \mathcal{F}_{\text{Lip}_1}} \| g - \phi \circ h \|_\infty = 0
+%	\]
+%\end{block}
+%\end{frame}
+
+
+
+%\begingroup
+%\frametitle{Intrinsic Nonlinear Homotopy: Strukturvergleich (nichtlinear)}
+%\begin{frame}
+%	\begin{itemize}
+%		\item \textbf{Neuer Ansatz:} Vergleich durch \emph{nichtlineare}, stetige 1-Lipschitz-Transformationen (z.\,B. Neuronale Netze)
+%		\item Fokus auf \textbf{interne Repräsentationen} $h(x) \in \mathbb{R}^d$ (letzter Hidden Layer)
+%		\item \textbf{Intuition:} Encoder $h$ lässt sich durch eine stetige Lipschitz-Transformation aus $g$ approximieren (und umgekehrt)
+%	\end{itemize}
+	
+%	\begin{block}{Definition (Nichtlineare intrinsische Relation)}
+%		Ein Encoder $h$ ist \emph{nichtlinear intrinsisch verwandt} zu $g$ (\( h \gtrsim_{\text{Lip}_1} g \)), wenn gilt:
+%		\[
+%		\inf_{\psi \in \mathcal{F}_{\text{Lip}_1}} \| h - \psi \circ g \|_\infty = 0
+%		\]
+%	\end{block}
+	
+%	\begin{block}{Definition (Nichtlinear intrinsisch homotop)}
+%		Zwei Encoder $h, g$ sind genau dann \emph{nichtlinear intrinsisch homotop} (\( h \simeq_{\text{Lip}_1} g \)), wenn gilt:
+%		\[
+%		\inf_{\psi \in \mathcal{F}_{\text{Lip}_1}} \| h - \psi \circ g \|_\infty = 0 \quad \text{und} \quad
+%		\inf_{\phi \in \mathcal{F}_{\text{Lip}_1}} \| g - \phi \circ h \|_\infty = 0
+%		\]
+%	\end{block}
+%\end{frame}
+%\endgroup
+
+\begin{frame}
+\begin{itemize}
+\uncover<1->{\item Nach Lemma: Wenn $(\mathcal{E}_V, d_\mathcal{F})$ ein Hemi-Metrikraum ist, dann induziert die Specialization-Quasiordering eine \textbf{Preorder}. Dann gilt für alle $g,h\in \mathcal{E}_V}$
+\[
+h \gtrsim_{\mathcal{E}_V} g \Longleftrightarrow d_\mathcal{F}(h,g) = 0
+\]
+\uncover<2->{\item Konstruktion einer Preorder auf dem Encoder-Raum induziert durch: 
+	\[
+	d_\mathcal{F}(h,g):= \inf_{\psi \in \mathcal{F}_{\text{Lip}_1}} \| h - \psi \circ g \|_\infty
+		\]}
+
+%\uncover<3->{	\item \( h \gtrsim_{\text{Lip}_1} g \): \emph{Jede offene Umgebung von \( h \) enthält auch \( g \)}, bezogen auf die von \( d \) induzierte Topologie.}
+
+%		\uncover<4->{\item Um dies zu rechtfertigen, zeigen wir, dass \( d \) eine \textbf{Hemimetrik} ist.  \( \Longrightarrow h \gtrsim_{\text{Lip}_1} g \iff d_\mathcal{F}(h,g) = 0 \) ist Preorder.}
+
+\end{itemize}
+
+\end{frame}
+
+\begingroup
+\frametitle{Intrinsic Nonlinear Homotopy}
+\begin{frame}
+	\begin{block}{Intrinsic Preorder}
+		Sei \( \mathcal{F}_{\text{Lip}_1} \subset \mathcal{C}(V, V) \) die Menge aller 1-Lipschitz stetigen Transformationen von \( V \) auf sich selbst\footnote{\tiny Im Beweis sehen wir, warum die Einschränkung auf 1-Lipschitz nötig ist und nicht alle stetigen Abbildungen zulässig sind.}.
+		
+		Die Relation \( \gtrsim_{\text{Lip}_1} \) definiert durch:
+		\[
+		h \gtrsim_{\text{Lip}_1} g \quad \Leftrightarrow \quad \inf_{\psi \in \mathcal{F}_{\text{Lip}_1}} \| h - \psi \circ g \|_\infty = 0
+		\]
+		ist eine Preorder auf \( \mathcal{E}_V \).
+	\end{block}
+\end{frame}
+\endgroup
+
+\begin{frame}
+	\begin{itemize}
+		\uncover<1->{\item Nach Lemma: Wenn $(\mathcal{E}_V, d_\mathcal{F})$ ein Hemi-Metrikraum ist, dann induziert die Specialization-Quasiordering eine \textbf{Preorder}. Dann gilt für alle $g,h\in \mathcal{E}_V}$
+		\[
+		h \gtrsim_{\mathcal{E}_V} g \Longleftrightarrow d_\mathcal{F}(h,g) = 0
+		\]
+		
+		%\uncover<3->{	\item \( h \gtrsim_{\text{Lip}_1} g \): \emph{Jede offene Umgebung von \( h \) enthält auch \( g \)}, bezogen auf die von \( d \) induzierte Topologie.}
+		
+		%		\uncover<4->{\item Um dies zu rechtfertigen, zeigen wir, dass \( d \) eine \textbf{Hemimetrik} ist.  \( \Longrightarrow h \gtrsim_{\text{Lip}_1} g \iff d_\mathcal{F}(h,g) = 0 \) ist Preorder.}
+		
+	\end{itemize}
+	
+\end{frame}
+	
+
+
+
+
+\begingroup
+\frametitle{\( d_{\mathcal{F}} \) ist Hemi-Metrik}
+
+\begin{frame}
+	\tiny{Hemi-Metrik-Eigenschaft (H1)}
+		\textbf{(Nullabstand zur Selbstabbildung)}  
+		\[
+		d_{{\mathcal{F}_{\text{Lip}_1}}}(h, h) = \inf_{\psi \in \mathcal{F}} \| h - \psi \circ h \|_\infty = 0
+		\]
+	
+	Wähle als Kandidat \(\psi = \mathrm{id} \in \mathcal{F}_{\text{Lip}_1}\). Dann gilt:
+		\[
+		\| h - \psi(h) \|_\infty = \| h - h \|_\infty = 0.
+		\]
+	
+	\vspace{1em}
+	\textit{Damit ist die erste Bedingung erfüllt.}
+\end{frame}
+\endgroup
+
+
+
+\begingroup
+\frametitle{Beweis: \( d_{{\mathcal{F}_{\text{Lip}_1}}} \) ist Hemi-Metrik}
+\begin{frame}
+	\tiny
+	\uncover<1->{
+		\textbf{Hemi-Metrik-Eigenschaft (H2)} \quad (Dreiecksungleichung)  
+	}
+	
+	\uncover<2->{
+		Für Encoder \( h, g, f \in \mathcal{E}_V \) und \( \varepsilon > 0 \) gilt:
+		\vspace{-0.5em}
+		\[
+		d_{{\mathcal{F}_{\text{Lip}_1}}}(h, f) \leq d_{{\mathcal{F}_{\text{Lip}_1}}}(h, g) + d_{\mathcal{F}_{\text{Lip}_1}}(g, f)
+		\]
+	}
+	
+	\uncover<3->{
+		\vspace{-1em}
+		Wähle \( \psi_1, \psi_2 \in \mathcal{F}_{\text{Lip}_1} \) mit:
+		\[
+		\| h - \psi_1(g) \|_\infty \leq 	d_{{\mathcal{F}_{\text{Lip}_1}}}(h, g) + \varepsilon, \quad
+		\| g - \psi_2(f) \|_\infty \leq d_{\mathcal{F}_{\text{Lip}_1}}(g, f) + \varepsilon
+		\]
+	}
+	
+	\uncover<4->{
+		\vspace{-1em}
+		Da \( \mathcal{F}_{\text{Lip}_1} \) unter Komposition abgeschlossen ist, betrachte:
+		\[
+		\psi := \psi_1 \circ \psi_2 \in \mathcal{F}_{\text{Lip}_1}
+		\]
+	}
+	
+	\uncover<5->{
+		\vspace{-1em}
+		Dann gilt:
+		\[
+		d_{{\mathcal{F}_{\text{Lip}_1}}}(h, f) \leq \| h - \psi(f) \|_\infty = \| h - \psi_1(\psi_2(f)) \|_\infty
+		\]
+	}
+	
+\end{frame}
+
+
+
+
+\begin{frame}
+	\tiny
+	
+	\uncover<1->{
+		\vspace{-0.5em}
+		\[
+		\| h - \psi_1(\psi_2(f)) \|_\infty
+		\leq 
+		\underbrace{\| h - \psi_1(g) \|_\infty}_{\text{aus Approximation von } d(h, g)}
+		+
+		\underbrace{\| \psi_1(g) - \psi_1(\psi_2(f)) \|_\infty}_{\leq \| g - \psi_2(f) \|_\infty \text{ (1-Lipschitz von } \psi_1 \text{*})}
+		\]
+	}
+	
+	\uncover<2->{
+		\vspace{-1em}
+		\[
+		\leq \| h - \psi_1(g) \|_\infty + \| g - \psi_2(f) \|_\infty
+		\]
+	}
+	
+	\uncover<3->{
+		\vspace{-1em}
+		\[
+		\Rightarrow d_{\mathcal{F}_{\text{Lip}_1}}(h, f)
+		\leq d_{\mathcal{F}_{\text{Lip}_1}}(h, g) + d_{\mathcal{F}_{\text{Lip}_1}}(g, f)  + 2\varepsilon 
+		\]
+	}
+	
+	\uncover<4->{
+		\vspace{-1em}
+		Da \( \varepsilon > 0 \) beliebig, folgt die Dreiecksungleichung.
+	}
+	
+	\uncover<1->{
+		\vspace{-0.5em}
+		\begin{itemize}
+			\tiny
+			\item[*] \( \psi_1 \in \mathcal{F}_{\text{Lip}_1} \Rightarrow \) 1-Lipschitz:  
+			\( \| \psi_1(g) - \psi_1(\psi_2(f)) \|_\infty \leq \| g - \psi_2(f) \|_\infty \)
+		\end{itemize}
+	}
+	
+	\uncover<6->{
+		\vspace{-0.5em}
+		\begin{itemize}
+			\tiny
+			\item[$\Rightarrow$] \( (\mathcal{E}_V, d_{\mathcal{F}_{\text{Lip}_1}}) \) ist Hemi-Metrischer Raum:
+			\begin{itemize}
+				\tiny
+				\item Reflexiv: \( h \gtrsim h \) via \( \psi = \mathrm{id} \)
+				\item Transitiv: \( h \gtrsim g, g \gtrsim f \Rightarrow h \gtrsim f \)
+			\end{itemize}
+		\end{itemize}
+	}
+	
+\end{frame}
+
+\endgroup
+
+\begingroup
+\frametitle{Intrinsic Nonlinear Homotopy}
+\begin{frame}
+	\uncover<1->{	\begin{itemize}
+			\item \textbf{Ziel:} Vergleich \emph{ohne} Downstream-Task
+			\item Fokus auf \textbf{interne Repräsentationen} (letzter Hidden Layer)
+
+	\end{itemize}}
+	
+	\uncover<2->{	\begin{block}{Definition (Exakte Intrinsische Nicht-lineare Homotopy)}
+			Zwei Encoder $h, g$ sind genau dann \emph{exakt intrinsisch nicht-linear homotop} ($h \gtrsim_{\text{Lip}_1} g$), wenn gilt:
+			\[
+			\inf_{\psi \in \mathrm{\text{Lip}_1}(V)} \| h - \psi \circ g \|_\infty = 0 \quad \text{und} \quad
+			\inf_{\varphi \in \mathrm{\text{Lip}_1}(V)} \| g - \varphi \circ h \|_\infty = 0
+			\]
+	\end{block}}
+\end{frame}
+
+\endgroup
+

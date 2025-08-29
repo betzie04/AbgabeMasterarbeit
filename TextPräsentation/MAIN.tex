@@ -1,0 +1,181 @@
+% Die Beamer-Klasse unterstützt folgende Optionen, die von
+% besonderem Interesse sind (alle Standardoptionen werden
+% ebenfalls unterstützt; siehe beamer-Basisdokumentation):
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% aspectratio: Seitenverhältnis des resultierenden Dokuments
+% (Achtung: Aufgrund der Designvorgaben ergeben sich unterschiedliche
+% Größen der effektiv nutzbaren Textblöcke)
+%
+% Standardeinstellung: 'aspectratio=43'
+%
+% Mögliche Einstellungen:
+% 'aspectratio=43'   (4:3)
+% 'aspectratio=169'  (16:9)
+% 'aspectratio=1610' (16:10)
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fontsize: Basisschriftgröße (Größen für Überschriften etc. werden
+% aus dieser Basis automatisch abgeleitet)
+%
+% Standardeinstellung: '22pt' (entspricht den Design-Vorgaben; sehr groß!)
+%
+% Mögliche Einstellungen:
+% '8pt', '9pt', '10pt', '11pt', '12pt', '14pt', '16pt',
+% '17pt','20pt','22pt', '24pt', '26pt', '28pt'
+
+
+\documentclass[aspectratio=169,16pt]{beamer}
+
+% Der OTHR-Theme unterstützt folgende Optionen:
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% department: (Wahl der Abteilung/Fakultät)
+%
+% default: 'OTHR'
+%
+% Mögliche Einstellungen:
+% 'FakA', 'FakAM', 'FakB', 'FakBW', 'FakEI', 
+% 'FakIM', 'FakM', 'FakS', 'ZWW', 'IPF',
+% 'SappZ', 'KNB', 'ReMIC', 'LFD', 'LAS3',
+% 'DK0PT', 'LBM', 'LeanLab', 'LFT', 'LFW',
+% 'LMP', 'LMS', 'LRT', 'LWS', 'RRRU',
+% 'RST', 'CEEC', 'FEM', 'IST'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% headerMode: Aussehen und Inhalt der Kopfleiste
+%
+% Standardeinstellung: 'full'
+%
+% Mögliche Einstellungen:
+% 'full', 'frametitle', 'frametitleSection'
+% 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Binäre Schalter (können angegeben oder nicht angegeben werden;
+% Standardeinstellung: Nicht angegeben)
+%
+%%%%%%%%%%%%%%%
+% navbar: Navigationssymbole anzeigen (Seite vor/zurück, Kapitel vor/zurück etc.)
+
+% pageNumbers: Seitennummerierung
+
+% blackFont: Nur schwarze Schriftfarbe verwenden (ansonsten: Fakultätsfarben)
+
+% frametitleCenter: Titel in der Kopfzeile zentrieren (ansonsten: rechtsbündig)
+
+\usetheme[department=FakIM,pageNumbers]{OTHR}
+
+% Inhaltsspezifische Zusatzpakete laden 
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{luainputenc}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{luainputenc}
+\usepackage{filecontents}
+\usepackage{subfigure}
+\usepackage{numprint}
+\usepackage{tikz}
+\usepackage{tikzpagenodes}
+\usetikzlibrary{calc, shapes, backgrounds, arrows}
+\usepackage{ragged2e} 
+\usepackage{blindtext}
+\usepackage{enumerate}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage[absolute,overlay]{textpos}  % in der Präambel
+\usepackage{tikz}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath}  
+\usepackage{listings}
+\usetikzlibrary{positioning}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\usepackage[most]{tcolorbox}
+
+
+\begin{document}
+
+
+\lstdefinestyle{mystyle}{
+	language=Python,
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{blue},
+	commentstyle=\color{gray},
+	stringstyle=\color{orange},
+	showstringspaces=false,
+	breaklines=true,
+	frame=singe
+}
+\renewcommand\lstlistingname{Code}
+
+\lstset{style=mystyle}
+
+\title{Präsentation der Masterarbeit}
+\subtitle{On Homotopy of Similar Neural Networks using Non-linear Transformations}
+\author{Bettina Zieger}
+
+\begin{textblock*}{5cm}(12cm,0cm)  % Breite, (x,y)-Position in cm
+	\includegraphics[width=0.7\linewidth]{BilderPräsentation/aisec_logo.pdf}
+\end{textblock*}
+	
+
+
+\institute{Fakultät Informatik und Mathematik}
+\date{24.07.2025}
+
+\begin{filecontents}{\jobname.bib}
+@inproceedings{
+chan_affine_2024,
+title={On Affine Homotopy between Language Encoders},
+author={Robin Chan and Reda Boumasmoud and Anej Svete and Yuxin Ren and Qipeng Guo and Zhijing Jin and Shauli Ravfogel and Mrinmaya Sachan and Bernhard Sch{\"o}lkopf and Mennatallah El-Assady and Ryan Cotterell},
+booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
+year={2024},
+url={https://openreview.net/forum?id=FTpOwIaWUz}
+}
+
+\end{filecontents}
+
+% Zitationsstil wählen: amsalpha
+\bibliographystyle{plain}
+
+\maketitle
+\frame{\tableofcontents \begin{textblock*}{5cm}(12cm,0cm)  % Breite, (x,y)-Position in cm
+		\includegraphics[width=0.7\linewidth]{BilderPräsentation/aisec_logo.pdf}
+\end{textblock*}}
+
+\section{Motivation}
+\frame{\tableofcontents[currentsection]}
+\input{Praesentation/Motivation}
+\section{Neuronale Netze}
+\frame{\tableofcontents[currentsection]}
+\input{Praesentation/NLP}
+\section{Ähnlichkeitsanalyse Neuronaler Netze}
+\frame{\tableofcontents[currentsection]}
+\input{Praesentation/Similarity}
+\section{Intrinsic Homotopy}
+\frame{\tableofcontents[currentsection]}
+\input{Praesentation/IntrinsicHomotopy}
+\section{Implementierung und Experimente}
+\frame{\tableofcontents[currentsection]}
+\input{Praesentation/ImplementationResults}
+\section{Zusammenfassung und Future Work}
+\frame{\tableofcontents[currentsection,currentsubsection]}
+\input{Praesentation/Diskussion}
+
+
+
+\appendix\nocite{*}
+\section{Literatur}
+\begin{frame}[allowframebreaks, nosection]
+	\frametitle{Literatur}
+	\bibliography{quellen}
+
+\end{frame}
+
+\begin{frame}[nosection]
+    Vielen Dank für Ihre Aufmerksamkeit!
+\end{frame}
+
+
+\end{document}

@@ -1,0 +1,98 @@
+%
+%\provide{OTHR_Bib.sty}
+
+\usepackage{tabularx}
+\usepackage{marvosym}
+
+\documenttype{Hochschulbibliothek}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\newcommand{\ja}{\CrossedBox}
+\newcommand{\nein}{\HollowBox}
+
+\newcommand{\@theAutor}{}
+\newcommand{\@theTitel}{}
+\newcommand{\@theHerausgeber}{}
+\newcommand{\@theISBN}{}
+\newcommand{\@theOrt}{---}
+\newcommand{\@theVerlag}{---}
+\newcommand{\@theJahr}{---}
+\newcommand{\@thePreis}{---}
+\newcommand{\@theFreihand}{1}
+\newcommand{\@theVormerkung}{\nein}
+\newcommand{\@theHandapparat}{0}
+\newcommand{\@theLabor}{0}
+\newcommand{\@theLabornummer}{}
+\newcommand{\@theBemerkung}{}
+\newcommand{\@theName}{}
+\newcommand{\@theKostenstelle}{}
+\newcommand{\@theFakultaet}{}
+\newcommand{\@theKostentraeger}{}
+\newcommand{\@theDatum}{\today}
+
+\newcommand{\Autor}[1]{\renewcommand{\@theAutor}{#1}}
+\newcommand{\Titel}[1]{\renewcommand{\@theTitel}{#1}}
+\newcommand{\Herausgeber}[1]{\renewcommand{\@theHerausgeber}{#1}}
+\newcommand{\ISBN}[1]{\renewcommand{\@theISBN}{#1}}
+\newcommand{\Ort}[1]{\renewcommand{\@theOrt}{#1}}
+\newcommand{\Verlag}[1]{\renewcommand{\@theVerlag}{#1}}
+\newcommand{\Jahr}[1]{\renewcommand{\@theJahr}{#1}}
+\newcommand{\Preis}[1]{\renewcommand{\@thePreis}{#1}}
+\newcommand{\Freihand}[2][\nein]{\renewcommand{\@theFreihand}{#2}\renewcommand{\@theVormerkung}{#1}}
+\newcommand{\Handapparat}[1]{\renewcommand{\@theHandapparat}{#1}}
+\newcommand{\Labor}[1]{\renewcommand{\@theLabor}{#1}}
+\newcommand{\Labornummer}[1]{\renewcommand{\@theLabornummer}{#1}}
+\newcommand{\Bemerkung}[1]{\renewcommand{\@theBemerkung}{#1}}
+\newcommand{\Name}[1]{\renewcommand{\@theName}{#1}}
+\newcommand{\Kostenstelle}[1]{\renewcommand{\@theKostenstelle}{#1}}
+\newcommand{\Fakultaet}[1]{\renewcommand{\@theFakultaet}{#1}}
+\newcommand{\Kostentraeger}[1]{\renewcommand{\@theKostentraeger}{#1}}
+\newcommand{\Datum}[1]{\renewcommand{\@theDatum}{#1}}
+
+
+\newcommand{\printorder}{\makehead\vspace{5ex}%
+\begin{center}\bfseries\large
+Bestellung von Büchern, Zeitschriften und anderen Medien (für Mitarbeiter und Mitarbeiterinnen der Fakultäten)
+\end{center}\vspace{5ex}
+\renewcommand{\arraystretch}{1.5}%
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+Verfasser/in (Name, Vorname):  & \bfseries\@theAutor\\
+Titel: & \bfseries\@theTitel\\
+Herausgeber: & \bfseries\@theHerausgeber\\
+ISBN: & \bfseries\@theISBN\\
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{@{}lXlXllll@{}}
+Ort: & \bfseries\@theOrt & Verlag: & \bfseries\@theVerlag & Jahr: & \bfseries\@theJahr & Preis: &\bfseries\@thePreis\\
+\end{tabularx}
+\vspace{1ex}
+
+Zu bestellende Exemplare für:
+
+\begin{tabularx}{\textwidth}{@{}lXllll@{}}
+Freihandbestand: &  {\bfseries\@theFreihand{}} Vormerkung erwünscht \Large\bfseries\@theVormerkung{} & Handapparat: & \bfseries\@theHandapparat  & Labor: & \bfseries\@theLabor\\
+\end{tabularx}
+\vspace{1ex}
+
+
+\begin{tabularx}{\textwidth}{@{}lXll@{}}
+Bemerkung: & \@theBemerkung & Labornummer: & \bfseries\@theLabornummer \\
+Name: & \bfseries\@theName & Kostenstelle: & \bfseries\@theKostenstelle \\
+Fakultät: & \bfseries\@theFakultaet & Kostenträger: & \bfseries\@theKostentraeger\\
+Datum: & \bfseries\@theDatum & \\
+\end{tabularx}
+\flushright\fbox{\begin{minipage}{.5\textwidth}Unterschrift\\\rule{0pt}{2cm}\end{minipage}}
+\cleardoublepage%
+\renewcommand{\@theAutor}{}%
+\renewcommand{\@theTitel}{}%
+\renewcommand{\@theHerausgeber}{}%
+\renewcommand{\@theISBN}{}%
+\renewcommand{\@theOrt}{---}%
+\renewcommand{\@theVerlag}{---}%
+\renewcommand{\@theJahr}{---}%
+\renewcommand{\@thePreis}{---}%
+\renewcommand{\@theFreihand}{1}%
+\renewcommand{\@theVormerkung}{\nein}%
+\renewcommand{\@theHandapparat}{0}%
+}
