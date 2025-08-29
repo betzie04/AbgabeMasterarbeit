@@ -1,0 +1,7 @@
+Most existing approaches to neural network similarity focus on comparing representations across models under linear transformations, such as permutations, orthogonal mappings, or affine projections \cite{kornblith_similarity_2019, williams_generalized_2021, li_convergent_2016}. These methods aim to identify structural equivalence of networks trained with different initializations or data.
+
+A more recent and relevant contribution by Chan et al.~\cite{chan_affine_2024} introduces an \emph{affine homotopy} between language encoders, modeling transformations through affine maps.
+While this approach is theoretically elegant, it assumes that encoders are related through linear structure — an assumption that fails to capture the complex nonlinear relations often observed in practice.
+
+In contrast, our work investigates \emph{nonlinear} transformations between encoders by formalizing intrinsic and extrinsic homotopies, as developed in Chapters~\ref{EA} and~\ref{ISA}. 
+We interpret similarity as a generalized distance between models and provide a framework that moves beyond the limitations of linear alignment methods.

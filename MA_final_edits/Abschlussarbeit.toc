@@ -1,0 +1,60 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Contents}{3}{section*.1}%
+\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}%
+\contentsline {paragraph}{\nonumberline Related Work.}{5}{paragraph*.4}%
+\contentsline {paragraph}{\nonumberline Motivation and Research Questions.}{6}{paragraph*.6}%
+\contentsline {chapter}{\numberline {2}Mathematical Formalizations of Neural Networks}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Overview of Machine Learning}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Neural Networks}{8}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Activation Functions}{10}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Training Process}{12}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Types of Neural Networks}{16}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Natural Language Processing}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Language Modeling}{17}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Transformer Models}{19}{section.3.2}%
+\contentsline {paragraph}{\nonumberline BERT – Bidirectional Encoder Representations from Transformers}{20}{paragraph*.16}%
+\contentsline {paragraph}{\nonumberline GPT – Generative Pre-Training}{20}{paragraph*.18}%
+\contentsline {chapter}{\numberline {4}Preliminaries}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Hemi-Metric Spaces}{21}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Norm and Distances}{22}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Specialization Quasi-ordering and Pre-ordering}{23}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Using Homotopy to Measure Similarity}{25}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Similarity of Neural Networks}{27}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Representational Similarity Measure}{28}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Functional Similarity Measure}{29}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Similarity Analysis using Affine Transformations}{31}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Intrinsic Homotopy}{32}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Extrinsic Homotopy}{33}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Improving Similarity Analysis using Nonlinear Transformations}{35}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Intrinsic Homotopy on Non-linear Transformations}{35}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Extrinsic Homotopy on Non-linear Transformations}{40}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Performance-Based Similarity Measure}{45}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Practical Realization and Implementation}{46}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Implementation of Loading the Models}{46}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Practical Approximation of Intrinsic Homotopy}{49}{section.8.2}%
+\contentsline {paragraph}{\nonumberline Model Architecture.}{49}{paragraph*.23}%
+\contentsline {paragraph}{\nonumberline Data Handling and Model Input.}{50}{paragraph*.25}%
+\contentsline {paragraph}{\nonumberline Training Procedure.}{50}{paragraph*.27}%
+\contentsline {paragraph}{\nonumberline Evaluation.}{50}{paragraph*.29}%
+\contentsline {section}{\numberline {8.3}Practical Approximation of Extrinsic Homotopy}{51}{section.8.3}%
+\contentsline {paragraph}{\nonumberline Adversarial Optimization Scheme.}{52}{paragraph*.31}%
+\contentsline {paragraph}{\nonumberline Model Architecture and Training.}{52}{paragraph*.33}%
+\contentsline {paragraph}{\nonumberline Evaluation.}{53}{paragraph*.35}%
+\contentsline {paragraph}{\nonumberline Additional Metrics.}{53}{paragraph*.37}%
+\contentsline {section}{\numberline {8.4}Estimation of the Lipschitz Constant}{53}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Implementation of Performance-Based Functional- Similarity Measure}{55}{section.8.5}%
+\contentsline {chapter}{\numberline {9}Practical Experiments on Nonlinear Transformation}{57}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Experimental Setup}{57}{section.9.1}%
+\contentsline {paragraph}{\nonumberline Models and Representations.}{57}{paragraph*.39}%
+\contentsline {paragraph}{\nonumberline Datasets.}{58}{paragraph*.41}%
+\contentsline {paragraph}{\nonumberline Training Details}{59}{paragraph*.44}%
+\contentsline {paragraph}{\nonumberline Hardware and Runtime.}{59}{paragraph*.47}%
+\contentsline {section}{\numberline {9.2}Experiment on Intrinsic Homotopy}{59}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Experiment on Extrinsic Homotopy and Performance Similarity}{64}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Consistency between Intrinsic and Extrinsic Distance}{67}{section.9.4}%
+\contentsline {paragraph}{\nonumberline QNLI.}{69}{paragraph*.63}%
+\contentsline {chapter}{\numberline {10}Conclusion and Future Work}{70}{chapter.10}%
+\contentsline {paragraph}{\nonumberline Limitations.}{70}{paragraph*.65}%
+\contentsline {paragraph}{\nonumberline Future Work.}{71}{paragraph*.67}%
+\contentsline {chapter}{References}{73}{section*.68}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

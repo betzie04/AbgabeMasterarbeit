@@ -1,0 +1,128 @@
+%
+% Zeichensatzdefinition nach dem Corporate Identity Design der OTH Regensburg
+%
+\ProvidesPackage{OTHR_fonts}[2024/06/01]
+\RequirePackage{iftex}
+\newif\ifUsingDejavuOTF\UsingDejavuOTFfalse
+\newif\ifRequest@Dejavu\Request@Dejavufalse
+\newif\ifRequest@Lucida\Request@Lucidafalse
+\newif\ifRequest@LucidaOTF\Request@LucidaOTFfalse
+\newif\ifRequest@LucidaGrande\Request@LucidaGrandefalse
+\newif\ifRequest@Roman\Request@Romanfalse
+%
+%
+\def\perform@AutomaticFontsetting{
+\RequirePackage{fontspec}
+\IfFontExistsTF{Lucida Grande}{\set@LucidaGrandeFont}{
+\message{Font Lucida Grande is not present. Falling back to font Lucida Bright OT.}
+\IfFontExistsTF{Lucida Bright OT}
+{\set@LucidaOTFont}{
+\message{Font Lucida Bright OT is not present. Falling back to font Dejavu.}
+\set@DejaVuFont}
+}
+}
+%
+\def\set@DejaVuFont{
+\ifLuaTeX\set@DejaVuOTFont%
+\else\ifXeTeX\set@DejaVuOTFont%
+    \else%     
+    \RequirePackage[T1]{fontenc}%
+    \RequirePackage[scaled=0.91]{DejaVuSans}%
+    \RequirePackage[scaled=0.91]{DejaVuSansMono}%
+    \RequirePackage[scaled=0.91]{DejaVuSerif}%
+    \fi%
+\fi%
+}
+%
+\def\set@LucidaFont{
+\RequirePackage[T1]{fontenc}
+\RequirePackage{textcomp}
+\RequirePackage[expert,vargreek,altbullet]{lucidabr}
+}
+%
+\def\set@LucidaOTFont{
+\RequirePackage{fontspec}
+\setmainfont[Ligatures={TeX, Common},
+               Numbers={OldStyle, Proportional},
+               Kerning=On, Scale=0.94]{Lucida Bright OT}
+\setsansfont[Ligatures={TeX, Common},
+               Numbers={OldStyle, Proportional}, Scale=0.94]{Lucida Sans OT}
+\setmonofont[Scale=0.94]{Lucida Sans Typewriter OT}
+}
+%
+\def\set@DejaVuOTFont{%
+\RequirePackage{fontspec}%
+\RequirePackage[usefilenames=false,%
+TT={Scale=0.91},%
+SS={Scale=0.91},%
+RM={Scale=0.91},%
+DefaultFeatures={Ligatures=TeX}]{dejavu-otf}%
+\UsingDejavuOTFtrue
+}
+%
+\def\set@LucidaGrandeFont{
+\RequirePackage{fontspec}
+\setmainfont[Ligatures={TeX, Common},
+               Numbers={OldStyle, Proportional},
+               Kerning=On]{Lucida Grande}
+\setsansfont[Ligatures={TeX, Common},
+               Numbers={OldStyle, Proportional}]{Lucida Grande}
+\setmonofont{Courier New}%
+}
+%
+\def\set@RomanFont{
+\renewcommand{\familydefault}{\rmdefault}
+}
+%
+%% Declare the options
+%
+\DeclareOption{AutomaticFonts}{\Request@Dejavufalse\Request@Lucidafalse\Request@LucidaOTFfalse\Request@LucidaGrandefalse}
+\DeclareOption{LucidaGrande}{\Request@Dejavufalse\Request@Lucidafalse\Request@LucidaOTFfalse\Request@LucidaGrandetrue}
+\DeclareOption{Lucida}{\Request@Dejavufalse\Request@Lucidatrue\Request@LucidaOTFfalse\Request@LucidaGrandefalse}
+\DeclareOption{lucida}{\Request@Dejavufalse\Request@Lucidatrue\Request@LucidaOTFfalse\Request@LucidaGrandefalse}
+\DeclareOption{LucidaOT}{\Request@Dejavufalse\Request@Lucidafalse\Request@LucidaOTFtrue\Request@LucidaGrandefalse}
+\DeclareOption{lucidaOT}{\Request@Dejavufalse\Request@Lucidafalse\Request@LucidaOTFtrue\Request@LucidaGrandefalse}
+\DeclareOption{DejaVu}{\Request@Dejavutrue\Request@Lucidafalse\Request@LucidaOTFfalse\Request@LucidaGrandefalse}
+\DeclareOption{KeepRoman}{\Request@Romantrue}
+\DeclareOption*{}%accept any undefined options here!
+%
+\ifLuaTeX\ExecuteOptions{AutomaticFonts}%
+\else\ifXeTeX\ExecuteOptions{AutomaticFonts}%
+      \else\ExecuteOptions{DejaVu}%
+      \fi%
+\fi
+\ProcessOptions\relax
+%
+%Perform font selection, here
+%
+\ifRequest@Dejavu%
+     \set@DejaVuFont%
+\else\ifRequest@Lucida%
+           \set@LucidaFont%
+      \else\ifRequest@LucidaOTF%
+                 \set@LucidaOTFont%
+            \else\ifRequest@LucidaGrande%
+                       \set@LucidaGrandeFont%
+                  \else
+                       \perform@AutomaticFontsetting%
+                  \fi
+            \fi
+     \fi
+\fi
+
+%
+% switch between roman and sans variants
+\ifRequest@Roman%
+     \set@RomanFont%
+\else%
+     \renewcommand{\familydefault}{\sfdefault}%
+    \ifUsingDejavuOTF%
+     \message{Switching to Fira Math Font.}
+     \RequirePackage{unicode-math}
+     \setmathfont{Fira Math}
+     \setmathfont[range={"22EE,"22F1,"2144,"25B3,"25B7}]{XITS Math}
+     \setmathrm{Deja Vu Sans}
+    \fi
+\fi
+%
+

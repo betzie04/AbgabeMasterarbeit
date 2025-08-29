@@ -1,0 +1,130 @@
+
+\section{Estimation of the Lipschitz Constant}
+
+%In the proofs of the triangle inequality in chapter \ref{ISA} we had to make the requirement of lipschitz continuity.
+%Therefore, it is necessary, to confirm the lipschitz continuity of the trained neural networks. 
+%As we defined neural networks as complex composition of multiple layers, that create a map between input and outputs, we can only evaluate the functions value of a neural network.
+%G.R. Wood and B.P. Zhang represented in their paper \cite{lipschitz_estimation} an approach, by finding the supremum of all slopes $\frac{|g(x)-g(y)|}{|x-y|}$ for distinct points $x$ and $y$ in the domain $g$, where $g$ denotes in the following the trained neural network.
+%The random variable $\frac{|g(X)-g(Y)|}{|X-Y|}$ itself has a cumulative distribution function $F$, which we refer to as the slope distribution of $g$, if we sample $X$ and $Y$ uniformly from the domain.
+%Then, the required Lipschitz constant is equal to the upper bound of its support. 
+
+In the proofs of the triangle inequality in Chapter~\ref{ISA}, we required the Lipschitz continuity of the neural networks involved. Therefore, it is necessary to confirm that the trained neural networks are indeed Lipschitz continuous.
+
+Since neural networks are defined as compositions of multiple layers that map inputs to outputs, we cannot evaluate their Lipschitz continuity analytically in general, but only approximate or bound it. In the following, we consider both upper and lower bounds on the Lipschitz constant, based on the work by Geuchen et al.~\cite{geuchen_upper_2024}.
+
+In Section~\ref{NN}, we defined neural networks as compositions of the form
+\[
+\psi = f^{(L)} \circ f^{(L-1)} \circ \dots \circ f^{(0)},
+\]
+where each layer is given by \( f^{(i)}(x) = \sigma(W_i x + b_i) \), and the activation functions \( \sigma \) are assumed to be Lipschitz continuous. 
+In particular, ReLU networks are Lipschitz continuous as compositions of Lipschitz continuous functions.
+
+Let \( \psi \in \mathcal{C}_{V,W} \) be a neural network that maps between two language encoders, and let \( x, y \in V \). Denote the Lipschitz constant of each layer \( f^{(i)} \) by \( L_i \). By recursively applying the definition of Lipschitz continuity, we obtain the following upper bound:
+\[
+\|\psi(x) - \psi(y)\| \leq L_L \cdot L_{L-1} \cdots L_0 \cdot \|x - y\|.
+\]
+Hence, the product of the individual layer constants provides an upper bound on the global Lipschitz constant of the network.
+
+To obtain a lower bound, we consider the basic definition of the Lipschitz constant \( L \) for a function \( \psi \in \mathcal{C}_{V,W} \):
+\[
+\|\psi(x) - \psi(y)\| \leq L \|x - y\| \quad \Longleftrightarrow \quad \frac{\|\psi(x) - \psi(y)\|}{\|x - y\|} \leq L.
+\]
+Taking the supremum over all \( x \neq y \) yields:
+\[
+\sup_{x \neq y} \frac{\|\psi(x) - \psi(y)\|}{\|x - y\|} \leq L.
+\]
+
+If \( \psi \) is differentiable, the local Lipschitz behavior around a point \( x \) is governed by the Jacobian \( J_\psi(x) \). The operator norm of the Jacobian gives a local estimate of the Lipschitz constant:
+\[
+\lim_{\|h\| \to 0} \frac{\|\psi(x + h) - \psi(x)\|}{\|h\|} = \|J_\psi(x)\|.
+\]
+
+In the case of the Euclidean norm, the induced operator norm is the spectral norm, defined as the largest singular value of the Jacobian:
+\[
+\|J_\psi(x)\|_2 = \sup_{\|v\| = 1} \|J_\psi(x)v\|_2.
+\]
+Consequently,
+\[
+\sup_x \|J_\psi(x)\|_2 \leq L,
+\]
+which provides a lower bound on the global Lipschitz constant \( L \).
+
+In practice, computing a tight lower bound on the Lipschitz constant via the spectral norm of the Jacobian over the entire domain is computationally expensive, especially in high-dimensional settings.
+
+An alternative approach for estimating the Lipschitz constant is presented by Wood et al.~\cite{lipschitz_estimation}.
+The key idea is to approximate the supremum of all slopes
+\[
+\frac{\|g(x)-g(y)\|}{\|x - y\|},
+\]
+for distinct points \( x, y \) in the domain of the function \( g \), where \( g \) denotes the trained neural network. 
+The quantity
+\[
+\frac{\|g(X) - g(Y)\|}{\|X - Y\|}
+\]
+can be interpreted as a random variable when \( X \) and \( Y \) are sampled uniformly from the domain. 
+This induces a cumulative distribution function \( F \), which we refer to as the \emph{slope distribution} of \( g \).
+The Lipschitz constant is then equal to the supremum of the support of \( F \).
+
+To approximate this distribution, one repeatedly samples pairs \( (X, Y) \) from the domain and computes the corresponding slopes.
+By accumulating these values and computing their maximum over many repetitions, an empirical estimate of the Lipschitz constant is obtained.
+
+However, in our setting, this method turned out to be computationally expensive and yielded unrealistically small estimates.
+This is due to the fact that the model's predictions tend to be relatively flat across large regions of the input space, which causes the majority of sampled slopes to underestimate the true Lipschitz constant. 
+As a result, these empirical estimates were not informative, and we therefore rely solely on the analytically computable upper bound as a conservative estimate.
+
+
+As such, we restrict ourselves to estimate an upper bound based on the product of the layer wise Lipschitz constant, which is easy to compute and provides a guaranteed over-approximation of the true Lipschitz constant. 
+However, this upper bound can be quite loose in practice and should be interpreted as a worst-case estimate rather than a tight characterization of the network's sensitivity. 
+%We define as G.R. Wood and B.P. Zhang  \cite{lipschitz_estimation} the upper bound for a ReLu layer as:
+%\[L(\psi)\leq\sup_{x\in\mathbb{R}^d}\|A^{(L)}D^{(L-1)}(x)W^{(L-1)}...D^{(0)}(x)W^{(0)}\|,\] where $A^{(L)}$ denote the weights matrice, which contains the learned parameters of each fully connected layer and $D^{(L-1)}$ denotes the derivative of the ReLU activation at a given input $x$, it selects which neurons are active at layer $L$ for input $x$ and zeros out the others.
+
+
+%an approach which we will use to get an estimation of the Lipschitz constant of the trained neural networks.
+%By finding the supreme of all slopes $\frac{|g(x)-g(y)|}{|x-y|}$ for distinct points $x$ and $y$ in the domain $g$, where $g$ denotes in the following the trained neural network, the Constant can be estimated.
+%The random variable $\frac{|g(X)-g(Y)|}{|X-Y|}$ itself has a cumulative distribution function $F$, which we refer to as the slope distribution of $g$, if we sample $X$ and $Y$ uniformly from the domain.
+%Then, the required Lipschitz constant is equal to the upper bound of its support. 
+%To receive the cumulative distribution function $F$, we sample the slopes within an interval $I$ in the reals and calculate the the maximum slope.
+%This process is repeated many times.
+%If we do so, the cumulative distribution of this slopes absolute values converges to the cumulative slope distribution $F$.
+%If we take a random simple size $n$ from this distribution and the largest of the absolute slopes, denoted by $l$, the cumulative distribution function of $l$ will be $F^n(x)$.
+%If we know the distribution to which $F$ tends with increasing $n$, we may use the estimated local parameter $L$ as an estimation of the Lipschitz constant of $g$.
+%To realize this process in practice we use the following algorithm \ref{alg:LipschitzEst}. 
+%\begin{algorithm}[H]
+%	\caption{Estimate Lipschitz Constant via Slope Sampling}
+%	\begin{algorithmic}[htbp]\label{alg:LipschitzEst}
+%		\State \textbf{Input:} 
+%		\State \quad Models $\mathcal{M} = \{\text{trained transformation models}\}$  
+%		\State \quad Input domain interval $[a, b]$  
+%		\State \quad Proximity threshold $\delta$  
+%		\State \quad Number of slope samples $n$  
+%		\State \quad Number of max slope repetitions $m$
+%		\State \textbf{Output:} Estimated Lipschitz constant $\hat{L}$
+%		
+%		\Procedure{Main}{}
+%		\For{model name $g_{\text{name}} \in \mathcal{M}$}
+%		\State $g \gets \text{load\_model}(g_{\text{name}})$
+%		\State $\hat{L}, (\text{shape}, \text{scale}) \gets \textsc{LipschitzConstant}(g, a, b, \delta, n, m)$
+%		\EndFor
+%		\EndProcedure
+%		
+%		\Function{LipschitzConstant}{$g, a, b, \delta, n, m$}
+%		\State $L_{\text{values}} \gets [\,]$ \Comment List to store $m$ maximum slope values
+%		\For{$i = 1$ to $m$}
+%		\State $slopes \gets [\,]$
+%		\For{$j = 1$ to $n$}
+%		\State Sample $x \in \mathbb{R}^d$ uniformly from $[a, b]^d$
+%		
+%		\State Sample direction $v \sim \mathcal{N}(0, I_d)$ and normalize: $v \gets v / \|v\|$
+%		\State $y \gets x + \delta \cdot v$
+%		\State $g_x \gets g(x)$
+%		\State $g_y \gets g(y)$
+%		\State $slope \gets \frac{|g_x - g_y|}{|x - y|}$
+%		\State $slopes.\text{append}(slope)$
+%		\EndFor
+%		\State $L_{\text{values}}.\text{append}(\max(\text{slopes}))$
+%		\EndFor
+%		\State $(\text{shape}, \text{loc}, \text{scale}) \gets \text{fit\_reverse\_weibull}(L_{\text{values}})$
+%		\State \textbf{return} $\text{loc}, (\text{shape}, \text{scale})$
+%		\EndFunction
+%	\end{algorithmic}
+%\end{algorithm}

@@ -1,0 +1,44 @@
+In this work, we introduced a homotopy-based framework for comparing language encoder models using two types of similarity: intrinsic similarity, which focuses on internal representations, and extrinsic similarity, which considers how well models can be transformed into each other based on their task-specific outputs.
+Our approach relies on learning non-linear, 1-Lipschitz-bounded transformations between model representations and estimating distances using the \(\ell^\infty\) -norm.
+
+Compared to the affine approach by Chan et al.~\cite{chan_affine_2024}, we found that non-linear transformations lead to more homotopic model pairs, especially when trained with smaller learning rates.
+This suggests that non-linear mappings allow for better alignment and reveal deeper structural relationships between encoders than affine baselines.
+
+In the intrinsic setting, these transformations produced particularly strong results, uncovering denser connections between encoder pairs. 
+In the extrinsic setting, we compared homotopy distances to performance-based similarity measures such as classification agreement and Spearman correlation. 
+While high agreement often corresponded to low homotopy distance, we also observed notable exceptions: some models made similar predictions but were far apart in terms of homotopy, and others showed functional closeness despite low agreement.
+This indicates that homotopy-based similarity captures deeper aspects of model behavior that are not visible from output similarity alone. 
+Moreover, extrinsic homotopy distances were asymmetric transforming model \( g \) into model \( h \) was not always as easy as the reverse, highlighting a directional structure that symmetric metrics cannot capture.
+
+We also examined how intrinsic and extrinsic homotopy relate to each other across different tasks.
+While Chan et al. \cite{chan_affine_2024} suggested a close link in the affine case, our results showed that this relationship depends heavily on the task.
+For example, we observed a clear positive correlation in \texttt{QNLI}, no correlation in \texttt{SST-2}, and moderate correlation in \texttt{MRPC}.
+This shows that intrinsic and extrinsic similarity capture different aspects of model behavior and should be analyzed together to gain a more complete picture.
+
+In summary, our work shows that homotopy-based similarity, especially with non-linear transformations, offers a powerful and flexible way to compare language models. 
+It goes beyond simple agreement or correlation and helps reveal deeper structural relationships between models.
+
+\paragraph{Limitations.}
+Despite the promising results, this work has several limitations. 
+First, our experiments were restricted to \texttt{BERT}-based models and \ac{GLUE} classification tasks, which limits the generalizability to other architectures or domains. 
+Second, the method showed sensitivity to hyperparameters, particularly the learning rate, which influenced training stability and distance estimates. 
+Additionally, the transformation networks were limited to simple feedforward architectures with spectral normalization, which may constrain expressiveness.
+
+\paragraph{Future Work.}
+While this study focused on language models and classification tasks from the \ac{GLUE} benchmark, our approach is broadly applicable and opens up several directions for future research.
+
+First, one promising application lies in the field of IT security.
+Since homotopy-based similarity captures structural and functional alignment between models, it could be used to detect anomalies introduced by data poisoning or backdoor attacks.
+For example, poisoned models might exhibit abnormal extrinsic or intrinsic distances when compared to clean reference models, even if their test accuracy remains high.
+Investigating whether homotopy measures can serve as early indicators of such manipulations could be a valuable direction for applied research.
+
+ 
+While we were unable to fully reproduce Chan et al.~\cite{chan_affine_2024} reported results on held-out data, we found that our training-based measurements exhibit patterns that are broadly consistent with their findings.  
+This suggests that differences in evaluation methodology, particularly the choice of data split, may partially account for the discrepancy.
+
+
+
+%Exploring this could clarify the role of generalization in homotopy-based alignment and help distinguish between memorization and true representational similarity.
+
+Finally, future work should address the current limitations by extending the analysis to more diverse model architectures, datasets, and transformation classes.
+This includes considering multilingual models, generative tasks, and more expressive transformation networks beyond fully connected layers with spectral normalization.

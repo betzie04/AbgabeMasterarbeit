@@ -1,0 +1,227 @@
+\begin{thebibliography}{10}
+
+\bibitem{antiga_deep_2020}
+Luca Antiga, Eli Stevens, and Thomas Viehmann.
+\newblock {\em Deep learning with {PyTorch}}.
+\newblock Manning, 2020.
+
+\bibitem{chan_affine_2024}
+Robin Chan, Reda Boumasmoud, Anej Svete, Yuxin Ren, Qipeng Guo, Zhijing Jin,
+  Shauli Ravfogel, Mrinmaya Sachan, Bernhard Sch{\"o}lkopf, Mennatallah
+  El-Assady, and Ryan Cotterell.
+\newblock On affine homotopy between language encoders.
+\newblock In {\em The Thirty-eighth Annual Conference on Neural Information
+  Processing Systems}, 2024.
+
+\bibitem{chang_clust_met_space}
+Cheng-Shang Chang, Wanjiun Liao, Yu-Sheng Chen, and Li-Heng Liou.
+\newblock { A Mathematical Theory for Clustering in Metric Spaces }.
+\newblock {\em IEEE Transactions on Network Science and Engineering},
+  3(01):2--16, January 2016.
+
+\bibitem{clark_electra_2020}
+Kevin Clark, Minh-Thang Luong, Quoc~V. Le, and Christopher~D. Manning.
+\newblock Electra: Pre-training text encoders as discriminators rather than
+  generators.
+\newblock In {\em International Conference on Learning Representations}, 2020.
+
+\bibitem{cotterell_formal_2024}
+Ryan Cotterell, Anej Svete, Clara Meister, Tianyu Liu, and Li~Du.
+\newblock Formal aspects of language modeling.
+
+\bibitem{cybenkot_approximation_nodate}
+G.~Cybenko.
+\newblock Approximation by superpositions of a sigmoidal function.
+\newblock {\em Mathematics of Control, Signals and Systems}, 2(4):303--314,
+  December 1989.
+
+\bibitem{BERT}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock {BERT}: Pre-training of deep bidirectional transformers for language
+  understanding.
+\newblock In {\em Proceedings of the 2019 Conference of the North {A}merican
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies, Volume 1 (Long and Short Papers)}, pages 4171--4186,
+  Minneapolis, Minnesota, June 2019. Association for Computational Linguistics.
+
+\bibitem{dieck_mengentheoretische_top}
+Tammo~tom Dieck.
+\newblock {\em Mengentheoretische Topologie}.
+\newblock 2009.
+
+\bibitem{forster_analysis_2025}
+Otto Forster and Florian Lindemann.
+\newblock {\em Analysis 2: Differentialrechnung im \(\mathbb{R}^n\),
+  gewöhnliche Differentialgleichungen}.
+\newblock Grundkurs Mathematik. Springer Fachmedien Wiesbaden, Wiesbaden, 2025.
+\newblock ISSN 2626-613X, 2626-6148.
+
+\bibitem{ReInfLearning}
+Javier Garc{\i}a and Fernando Fern{\'a}ndez.
+\newblock A comprehensive survey on safe reinforcement learning.
+\newblock {\em Journal of Machine Learning Research}, 16(1):1437--1480, 2015.
+
+\bibitem{geuchen_upper_2024}
+Paul Geuchen, Dominik Stöger, Thomas Telaar, and Felix Voigtlaender.
+\newblock Upper and lower bounds for the {Lipschitz} constant of random neural
+  networks, April 2025.
+
+\bibitem{gokcesu2021generalizedhuberlossrobust}
+Kaan Gokcesu and Hakan Gokcesu.
+\newblock Generalized huber loss for robust learning and its efficient
+  minimization for a robust statistics, 2021.
+
+\bibitem{goodfellow_generative_2014}
+Ian Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley,
+  Sherjil Ozair, Aaron Courville, and Yoshua Bengio.
+\newblock Generative adversarial networks.
+\newblock {\em Commun. ACM}, 63(11):139–144, October 2020.
+
+\bibitem{goubault-larrecq_non-hausdorff_nodate}
+Jean Goubault-Larrecq.
+\newblock {\em Non-Hausdorff Topology and Domain Theory: Selected Topics in
+  Point-Set Topology}.
+\newblock New Mathematical Monographs. Cambridge University Press, Cambridge,
+  2013.
+\newblock Available in hardback.
+
+\bibitem{goyal_deep_2018}
+Palash Goyal, Sumit Pandey, and Karan Jain.
+\newblock {\em Deep {Learning} for {Natural} {Language} {Processing}}.
+\newblock Apress, Berkeley, CA, 2018.
+
+\bibitem{DataMining}
+Jiawei Han, Micheline Kamber, and Jian Pei.
+\newblock 2 - getting to know your data.
+\newblock In {\em Data Mining (Third Edition)}, The Morgan Kaufmann Series in
+  Data Management Systems, pages 39--82. Morgan Kaufmann, Boston, third edition
+  edition, 2012.
+
+\bibitem{jing_self_supervised_2021}
+Longlong Jing and Yingli Tian.
+\newblock Self-supervised visual feature learning with deep neural networks: A
+  survey.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  43(11):4037--4058, 2021.
+
+\bibitem{MachLearnFoundation}
+A.~Jung.
+\newblock {\em Machine Learning: The Basics}.
+\newblock Machine Learning: Foundations, Methodologies, and Applications.
+  Springer Nature Singapore, 2022.
+
+\bibitem{kingma2017adammethodstochasticoptimization}
+Diederik~P. Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em CoRR}, abs/1412.6980, 2014.
+
+\bibitem{klabunde_similarity_2024}
+Max Klabunde, Tobias Schumacher, Markus Strohmaier, and Florian Lemmerich.
+\newblock Similarity of neural network models: A survey of functional and
+  representational measures.
+\newblock {\em ACM Comput. Surv.}, 57(9), May 2025.
+
+\bibitem{knudson_algtop}
+Kevin~P. Knudson.
+\newblock {\em Algebraic Topology}.
+\newblock De Gruyter, Berlin, Boston, 2024.
+
+\bibitem{kornblith_similarity_2019}
+Simon Kornblith, Mohammad Norouzi, Honglak Lee, and Geoffrey Hinton.
+\newblock Similarity of neural network representations revisited.
+\newblock In {\em Proceedings of the 36th International Conference on Machine
+  Learning}, pages 3519--3529. {PMLR}, 2019.
+\newblock {ISSN}: 2640-3498.
+
+\bibitem{lang_algebra_2002}
+Serge Lang.
+\newblock {\em Algebra}.
+\newblock Graduate {Texts} in {Mathematics}. Springer, New York, NY, 2002.
+\newblock ISSN: 0072-5285, 2197-5612.
+
+\bibitem{lawvere_metric_1973}
+F.~William Lawvere.
+\newblock Metric spaces, generalized logic, and closed categories.
+\newblock {\em Rendiconti del Seminario Matematico e Fisico di Milano},
+  43(1):135--166, 1973.
+
+\bibitem{li_convergent_2016}
+Yixuan Li, Jason Yosinski, Jeff Clune, Hod Lipson, and John Hopcroft.
+\newblock Convergent learning: Do different neural networks learn the same
+  representations?
+\newblock In {\em Proceedings of the 1st International Workshop on Feature
+  Extraction: Modern Questions and Challenges at NIPS 2015}, volume~44 of {\em
+  Proceedings of Machine Learning Research}, pages 196--212, Montreal, Canada,
+  11 Dec 2015. PMLR.
+
+\bibitem{liu_roberta_2019}
+Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer
+  Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov.
+\newblock Ro{BERT}a: A robustly optimized {BERT} pretraining approach.
+\newblock In {\em International Conference on Learning Representations}, 2020.
+
+\bibitem{pedrycz_deep_2020}
+Witold Pedrycz and Shyi-Ming Chen.
+\newblock Deep learning: Concepts and architectures.
+
+\bibitem{peters-etal-2018-deep}
+Matthew~E. Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark,
+  Kenton Lee, and Luke Zettlemoyer.
+\newblock Deep contextualized word representations.
+\newblock In {\em Proceedings of the 2018 Conference of the North {A}merican
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies, Volume 1 (Long Papers)}, pages 2227--2237, New Orleans,
+  Louisiana, June 2018. Association for Computational Linguistics.
+
+\bibitem{GPT}
+Alec Radford and Karthik Narasimhan.
+\newblock Improving language understanding by generative pre-training.
+\newblock 2018.
+
+\bibitem{sellam_multiberts_2022}
+Thibault Sellam, Steve Yadlowsky, Ian Tenney, Jason Wei, Naomi Saphra,
+  Alexander D'Amour, Tal Linzen, Jasmijn Bastings, Iulia~Raluca Turc, Jacob
+  Eisenstein, Dipanjan Das, and Ellie Pavlick.
+\newblock The multi{BERT}s: {BERT} reproductions for robustness analysis.
+\newblock In {\em International Conference on Learning Representations}, 2022.
+
+\bibitem{smets2024mathematicsneuralnetworkslecture}
+Bart M.~N. Smets.
+\newblock Mathematics of neural networks (lecture notes graduate course), 2024.
+
+\bibitem{vaswani_attention_2023}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N Gomez, Łukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is {All} you {Need}.
+\newblock In {\em Advances in {Neural} {Information} {Processing} {Systems}},
+  volume~30. Curran Associates, Inc., 2017.
+
+\bibitem{wang_glue_2019}
+Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and
+  Samuel~R. Bowman.
+\newblock {GLUE}: A multi-task benchmark and analysis platform for natural
+  language understanding.
+\newblock In {\em International Conference on Learning Representations}, 2019.
+
+\bibitem{werner_funktionalanalysis_2005}
+D.~Werner.
+\newblock {\em Funktionalanalysis}.
+\newblock Springer-{Lehrbuch}. Springer, 2005.
+
+\bibitem{williams_generalized_2021}
+Alex~H Williams, Erin Kunz, Simon Kornblith, and Scott Linderman.
+\newblock Generalized shape metrics on neural representations.
+\newblock In {\em Advances in Neural Information Processing Systems},
+  volume~34, pages 4738--4750. Curran Associates, Inc., 2021.
+
+\bibitem{lipschitz_estimation}
+G.R. Wood and B.P. Zhang.
+\newblock Estimation of the {Lipschitz} constant of a function.
+\newblock {\em Journal of Global Optimization}, 8(1), January 1996.
+
+\bibitem{zhou_machine_2021}
+Zhi-Hua Zhou.
+\newblock {\em Machine Learning}.
+\newblock Springer Singapore, 2021.
+
+\end{thebibliography}

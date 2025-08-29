@@ -1,0 +1,77 @@
+
+\section{Performance-Based Similarity Measure}\label{sec:PBSM}
+
+As explained in Chapter~\ref{SoNN}, functional similarity measures compare the outputs $\mathbf{O}, \mathbf{O}' \in \mathbb{R}^{N\times C}$, where each element $\mathbf{O}_{i,c}$ denotes the predicted probability or score for class $c$ on input $x_i$. The predicted class $\hat{c}$ for input $x_i$ is given by
+\[
+\hat{c} = \arg \max_c \mathbf{O}_{i,c}.
+\]
+
+A common perspective in functional similarity is that models are considered similar if they achieve similar performance on a downstream task. Chan et al.~\cite{chan_affine_2024} adopted this view in their definition of \emph{extrinsic homotopy}, using model behavior across all downstream tasks.
+
+In this work, we compare two models based on their predictions on a given classification task. We consider two performance-based similarity measures:
+\begin{enumerate}
+    \item \textbf{Classification agreement}: the relative frequency with which both models produce the same predicted class labels.
+    \item \textbf{Spearman rank correlation}: the correlation between the ranked class scores of the two models for each input, capturing the similarity of their confidence profiles.
+\end{enumerate}
+
+More generally, performance-based similarity measures reduce model predictions to scalar values via a quality function $q$, which evaluates prediction accuracy relative to the ground-truth labels. A simple similarity measure then compares the absolute difference in performance:
+\[
+m_{\mathrm{Perf}}(\mathbf{O}, \mathbf{O}') = \left| q(\mathbf{O}) - q(\mathbf{O}') \right|.
+\]
+
+\paragraph{Spearman's Rank Correlation}
+measures the strength and direction of the monotonic relationship between two ranked variables~\cite{sammut_encyclopedia_2017}.
+It assesses how well the relationship between two sets of data can be described using a monotonic function, without assuming linearity.
+
+In the context of model comparison, Spearman's correlation is used to evaluate whether two models produce similarly ranked outputs, independent of the absolute predicted values.
+This is particularly useful when the relative ordering of predictions matters more than their magnitudes.
+
+The Spearman rank correlation coefficient \( \rho \) is computed as:
+
+\[
+\rho = 1 - \frac{6 \sum_{i=1}^N (x_i - y_i)^2}{N(N^2 - 1)},
+\]
+where \( x_i \) and \( y_i \) are the ranks of the \( i \)th observation in the two samples, and \( N \) is the total number of observations.
+
+This formula assumes that there are no tied ranks\footnote{In practice, ties can occur, especially with discrete prediction scores or limited numerical precision.
+In such cases, a corrected version of the Spearman correlation should be used, e.g., via Pearson correlation applied to the ranks. Most statistical libraries apply these corrections automatically.}.
+
+The combination of classification agreement and rank correlation thus provides a more comprehensive picture of model similarity—capturing both agreement in predicted classes and consistency in output structure.
+
+In machine learning, Spearman's rank correlation is often used to evaluate whether a model correctly ranks predictions relative to the true targets. It focuses on the order rather than the exact values, making it suitable for tasks where the correct sorting of outputs is more important than their absolute magnitude.
+
+%\textbf{Accuracy} is a measure of how many predictions of a model are correct - in relation to the total number of all predictions \cite{sammut_encyclopedia_2017}. 
+%It is often used in classification problems and is calculated as follows: \[\text{accuracy} = \frac{\text{true positives + true negatives}}{\text{all objects}}.\]
+
+
+\paragraph{Classification Agreement} 
+measures how frequently two models produce identical class predictions on the same inputs.
+Let the predicted class labels for each input \( x_i \) be given by
+\[
+\hat{y}^{(h)}_i = \arg\max_c \mathbf{O}^{(h)}_{i,c}, \quad
+\hat{y}^{(g)}_i = \arg\max_c \mathbf{O}^{(g)}_{i,c},
+\]
+where \( \mathbf{O}^{(h)}_{i,c} \) and \( \mathbf{O}^{(g)}_{i,c} \) denote the predicted score or probability for class \( c \) on input \( x_i \) from models \( h \) and \( g \), respectively.
+
+Then the agreement score is defined as:
+\[
+\operatorname{Agreement}(h, g) = \frac{1}{N} \sum_{i=1}^N \mathds{1} \left[ \hat{y}^{(h)}_i = \hat{y}^{(g)}_i \right],
+\]
+where \( \mathds{1} \) is the indicator function that returns \( 1 \) if its argument is true and \( 0 \) otherwise.
+%\textbf{F1-score} is the harmonic mean of Precision and Recall.
+%It gives a better measure of the incorrectly classified cases than the Accuracy Metric \cite{sammut_encyclopedia_2017}.
+%\[\text{F1-score}=2\cdot \frac{\text{Precision}\cdot \text{Recall}}{\text{Precision} + \text{Recall}},\]
+%where Precision is the measure of the true positives from all predicted positive cases:\[\text{Precision} = \frac{\text{true positives}}{\text{true positives} + \text{false positives}}\]
+% and Recall the measure of true positives from all actual positives: \[\text{Recall} = \frac{\text{true positives}}{\text{true positives} + \text{false negatives}}.\] 
+ %\textbf{Brier-score} is a measure that measures the mean squared deviation from the ideal probabilities $1$ and $0$.
+ %It is used to evaluate the quality of probability estimator.
+%\[
+%\text{BS} := \frac{1}{k} \sum_{x \in \mathcal{D}} (p(x) - b(x))^2,
+%\]
+%where $\mathcal{D}$ denotes the evaluation set, $p(x)$ the predicted probability and $b(x)$ the lable.
+
+
+
+%\section{Relation of Intrinsic and Extrinsic Homotopy}
+%Within this section, we will focus on the relation of intrinsic and extrinsic homotopy.
+%Therefore, we relate $d_\mathcal{F}(h,g)$ and $d_{\mathcal{C}_{V,W}}^\mathcal{H}$

@@ -1,0 +1,67 @@
+In Chapter~\ref{ISA}, we extended the concept of extrinsic homotopy to a family of non-linear models and transformations.  
+In this setting, we aim to quantify the dissimilarity between two language encoders \( g, h \in \mathcal{E}_V \) by approximating the Hausdorff–Hoare distance:
+\[
+	d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(g, h) = \sup_{\psi \in \mathcal{C}_{V,W}} \inf_{\varphi \in \mathcal{C}_{V,W}} \|\psi\circ h - \varphi \circ g\|_\infty.
+\]
+Following Section~\ref{ExtrinsicHomotopyonNonlinTransf}, we restrict the hypothesis space \( \mathcal{C}_{V,W} \) to the subclass \( \mathcal{F}_{\text{Lip}_1} \subset \mathcal{C}_{V,W} \) of non-linear 1-Lipschitz continuous neural networks.  
+This choice, motivated by prior work in the affine case~\cite{chan_affine_2024}, ensures bounded sensitivity and comparability across models.
+
+Since the resulting minimax problem is non-linear and non-convex, no global optimum can be guaranteed in practice.  
+Inspired by adversarial training strategies in generative models~\cite{goodfellow_generative_2014}, we approximate the solution via alternating optimization.
+
+\paragraph{Adversarial Optimization Scheme.}
+Let \( \psi, \varphi \in \mathcal{F}_{\text{Lip}_1} \) denote two neural networks modeling the transformations of the source and target encoders, respectively.  
+We employ the following alternating training strategy:
+\begin{itemize}
+    \item In the \emph{inner loop}, we fix \( \psi \) and train \( \varphi \) to minimize the discrepancy \( \|\psi(h(x)) - \varphi(g(x))\|_\infty \).
+    \item In the \emph{outer loop}, we fix \( \psi \) and update \( \varphi \) via gradient ascent to increase the discrepancy to the current approximation \( \psi(g(x)) \).
+\end{itemize}
+This approach mirrors the generator–discriminator dynamics in GAN training, where alternating updates push the system toward an equilibrium.  
+An overview is given in Algorithm~\ref{alg:alternating-training}.
+
+\begin{algorithm}[H]
+\caption{Alternating Training of Neural Networks \(\psi\) and \(\varphi\)}
+\label{alg:alternating-training}
+\begin{algorithmic}[1]
+\State Initialize neural networks \(\psi\), \(\varphi\), and their optimizers
+\For{each training epoch}
+    \For{each batch index \(i\), and inputs \(x_g, x_h\)}
+        \If{\(i \bmod 2 = 0\)} \Comment{Even batch: train \(\psi\)}
+            \State \(\hat{y}_\psi \gets \psi(x_g)\)
+            \State \(y_\varphi \gets \varphi(x_h).\text{detach()}\)
+            \State \(\mathcal{L}_\psi \gets \text{MSE}(\hat{y}_\psi, y_\varphi)\)
+            \State Perform gradient \textbf{ascent} on \(-\mathcal{L}_\psi\)
+        \Else \Comment{Odd batch: train \(\varphi\)}
+            \State \(\hat{y}_\varphi \gets \varphi(x_h)\)
+            \State \(y_\psi \gets \psi(x_g).\text{detach()}\)
+            \State \(\mathcal{L}_\varphi \gets \text{MSE}(\hat{y}_\varphi, y_\psi)\)
+            \State Perform gradient \textbf{descent} on \(\mathcal{L}_\varphi\)
+        \EndIf
+    \EndFor
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Model Architecture and Training.}
+Both \( \psi \) and \( \varphi \) are implemented as fully connected neural networks with spectral normalization applied to all linear layers to enforce 1-Lipschitz continuity.  
+Training is conducted using the Adam optimizer with early stopping based on validation loss.  
+Alternating updates are controlled via mini-batch indices: even-numbered batches update \( \psi \), odd-numbered batches update \( \varphi \).  
+To avoid gradient leakage between updates, we detach the target model’s output using \texttt{.detach()} during each step.
+
+\paragraph{Evaluation.}
+After training, the extrinsic homotopy distance is approximated by the maximum deviation between the transformed outputs:
+\[
+d^\mathcal{H}_{\mathcal{F}_{\text{Lip}_1}}(g, h) \approx \max_{x \in \mathcal{D}_{\mathrm{test}}} \| \psi(h(x)) - \varphi(g(x)) \|_\infty.
+\]
+This value is computed over the test set using \texttt{torch.max(torch.abs(...))} (see Listing~\ref{lst:linf-computation}).  
+It serves as a practical estimate of the extrinsic homotopy distance under the considered model class \( \mathcal{F}_{\text{Lip}_1} \).
+
+\paragraph{Additional Metrics.}
+As in the previous subsection, we provide a more comprehensive view of representational alignment and to enable comparisons between extrinsic homotopy similarity and performance similarity in the following experimet in Section~\ref{exp:ExtrinsicHom}, we additionally compute:
+\begin{itemize}
+    \item Spearman rank correlation between \( \psi(h(x)) \) and \( \varphi(g(x)) \),
+    \item Pearson correlation (averaged over dimensions),
+    \item Upper bound on the Lipschitz constant via the product of spectral norms.
+    %\item a Monte Carlo estimate of the Lipschitz lower bound using Jacobian norms on sampled inputs.
+\end{itemize}
+

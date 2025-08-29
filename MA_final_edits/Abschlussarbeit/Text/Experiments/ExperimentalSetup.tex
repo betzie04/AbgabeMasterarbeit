@@ -1,0 +1,108 @@
+This chapter is structured around three successive experimental components, each designed to examine a specific aspect of the research questions.
+
+We begin by outlining the experimental setup, including the selected models, datasets, and training details for the transformation networks.
+
+The subsequent sections are organized as follows:
+\begin{itemize}
+	\item In the intrinsic homotopy experiment, we compare the quality of non-linear transformations against the original affine approach.
+	\item In the extrinsic homotopy experiment, we investigate how extrinsic similarity aligns with predictive agreement between models, and whether good transformations can be learned when model agreement is high.
+	\item Finally, we conduct a comparative analysis of intrinsic and extrinsic distances to assess whether structural and behavioral similarity are consistently related in both the affine and non-linear settings.
+\end{itemize}
+
+Together, these experiments provide a comprehensive empirical evaluation of the extended homotopy framework introduced in this thesis.
+
+
+\section{Experimental Setup}\label{sec:Exp_Setup}
+This section describes the experimental setup used to evaluate homotopy-based similarity between language encoders.
+We first introduce the selected models.
+Subsequently, we describe the datasets and training objectives used for learning the transformations, and provide an overview of the computational effort required for training.
+\paragraph{Models and Representations.}
+To investigate homotopic relationships between language models, we evaluate three families of transformer-based encoders: \texttt{ELECTRA}~\cite{clark_electra_2020}, \texttt{RoBERTa}~\cite{liu_roberta_2019}, and the 25 variants of \texttt{MultiBERTs}~\cite{sellam_multiberts_2022}.
+For each model, we extract contextualized representations from all 12 transformer layers using pretrained weights available on HuggingFace.\footnote{\url{https://huggingface.co/}} 
+Each hidden state is a 768-dimensional vector per input token. 
+To obtain fixed-size input representations for the transformations, we apply mean pooling across tokens.
+
+\paragraph{Datasets.}
+We use six classification tasks from the \acf{GLUE} benchmark~\cite{wang_glue_2019}, a standard suite for evaluating language understanding.
+These tasks span diverse linguistic phenomena and vary in size and difficulty. 
+The selected tasks are:
+\begin{itemize}
+    \item \textbf{Stanford Sentiment Treebank \texttt{(SST-2)}}:  
+    A binary sentiment classification task in which the model must predict whether a given sentence expresses positive or negative sentiment.
+
+    \item \textbf{Microsoft Research Paraphrase Corpus \texttt{(MRPC)}}:  
+    A binary classification task to determine whether two given sentences are semantically equivalent (i.e., paraphrases of each other).
+
+    \item \textbf{Recognizing Textual Entailment \texttt{(RTE)}}:  
+    A task where the model must decide whether a given premise entails a hypothesis.
+
+    \item \textbf{Corpus of Linguistic Acceptability \texttt{(CoLA)}}:  
+    A grammatical acceptability task in which the model predicts whether a given English sentence is grammatically correct.
+
+    \item \textbf{Multi-Genre Natural Language Inference \texttt{(MNLI)}}:  
+    
+    A Three-way classification task to determine whether a hypothesis is entailed by, contradicts, or is neutral with respect to a given premise.
+
+    \item \textbf{Quora Question Pairs \texttt{(QQP)}}:  
+    A binary paraphrase detection task on question pairs from Quora, asking whether two questions have the same meaning.
+\end{itemize}
+
+Following best practices in empirical research, we report the specific splits used for training, validation, and testing to facilitate reproducibility.
+
+\begin{table}[H]
+\centering
+\caption{GLUE datasets used in the experiments.}
+\label{tab:glueDs}
+\begin{tabular}{l l l l l}
+\toprule
+\textbf{Task} & \textbf{Train} & \textbf{Validation} & \textbf{Test} & \textbf{License} \\
+\midrule
+SST-2 & 67,349  & 872   & 1,821  & CC0: Public Domain \\
+MRPC & 3,668   & 408   & 1,725  & Apache License 2.0 \\
+RTE & 2,490   & 277   & 3,000  & CC BY 3.0 \\
+CoLA & 8,551   & 1,043 & 1,063  & CC BY-SA 4.0 \\
+MNLI & 392,702 & 9,815 & 9,796  &  GPL \\
+QQP & 363,846 & 40,430 & 390,965 & Custom (non-commercial) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\paragraph{Training Details}
+
+Each transformation model was trained independently for a specific encoder pair and task.
+For each configuration, we ran experiments across multiple learning rates to select the best-performing model.
+Early stopping was applied to prevent overfitting and reduce unnecessary computation: training was terminated if the validation loss did not improve for 20 consecutive epochs.
+
+\begin{table}[H]
+\centering
+\caption{Training hyperparameters used across all experiments.}
+\label{tab:training-hyperparameters}
+\begin{tabular}{ll}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+Optimizer & Adam~\cite{kingma2017adammethodstochasticoptimization} \\
+Learning Rates & \{1e-5, 1e-4, 1e-3, 1e-2, 1e-1\} \\
+Batch Size & 8 \\
+Epochs & Up to 100 \\
+Early Stopping & Patience = 20 epochs (validation loss) \\
+Loss Functions & MSELoss, HuberLoss (task-dependent) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\paragraph{Hardware and Runtime.}
+All experiments were conducted on NVIDIA DGX A100 systems.
+All computations were executed inside a dedicated Docker container to ensure consistent software environments across runs.
+The hidden state extraction was performed on a single GPU and took approximately 6 hours in total.
+The training time for the transformation models varied depending on the task:
+\begin{itemize}
+\item Nonlinear intrinsic transformation models (with spectral normalization) took up to \textbf{37 hours} due to increased model complexity.
+\item Extrinsic transformation models, trained adversarially, completed in approximately \textbf{7 hours}.
+\item Classification models for functional similarity required roughly \textbf{30 minutes} per run.
+\end{itemize}
+

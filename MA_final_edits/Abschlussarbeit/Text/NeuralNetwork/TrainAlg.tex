@@ -1,0 +1,41 @@
+
+
+In praxis this can be formalized by the following algorithm \ref{alg:TrainNN}: 
+
+
+\begin{algorithm}[H]
+	\caption{Training Process of a Neural Network}
+	\label{alg:TrainNN}
+	\begin{algorithmic}[htb]
+		\State \textbf{Input:} Dataset $(X, Y)$, learning rate $lr$, number of epochs $T$, network architecture with weights $W$ and biases $b$
+		\Procedure{Main}{}
+		\State Initialize weights $W$ and biases $b$
+		\For{$t = 1$ to $T$} \Comment{Epoch loop}
+		\For{each training sample $(x, y)$ in $(X, Y)$}
+		\State Set $a^0 = x$
+		\Comment{Forward Propagation}
+		\For{each layer $l = 1$ to $L$}
+		\State $z^l = W^l a^{l-1} + b^l$
+		\State $a^l = \sigma(z^l)$
+		\EndFor
+		\State $\hat{y} = a^L$ \Comment{Output prediction}
+		\State $\mathcal{L} = \frac{1}{2}(y - \hat{y})^2$ \Comment{Calculate Loss}
+		
+		
+		\State $\delta^L = \frac{\partial \mathcal{L}}{\partial \hat{y}} \cdot \sigma'(z^L)$
+		\For{each layer $l = L-1$ down to $1$}\Comment{Backpropagation through layers}
+		\State $\delta^l = (W^{l+1})^T \delta^{l+1} \cdot \sigma'(z^l)$
+		\EndFor
+		
+		\Comment{Gradient Descent}
+		\For{each layer $l = 1$ to $L$}
+		\State $W^l \leftarrow W^l - lr \cdot \delta^l (a^{l-1})^T$ \Comment{Update Weights an Bias}
+		\State $b^l \leftarrow b^l - lr \cdot \delta^l$ \Comment{Performed by Optimizer e.g Adam SGD}
+		\EndFor
+		\EndFor
+		\EndFor
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
+ 

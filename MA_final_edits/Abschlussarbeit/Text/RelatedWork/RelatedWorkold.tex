@@ -1,0 +1,38 @@
+
+
+
+Recent work \cite{csiszarik_similarity_nodate, kornblith_similarity_2019, li_convergent_2016, morcos2018insightsrepresentationalsimilarityneural} has attempted to understand the behaviour of neural networks by examining the representations between the layers of differently trained neural networks or their output, as explained in the previous.
+The most relevant work of Chan et al. \cite{chan_affine_2024} for this thesis will be explained in more detail in the next chapter \ref{EA}.
+Chan et al \cite{chan_affine_2024} introduced an affine homotopy between language encoder, where a linear transformation transforms one encoder to another one. 
+This approach uses linear transformations, which doesn't consider, that language encoder representations are not exactly affinely related.
+
+%In the following we will focus \textit{representational measure similarity}, that measures the difference between the activations of intermediate layers and \textit{functional measure similarity}, where the outputs of the neural networks are compared according to their respective tasks.
+
+Nevertheless, in the current literature, there are different methods to analyse similarity, that use the invariance properties of neural network \cite{ding_grounding_2021, kornblith_similarity_2019}.
+There are other views on neural network similarity like the functional similarity for non-classification tasks,  which are discussed in  Celikyilmaz et al. \cite{celikyilmaz2021evaluationtextgenerationsurvey} or Ali Borji \cite{ borji2018prosconsganevaluation} survey papers.
+Furthermore, there are alternative notions of neural networks similarity, as approaches that uses visualizations of decision regions \cite{somepalli2022neuralnetslearnmodel}, neuron activations \cite{bau2017networkdissectionquantifyinginterpretability} or reconstructed images \cite{mahendran2014understandingdeepimagerepresentations}, to analyse the similarity of convolutional neural networks.
+As we will focus on \ac{NLP}s, we will not focus any further on those methods.
+%But there are also methods that compare the weight matrices of neural networks \cite{wang2022understandingweightsimilarityneural, guth2024universalityneuralencodingscnns} or consider the impact of inputs \cite{sharma_conceptual_2018}. 
+
+Similarity measures have in general equivalent concepts as the distance between models, this is why we will quantify different distance between models as similarity measures.
+Those are related to the notions of intrinsic and extrinsic homotopy used in the following chapters \ref{EA} and \ref{ISA}.
+
+%We will give an overview of the methodologies that are more relevant to our future work.
+
+
+\begin{enumerate}
+    \item Canonical Correlation Analysis-Based Measures, which is a method to compare two sets of values of random variables.
+    Methods like Canonical Correlation Analysis (CCA) \cite{Hardoon2004CanonicalCA} %, CCA_harold},  
+    Singular Values CCA \cite{raghu2017svccasingularvectorcanonical} and Projection Weighted CCA \cite{morcos2018insightsrepresentationalsimilarityneural} types of these measures. 
+    \item Alignment-Based Measures states that a pair of representations $R, R'$ can be directly compared once the corresponding representation spaces have been aligned, which is accomplished with a transformation and the minimization of the form $\|\varphi (R)-R'\|$. 
+    Methods like Orthogonal Procrustes Problem \cite{williams_generalized_2021, ding_NEURIPS2021_0c0bf917, schonemann_generalized_1966}, Linear Regression \cite{kornblith_similarity_2019, li2016convergentlearningdifferentneural, bau2018identifyingcontrollingimportantneurons} or Generalized Shape Metrics \cite{williams_generalized_2021, duong2023representationaldissimilaritymetricspaces, kingma2022autoencodingvariationalbayes, ostrow2023geometrycomparingtemporalstructure}
+    \item Representational Similarity Matrix-Based Measures that describes the similarity of each instance to all other instances in a given representation.
+    Methods like Centered Kernel Alignment (CKA) \cite{kornblith_similarity_2019}%, cortes2024algorithmslearningkernelsbased, cristianini_kernel-target_2001}
+    \item There are further methods of the field of Neighbourhood-Based measures, Topology-Based Measures and Descriptive Statistics 
+    \item 
+\end{enumerate}
+
+
+In the current literature \cite{kornblith_similarity_2019, li2016convergentlearningdifferentneural, tsitsulin2020shapedataintrinsicdistance, williams_generalized_2021}, there are six different main groups of transformations for which the representations are considered to be equivalent.
+The similarity measures for representations are often designed to be invariant with respect to Permutations, Orthogonal Transformations, Isotropic Scaling, Invertible Linear Transformations, Translations and Affine Transformations. 
+As none of those considers nonlinear Transformations, we will focus on those. 

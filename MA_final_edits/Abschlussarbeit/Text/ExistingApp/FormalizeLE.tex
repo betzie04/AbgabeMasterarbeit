@@ -1,0 +1,85 @@
+In this section, we introduce the mathematical building blocks of modern language models. 
+Intuitively, a \emph{language encoder} is a function that transforms text into numbers. 
+This is necessary because computers cannot directly work with text, they need numerical representations.
+
+To do so, we use Cotterells et al. publication \cite{cotterell_formal_2024} as baseline and define the important tools in language modelling if not referenced differently as they did.
+
+\begin{definition}[Language Encoder]
+A \textbf{language encoder} is a function
+\[
+h:\Sigma^* \rightarrow V
+\]
+that maps text strings to vectors of real value. 
+Here, $\Sigma^*$ denotes the set of all possible sequences of characters from a finite alphabet $\Sigma$, and $V = \mathbb{R}^D$ is a $D$-dimensional real vector space.
+\end{definition}
+
+For example, the sentence “language is powerful” might be mapped to a 768-dimen\-sional vector such as $(0.1, -0.3, \dots, 0.2)$.
+
+
+We define:
+
+\begin{itemize}
+    \item $\mathcal{E}_V := V^{\Sigma^*}$: the set of all such encoders.
+    \item $\mathcal{E}_b := \{ h \in \mathcal{E}_V \mid h(\Sigma^*) \text{ is bounded} \}$: the subset of encoders that do not produce arbitrarily large vectors.
+\end{itemize}
+
+A \textbf{language model} is a probability distribution over all possible texts. 
+It allows us to answer questions like: “How likely is this sentence?” or “What word should come next?”
+
+\begin{definition}[Language Model]
+A \textbf{language model} is a probability distribution
+\[
+p_{\mathrm{LM}}: \Sigma^* \rightarrow [0,1]
+\]
+that assigns probabilities to strings over the alphabet $\Sigma$.
+\end{definition}
+
+A common type of language model is the \emph{autoregressive model}, which predicts the next word in a sentence one step at a time. 
+This process stops when a special end-of-sequence symbol (\texttt{EOS}) is generated.
+
+
+\begin{definition}[Autoregressive Language Model]
+Given a sequence $y = (y_1, \dots, y_T)$, an autoregressive model defines:
+\[
+p_h^{\mathrm{LM}}(y) = p_h(\texttt{EOS} \mid y) \cdot \prod_{t=1}^T p_h(y_t \mid y_{<t})
+\]
+The conditional probabilities are parametrized using a language encoder $h$ as:
+\[
+p_h(y_t \mid y_{<t}) = \operatorname{softmax}(E h(y_{<t}))_{y_t}
+\]
+where $E \in \mathbb{R}^{(|\Sigma|+1) \times D}$ is a learned embedding matrix.
+\end{definition}
+
+This formulation is used in models like GPT.
+
+
+An alternative training strategy is \emph{masked language modeling}, where some words in a sentence are replaced with a special token like \texttt{[MASK]} and the model must guess them.
+
+
+
+%\begin{definition}[Masked Language Model]
+%A \textbf{masked language model} estimates:
+%\[
+%p_h(y_t \mid y_{<t}, y_{>t}) = \operatorname{softmax}(E h(y_{<t} \circ [\texttt{MASK}] \circ y_{>t}))_{y_t}
+%\]
+\begin{definition}[Masked Language Model]
+Let \( y = (y_1, \dots, y_T) \) be a sequence of tokens from a vocabulary \( \mathcal{V} \), and let \( t \in \{1, \dots, T\} \) be a randomly selected position to mask.
+Let \( y_{\setminus t} := (y_1, \dots, y_{t-1}, \texttt{[MASK]}, y_{t+1}, \dots, y_T) \) denote the input sequence with the \( t \)-th token replaced by a special \texttt{[MASK]} token.
+A \textbf{masked language model (MLM)} estimates the conditional probability
+\[
+p_h(y_t \mid y_{\setminus t}) = \operatorname{softmax}(E\, h(y_{\setminus t}))_{y_t},
+\]
+where:
+\begin{itemize}
+    \item \( h \colon \mathcal{V}^T \to \mathbb{R}^D \) is a language encoder that maps the masked sequence \( y_{\setminus t} \) to a hidden representation;
+    \item \( E \in \mathbb{R}^{|\mathcal{V}| \times D} \) is a learned projection from the hidden space to vocabulary logits;
+    \item The softmax is applied on the vector \( z := E\, h(y_{\setminus t}) \in \mathbb{R}^{|\mathcal{V}|} \): \[ \operatorname{softmax}(z)_v:= \frac{\exp(z_v)}{\sum\limits_{v' \in \mathcal{V}} \exp(z_{v'})} \quad \text{for } v \in \mathcal{V}.
+    \]\end{itemize}
+\end{definition}
+
+
+\textbf{Example:}
+
+\texttt{The students [MASK] to learn about language models.}
+
+The model should assign high probabilities to words like \textit{want} or \textit{like}. This task encourages the model to understand both the left and right context of a word.

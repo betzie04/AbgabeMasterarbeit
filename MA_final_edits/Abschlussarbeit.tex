@@ -1,0 +1,220 @@
+% arara: pdflatex: { shell: yes } until !found('log', '\\(?(R|r)e\\)?run (to get|LaTeX)')
+\documentclass[a4paper, fontsize=12pt,
+parskip=half,	% Abstände statt Einrückungen bei Absätzen
+department=FakIM,  % Farbanpassungen
+twoside, % Spart Papier und erhöht die Lesbarkeit
+DIV=15,BCOR=10mm, % Seitenlayout wie bei Koma-Script
+]{OTHRreprt}%{scrreprt}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{times}
+%\usepackage[english,ngerman]{babel} % German documents with some fragments of English
+\usepackage[english,english]{babel} % Use instead for English documents
+%%\usepackage[svgnames, table]{xcolor} % Will work only using recent LaTeX cores
+%\usepackage{acronym} % Abkürzungsverzeichnis
+\usepackage[bookmarks, raiselinks, pageanchor, hyperindex, colorlinks, hidelinks]{hyperref}
+\usepackage{amsmath}	
+\usepackage{amsthm}% Pakete fuer den Mathematikmodus
+%\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{subcaption}
+\usepackage{pifont}				% zusaetzliche Symbole
+\usepackage{amssymb}
+\pgfplotsset{compat=1.18}
+\usepackage{abstract}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+\usepackage{dsfont}
+
+\usepackage{subcaption}
+
+\usepackage[printonlyused]{acronym} % oder ohne Option
+
+\usepackage[format=hang,			% Einstellung fuer Bildunterschriften
+font={footnotesize},
+labelfont={bf},
+margin=1cm,
+aboveskip=5pt,
+position=bottom]{caption}
+
+\usepackage{booktabs} % Hübschere Tabellen
+%\usepackage{tikz}								% Erstellen von Grafiken
+%\usetikzlibrary{positioning,arrows,plotmarks} 	% TikZ-Bibliotheken
+\usepackage[autostyle=true,german=quotes]{csquotes}	% Zur Nutzung von deutschen Anführungszeichen, innerhalb des Textes mit dem Befehl \enquote vorgehen
+\usepackage[bottom]{footmisc}
+\usepackage[gen]{eurosym}				% Eurozeichen einfügen
+%\usepackage{chngpage}					
+%\usepackage{lscape}						% Nützlich, falls querformatierte 	Seiten gewünscht sind
+%\usepackage{pdflscape}					% Zum exportieren der Landscapes in PDF-Dateien
+%\usepackage{mathpazo}
+\usepackage{times}
+\usepackage[headsepline]{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\automark[chapter]{chapter}
+\automark*[section]{}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{multirow}
+
+
+%\usepackage[scaled=0.9]{helvet} 
+%\renewcommand{\familydefault}{\sfdefault}
+
+
+%\title{Similarity of Language Encoder using Non-linear Transformations and Homotopy}
+%\title{Similarity of Neural networks using Non-linear Transformations}
+\title{On Homotopy of Similar Neural Networks using Non-linear Transformations}
+
+\author{Bettina Zieger}
+\documenttype{Master Thesis}
+\studentid{3401509}
+\department{Computer Science and Mathematics}
+\studyprogramme{Master Mathematics}
+\startingdate{1.\,March 2025}
+\closingdate{31.\, July 2025}
+\firstadvisor{Prof. Dr. Stefan Körkel}
+\secondadvisor{Prof. Dr. Wolfgang Lauf}
+\externaladvisor{M. Sc. Daniel Kowatsch, Fraunhofer AISEC}
+
+\externallogo[height=1.6cm]{Abschlussarbeit/Pictures/aisec_logo.pdf}
+
+% Hiermit trägt pdflatex die PDF-Metadaten des erzeugten Dokuments ein:
+\hypersetup{pdftitle={\csname @title\endcsname{}},%
+	pdfauthor={\csname @author\endcsname{}},%
+	%pdfsubject={Optionaler Untertitel / englischer Titel},%
+	%pdfkeywords={Optionale Schlüsselwörter}
+	}
+
+%\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\lstdefinestyle{mystyle}{
+    language=Python,
+    basicstyle=\ttfamily\footnotesize	,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{orange},
+    showstringspaces=false,
+    breaklines=true,
+    frame=single
+}
+\renewcommand\lstlistingname{Code}
+
+\lstset{style=mystyle}
+
+
+
+
+\begin{document}
+        \pagenumbering{arabic}
+        \maketitle
+		\cleardoublepage
+		\phantomsection
+	%	\chapter*{Contents}
+		\addcontentsline{toc}{chapter}{Contents}
+		\tableofcontents
+		\cleardoublepage
+
+	
+	% Style für die Bibliothek festlegen
+    \bibliographystyle{plain}
+	\newpage
+    \input{Abschlussarbeit/Text/Abbreviations}
+
+	% Anhang
+	%\addcontentsline{toc}{chapter}{List of Figures}
+	%\listoffigures
+	
+	%\addcontentsline{toc}{chapter}{List of Tables}
+	%\listoftables
+	
+	%\addcontentsline{toc}{chapter}{Listingsverzeichnis} % für Quellcode
+	%\lstlistoflistings 
+	
+	%\addcontentsline{toc}{chapter}{Digitaler Anhang}	% für digitalen Anhang, falls nötig
+	%\include{anhang}
+	%\cleardoublepage
+	%\thispagestyle{empty}
+	%\makedeclaration
+
+	%\cleardoublepage
+	\chapter{Introduction}\label{Introduction}
+    %\input{Abschlussarbeit/Text/Introduction/table}
+    \input{Abschlussarbeit/Text/Introduction/IntroductionNew}
+        \chapter{Mathematical Formalizations of Neural Networks}\label{NN_RW}
+        \input{Abschlussarbeit/Text/NeuralNetwork/IntroductionNN}
+        \section{Neural Networks}\label{NN}
+        \input{Abschlussarbeit/Text/NeuralNetwork/NeuralNetworks}
+        \subsection{Activation Functions}\label{ActFunc}
+        \input{Abschlussarbeit/Text/NeuralNetwork/ActivationFunctions}
+		\newpage
+        \section{Types of Neural Networks}\label{ToNN}
+        \input{Abschlussarbeit/Text/NeuralNetwork/TypesofNN}
+
+        
+        \chapter{Natural Language Processing}\label{NLP}
+        \input{Abschlussarbeit/Text/NLP/IntroductionNLP}
+        \section{Language Modeling}\label{LangMod}
+        %\section{Formalizing Language Encoder}        
+        \input{Abschlussarbeit/Text/ExistingApp/FormalizeLE}
+        %\input{Abschlussarbeit/Text/NLP/RNN}
+        \input{Abschlussarbeit/Text/NLP/NLP}
+        \chapter{Preliminaries}\label{Preliminaries}
+        \input{Abschlussarbeit/Text/ExistingApp/Preliminaries}
+        \chapter{Similarity of Neural Networks}\label{SoNN}
+        \input{Abschlussarbeit/Text/Similarity/Similarity}
+        %\section{Similarity of Neural Networks}
+        \section{Representational Similarity Measure}\label{RMS}
+        \input{Abschlussarbeit/Text/Similarity/RepresentationalSim}
+        \section{Functional Similarity Measure}\label{FMS}      \input{Abschlussarbeit/Text/Similarity/FunctionalSim}
+ 
+        %\section{Related Work}\label{RW}
+        %\input{Abschlussarbeit/Text/RelatedWork/RelatedWork}
+        \chapter{Similarity Analysis using Affine Transformations}\label{EA}    
+        \input{Abschlussarbeit/Text/ExistingApp/usingHomotopy}
+        
+        \chapter{Improving Similarity Analysis using Nonlinear Transformations}\label{ISA}
+        \input{Abschlussarbeit/Text/ImprovingSimilarityAna/ImprovingSA}
+    \chapter{Practical Realization and Implementation}\label{sec:PRaI}
+    \input{Abschlussarbeit/Text/Implementation/PracticalRealization}
+             \section{Implementation of Loading the Models}
+         \input{Abschlussarbeit/Text/Implementation/LoadModelsNeu}
+         \newpage
+         \section{Practical Approximation of Intrinsic Homotopy}
+        \input{Abschlussarbeit/Text/Implementation/IntrinsicHomotopy}
+         \section{Practical Approximation of Extrinsic Homotopy}
+         \input{Abschlussarbeit/Text/Implementation/ExtrinsicHomotopy}
+         \input{Abschlussarbeit/Text/Implementation/Lipschitz}
+         
+        \section{Implementation of Performance-Based Functional- Similarity Measure}
+         \input{Abschlussarbeit/Text/Implementation/FunctionalSimilarity}
+	\chapter{Practical Experiments on Nonlinear Transformation }\label{exp}
+            \input{Abschlussarbeit/Text/Experiments/ExperimentalSetup}
+        \section{Experiment on Intrinsic Homotopy}\label{exp:IntrinsicHOm}
+       \input{Abschlussarbeit/Text/Experiments/IntrinsicHomotopy}
+       \newpage
+            \section{Experiment on Extrinsic Homotopy and Performance Similarity}\label{exp:ExtrinsicHom}
+            \input{Abschlussarbeit/Text/Experiments/ExtrinsicHomotopy}
+            \section{Consistency between Intrinsic and Extrinsic Distance}\label{exp:Intrinsic_vs_Extrinsic}
+            \input{Abschlussarbeit/Text/Experiments/ExtrinsicVsIntrinsic}
+
+        \chapter{Conclusion and Future Work}\label{conc}
+        \input{Abschlussarbeit/Text/Conclusion_Future_Work}
+        
+        \cleardoublepage
+
+
+	% Literaturverzeichnis in das Inhaltsverzeichnis einfügen
+	\phantomsection
+	\addcontentsline{toc}{chapter}{References}
+      % Einfügen des Literaturverzeichnisses in das Dokument
+        \bibliography{Abschlussarbeit/Text/Literatur}
+         \cleardoublepage
+       
+       \makedeclaration
+    
+\end{document}

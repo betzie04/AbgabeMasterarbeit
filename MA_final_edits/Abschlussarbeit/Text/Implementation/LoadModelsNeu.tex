@@ -1,0 +1,89 @@
+%Transformer-based language models such as \texttt{BERT}, \texttt{RoBERTa}, or \texttt{ELECTRA} process text by passing token embeddings through multiple layers of self-attention and feedforward operations.
+%At each layer, the model computes intermediate representations for each input token.
+%These internal activations are referred to as \emph{hidden states}.
+%Formally, if the input to the model is a tokenized sentence \( x = (x_1, \dots, x_n) \), the model produces for each layer \( \ell \) a sequence of vectors \( h^{(\ell)} = (h_1^{(\ell)}, \dots, h_n^{(\ell)}) \in \mathbb{R}^{n \times d} \), where \( d \) is the hidden size of the model.
+Transformer-based language models such as \texttt{BERT}, \texttt{RoBERTa}, or \texttt{ELECTRA} process text by passing token embeddings through multiple layers of self-attention and feedforward operations.  
+At each layer, the model computes intermediate representations for each input token, referred to as \emph{hidden states}, which encode increasingly abstract and contextualized information.
+
+Formally, let \( x = (x_1, \dots, x_n) \) be a tokenized input sequence of length \( n \).  
+For a given pretrained language model \( g \), the hidden states at layer \( \ell \) are denoted by
+\[
+h^{(g,\ell)}(x) = \left(h^{(g,\ell)}_1, \dots, h^{(g,\ell)}_n\right) \in \mathbb{R}^{n \times d},
+\]
+where \( h^{(g,\ell)}_i \in \mathbb{R}^d \) is the representation of token \( x_i \), and \( d \) is the hidden size of the model.
+
+To obtain a fixed-size vector representation per input and layer, we compute the mean over all tokens.
+This aggregation yields a fixed-size representation that enables model comparisons and downstream processing independent of input length.
+\[
+h^{(g,\ell)} := \frac{1}{n} \sum_{i=1}^n h_i^{(g,\ell)} \in \mathbb{R}^d.
+\]
+For notational convenience, we write \( h^{(g)}(x) \) when the layer \( \ell \) is fixed or clear from context.
+
+To compute both extrinsic and intrinsic homotopy distances between different language encoders, we learn a nonlinear transformation between their internal representations.
+
+Concretely, we train neural networks that map the hidden representations of one language model to those of another.
+Let \( h \in \mathbb{R}^{d} \) denote a mean-aggregated hidden representation extracted from a pretrained language encoder for a given input from a \ac{GLUE} task, which is described in detail in Section~\ref{sec:Exp_Setup}.
+Let \( \psi: \mathbb{R}^{d} \rightarrow \mathbb{R}^{d'} \) be a neural network that learns to transform these representations into the feature space of another encoder.
+
+Unless stated otherwise, we extract hidden states from the final Transformer layer, as it typically contains the most task-relevant and semantically rich information.
+
+During training, we treat the hidden states of the source model as inputs and the corresponding hidden states of the target model (for the same textual input) as targets.
+That is, we train \( \psi \) such that
+\[
+\psi(h^{(g)}(x)) \approx h^{(f)}(x),
+\]
+where \( h^{(g)}(x) \) and \( h^{(f)}(x) \) denote the mean-aggregated hidden states produced by models \( g \) and \( f \), respectively, for the same input \( x \).
+
+This approach enables a learned alignment between the internal representation spaces of two encoders.
+Once trained, the transformation \( \psi \) allows us to compare model representations across the \ac{GLUE} tasks in terms of homotopy distances.
+The composition \( \psi \circ h^{(g)} \) thus maps raw input text into the representation space of model \( f \) via a nonlinear transformation that approximates \( h^{(f)} \).
+This composition forms the foundation for the extrinsic and intrinsic homotopy metrics introduced in Sections~\ref{InrinsicHomotopyonNonlinTransf} and~\ref{ExtrinsicHomotopyonNonlinTransf}.
+
+The following implementation extracts and stores hidden states from \texttt{MultiBERTs}, \texttt{RoBERTa} and \texttt{ELECTRA}  models.
+
+The \texttt{MultiBERTs} models differ only in their random initialization and are therefore processed individually.
+All models are publicly available via Hugging Face and pretrained.
+They are subsequently fine-tuned on classification tasks from the \ac{GLUE} benchmark.
+
+
+To analyze the internal behavior of these models, we first extract the hidden states from all transformer layers for each input sample across several \ac{GLUE} tasks. This involves loading the respective model (\texttt{RoBERTa}, \texttt{ELECTRA}, or \texttt{MultiBERTs}), preparing the task-specific input data, and performing a forward pass to compute the hidden representations.
+
+For each layer, the outputs are averaged across the token dimension to yield a fixed-size vector for each input. These representations, together with their associated labels, are saved for the training, validation, and test splits of the GLUE tasks.
+Although the classification heads of the models are customized with additional non-linear layers to increase expressiveness, our analysis focuses on the pre-classification activations, i.e., the internal representations learned by the transformer encoder itself.
+
+The general procedure used for extracting and saving the hidden states is summarized in Algorithm~\ref{alg:hiddenStateExtractAbstract}.
+
+
+\begin{algorithm}[H]
+\caption{Extraction of Hidden States and Labels for GLUE Tasks}
+\label{alg:hiddenStateExtractAbstract}
+\begin{algorithmic}[htb]
+\Procedure{ExtractHiddenStates}{$\text{model}, \mathcal{L}$}
+  \State $H, Y \gets$ empty list
+  \For{$\text{batch} \in \mathcal{L}$}
+    \State Move $\text{batch}$ to device (CPU/GPU)
+    \State $y \gets \text{batch.labels}$
+    \State $\text{batch.labels} \gets \mathbf{0}$ \Comment{Dummy labels for forward pass}
+    \State $\hat{h} \gets \text{model}(\text{batch}, \text{output\_hidden\_states}=\text{True})$
+    \State $h \gets \text{mean\_pool}(\hat{h}.\text{hidden\_states})$ \Comment{Mean pooling over tokens (per layer)}
+    \State $H.\text{append}(h)$,\quad $Y.\text{append}(y)$
+  \EndFor
+  \State $H \gets \text{concatenate}(H, \text{axis}=0)$ \Comment{Stack over batch dimension}
+  \State $Y \gets \text{concatenate}(Y)$
+  \State \Return $H, Y$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+All transformer models used in this work consist of 12 layers in the encoder stack, followed by a task-specific classification head (the 13\textsuperscript{th} layer). 
+These models are fully fine-tuned and downloaded in their task-specific form via Hugging Face, meaning that both the encoder and the classification head are adapted to the downstream \ac{GLUE} task.
+
+
+
+After extracting the hidden representations for all training, validation, and test samples, we serialize the resulting tensors using PyTorch's built-in \texttt{torch.save} function. 
+This enables efficient reuse of the representations in downstream tasks such as classification or similarity analysis.
+
+The extraction and serialization process is repeated for each combination of model type (e.g., \texttt{BERT}, \texttt{RoBERTa}), random seed (in the case of \texttt{MultiBERTs}), and \ac{GLUE} task (e.g., SST-2, MNLI).
+
+The corresponding script is fully configurable via command line arguments and supports features such as caching, adjustable batch sizes, and dynamic model selection.
+

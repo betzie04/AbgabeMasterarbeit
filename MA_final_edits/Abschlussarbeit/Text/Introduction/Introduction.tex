@@ -1,0 +1,57 @@
+%Neural networks are frequently used in literature, research and applications.
+%One of the most commonly used machine learning techniques is called deep learning.
+%It is used in various areas, such as anomaly and image detection, pattern recognition and natural language processing \cite{pedrycz_deep_2020}.
+Neural networks are frequently used in literature, research, and various application domains, including anomaly detection, image analysis, pattern recognition, and natural language processing \cite{pedrycz_deep_2020}.
+
+Their widespread adoption in these areas is mainly due to their flexibility and their ability to model complex, non-linear patterns in data.
+Given the broad range of applications, it is crucial to understand how neural networks represent information internally, not only to interpret their decisions, but also to compare different architectures, training runs, or regularization strategies.
+To enable such comparisons and gain insights into the learned representations, various similarity measures have been proposed in the literature \cite{klabunde_similarity_2024}
+%Due to this wide range of applications it is very important to understand and improve the neural network representation, learned from data.
+%To do so, different measures of similarity have been used in the literature \cite{klabunde_similarity_2024}. 
+We can distinguish, for example, between \textit{representational measure similarity}, where we calculate the difference in the activation of intermediate layers and the \textit{functional measure similarity}, where we calculate the difference in the models output data. 
+
+\paragraph{Related Work.}
+Most existing approaches to neural network similarity focus on comparing model representations under linear transformations such as permutations, orthogonal mappings, or affine projections~\cite{kornblith_similarity_2019, williams_generalized_2021, li_convergent_2016}. 
+These methods aim to capture structural alignment between models trained under different conditions.
+
+A more recent contribution by Chan et al.~\cite{chan_affine_2024} introduces \emph{affine homotopies} between encoders, formalizing intrinsic and extrinsic similarity via affine maps.
+While this approach is theoretically well-grounded, it remains limited to linear structure.
+
+In contrast, our work extends the homotopy framework to \emph{nonlinear} transformations, providing a more expressive and flexible notion of similarity between encoders that reflects complex real-world model behavior.
+
+However, Chan et al. \cite{chan_affine_2024} published a paper about the functional similarity of language encoders.
+In this work, models are considered to be similar if they are homotopic, that is, if some form of transformation can bring them into alignment.
+The definitions of homotopy used in this paper are based on affine transformations and performance on a downstream task involving a family of log-linear models.
+In the downstream setting, a task-specific head is trained on top of the models’ representations, allowing for fine-tuning to assess functional similarity.
+
+Due to nonlinearity a network can approximate more complex functions \cite{antiga_deep_2020}, which causes a wider range of application. 
+This is why, we want to find out how Chan et al. \cite{chan_affine_2024} approaches can be used to analyse the similarity between a coarser range of models, if we use nonlinear transformations and a family of nonlinear models.
+This master thesis aims to improve similarity analysis of language encoders using nonlinear transformations. 
+%As we will use the concepts of Chan et al. \cite{chan_affine_2024}, it is used as baseline and is the main source in this thesis.
+
+Neural networks are capable of approximating complex, nonlinear functions~\cite{antiga_deep_2020}, which enables a broad range of applications across domains.  
+This flexibility motivates the exploration of more expressive similarity measures between models, particularly in cases where linear approximations fall short.
+
+In this thesis, we extend the framework proposed by Chan et al.~\cite{chan_affine_2024}, who introduced a homotopy-based approach for measuring similarity between language encoders using affine transformations.  
+Our goal is to investigate whether using nonlinear transformations and a broader class of neural network models improves the analysis of representational similarity.
+
+Specifically, this thesis aims to answer the following research questions:
+\begin{itemize}
+    \item How can intrinsic and extrinsic homotopy be extended to nonlinear transformations?
+    \item Do nonlinear transformations provide better similarity estimates between language encoders than affine ones?
+    \item Do similar neural networks also behave similarly in terms of performance, inference characteristics, and training efficiency?
+    \item Is there still a meaningful relationship between intrinsic and extrinsic homotopy in the nonlinear setting?
+\end{itemize}
+
+
+
+To answer the hypothesis, we first formalize mathematical a neural network and introduce some activation and loss functions as well as the trainings process and different types of neural networks, in Chapter \ref{NN}.
+Based on those basics, we will focus in Chapter \ref{NLP} on Natural Language Processing, where we define language encoders and give an introduction into the state of the art transformer models and their application. 
+In Chapter \ref{Preliminaries} we deal with the required preliminaries about hemi-metric spaces, norms and distances and homotopy. 
+%Afterwards, in Chapter \ref{SoNN} we give an overview about measuring similarity of neural networks and introduce related work.
+Afterwards, in Chapter \ref{EA} we focus on the existing approach and how to use homotopy to measure similarity between two language encoders.
+In Chapter \ref{ISA} we will apply our novel approach and explain how to use nonlinear transformations to analyse the similarity of neural networks.
+To confirm our assumptions in praxis and check our concepts, we will perform different experiments in Chapter \ref{exp}.
+There we will consider three encoders that are architecturally the same as {BERT-BASE} \cite{noauthor_bert_nodate} only pretrained on different seeds.
+Finally, we will discuss our results and give an outlook on Future Work in Chapter \ref{discFW}.
+In the end, in our conclusion Chapter \ref{conc} we will sum up the important results. 

@@ -1,0 +1,151 @@
+The purpose of the following implementation is, to extract and save the hidden states from the transfomer model {ROBERTA}, {ELECTRA} and {MULTIBERTS}.
+The {MULTIBERTS} models are trained on different seeds.
+Consequently we will download the model for each Seed.
+This models are already pretrained on Huggigface and will be finetuned on different task of GLUE benchmark classification task.
+%\begin{algorithm}[htb]
+%\caption{Extraction Hidden States and Labels for GLUE Tasks}\label{alg:hiddenStateExtract}
+%\begin{algorithmic}
+%\Require $model\_types=[\text{roberta}, \text{electra}, \text{ multiberts}]$, $task\_list=g [\text{cola}, \text{mnli}, \text{mrpc}, \text{qnli}, \text{qqp}, \text{sst2},\text{rte}]$, batch size, seeds and configurations like root path
+%\Ensure Save hidden states and labels for all tasks
+%
+%\State $\text{Load argument parser}$ 
+%\State $ROOT\_PATH \gets args.root\_path$\;
+%\For{$model\_type$ in $args.model\_types$} 
+%    \For{ $task$ in $args.task\_names$}
+%        \For{each seed $s \in S$ (if $model = \text{multiberts}$)}
+%        \State $model\_path$ \Comment{set path to Huggingface for download}
+%        \State Set $config$ and $tokenizer$\Comment{centralize configuration logic} 
+%        \State $model \gets \text{download model($config$, $model\_path$)}$
+%        \State Load dataset $\mathcal{D}_t$ from GLUE \Comment{Tokenize and preprocess dataset}
+%        \State  $\mathcal{D}_\text{train},
+%        \mathcal{D}_\text{train},\mathcal{D}_\text{test}\gets\mathcal{D}_t$ \Comment{split Dataset into train, evaluate and test}
+%        \State Creat dataloader  $\mathcal{L}_\text{train},
+%        \mathcal{L}_\text{train},\mathcal{L}_\text{test}$
+%                \For{each split $\sigma \in \{\text{train}, \text{val}, \text{test}\}$}
+%                    \State $\mathcal{H}, \mathcal{Y} \gets \text{extract\_hidden\_states}(model, \mathcal{L}_{\sigma})$
+%                    \State Save $\mathcal{H}$ to $ROOT\_PATH/model/task\_t\_\sigma\_seed\_s.pt$
+%                    \State Save $\mathcal{Y}$ to $ROOT\_PATH/model/labels\_t\_\sigma\_seed\_s.pt$
+%                \EndFor
+%        \EndFor
+%    \EndFor
+%\EndFor
+%
+%\Procedure{extract\_hidden\_states}{$model$,$\mathcal{L}$}
+%  \State $hidden\_states,labels\gets$ empty\_list
+%  \For{$batch \in\mathcal{L}$}
+%  \State Move $batch$ to device (GPU/CPU)
+%  \State $y\gets batch.lables$ \Comment{Dummy labels for forward pass}
+%  \State $\hat{h}\gets model(batch, output\_hidden\_states)$
+%  \State $h\gets mean\_pool(\hat{h}.hidden\_states)$ \Comment{Aggregate across layers}
+%  \State $hidden\_states.append(h),labels.append(y)$
+%  \EndFor
+%  \State \Return $hidden\_states,labels$
+%\EndProcedure
+%\end{algorithmic}
+%\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{Extraction of Hidden States and Labels for GLUE Tasks}
+\label{alg:hiddenStateExtractAbstract}
+\begin{algorithmic}[htb]
+\Require %args.model\_types$, $args.glue\_tasks$, $args.models\_configuration$, $args.settings$
+\Ensure Hidden states and corresponding labels for train, validation, and test splits
+
+\For{$model\_type$ in $args.model\_types$}
+    \For{$task$ in $args.glue\_task$}
+        \For{$seed\in \{Seeds\}$ if $model=\text{multiberts}$}
+            \State Initialize model and tokenizer
+            \State $model \gets \text{download model($config$, $model\_path$)}$
+        \State Load dataset $\mathcal{D}_t$ from GLUE \Comment{Tokenize and preprocess dataset}
+        \State  $\mathcal{D}_\text{train},
+        \mathcal{D}_\text{train},\mathcal{D}_\text{test}\gets\mathcal{D}_t$ \Comment{split Dataset into train, evaluate and test}
+        \State Creat dataloader  $\mathcal{L}_\text{train},
+        \mathcal{L}_\text{train},\mathcal{L}_\text{test}$
+                \For{$data\_split \in \{\text{train}, \text{val}, \text{test}\}$}
+                    \State $hidden\_states, labesl \gets $\Call {extract\_hidden\_states }{$model, \mathcal{L}_{data\_split}$}
+                    \State Save $hidden\_states$ to $hidden\_state\_path.pt$
+                    \State Save $labesl$ to $labels\_path.pt$
+                \EndFor
+                \State Extract hidden states and labels using the model
+                \State Store the extracted representations
+        \EndFor
+    \EndFor
+\EndFor
+
+
+\Procedure{extract\_hidden\_states}{$model$,$\mathcal{L}$}
+  \State $hidden\_states,labesl\gets$ empty\_list
+  \For{$batch\in\mathcal{L}$}
+  \State Move $batch$ to device (GPU/CPU)
+  \State $y\gets batch.lables$ \Comment{Dummy labels for forward pass}
+  \State $\hat{h}\gets model(batch, output\_hidden\_states)$
+  \State $h\gets mean\_pool(\hat{h}.hidden\_states)$ \Comment{Aggregate across layers}
+  \State $hidden\_states.append(h),labesl.append(y)$
+  \EndFor
+  \State \Return $hidden\_states,labesl$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+The purpose of the following implementation is, to train a neural network on intrinsic homotopy and save the models.
+Therefore, we use the in Algorithm \ref{alg:hiddenStateExtract} train intrinsic model on  hidden states of the models  {ROBERTA}, {ELECTRA} and {MULTIBERTS}.
+
+\begin{algorithm}
+\caption{Intrinsic Dimensionality Analysis}
+\begin{algorithmic}[htb]
+
+\State \textbf{Input:} 
+\State \quad Tasks $\mathcal{T}$, Models $\mathcal{M}=\{\text{multiberts}, \text{roberta}, \text{electra}\}$, Seeds $\mathcal{S}$
+\State \quad Hyperparameters: $\text{lr}_\text{list}$, epochs, layer
+\State \textbf{Output:} Trained models with CKA/Lipschitz metrics 
+\Procedure{Main}{}
+    \For{task $t \in \mathcal{T}$}
+        \For{source model $g \in \mathcal{M}$}
+            \State Load hidden states $g^{\text{train}}$, $g^{\text{eval}}$ for layer
+            \For{target model $h \in \mathcal{M} \setminus \{g\}$}
+                \For{seed $s \in \mathcal{S}$ (if $g \text{ or } h = \text{multiberts}$)}
+                    \State Load $h^{\text{train}}$, $h^{\text{eval}}$
+                    \For{lr $\in \text{lr}_\text{list}$}
+                        \State $\psi \gets \text{{train\_nonlinear\_map}}(g^{\text{train}}, h^{\text{train}}, \text{lr})$
+                        \State $\text{cka} \gets \text{CKA}(\psi(g^{\text{eval}}), h^{\text{eval}})$
+                        \State $L \gets \text{LipschitzConstant}(\psi)$
+                        \State Save $\psi$, log metrics
+                    \EndFor
+                \EndFor
+            \EndFor
+        \EndFor
+    \EndFor
+\EndProcedure
+
+\Function{train\_nonlinear\_map}{$g$, $h$, lr}
+    \State Initialize $\psi$: $\mathbb{R}^{d_s} \to \mathbb{R}^{d_t}$ with spectral norm
+    \State optimizer $\gets$  RiemannianSGD(params, lr)
+    \For{epoch $1$ to epochs}
+        \State $\mathcal{L} \gets \|\psi(g) - h\|^2$
+        \State Update $\psi$ using $\max_i \mathcal{L}_i$ (worst-case loss)
+    \EndFor 
+    \State
+    \Return $\psi$
+\EndFunction
+
+\Function{CKA}{$A$, $B$}
+    \State Center kernel matrices $K_A$, $K_B$
+    \State
+    \Return $1 - \frac{\langle K_A, K_B \rangle}{\|K_A\| \|K_B\|}$
+\EndFunction
+\Function{LipschitzConstant}{$\psi$}
+\For{layer in $\psi$}
+    \State
+    \Return $\prod_{l\in\psi} \sigma_{\max}(W_l)$ \Comment{Product of spectral norms}
+\EndFor
+\EndFunction
+
+\end{algorithmic}
+\end{algorithm}
+
+Further, for the experiments on performance based Similarity,
+we compare different models traind on the same task, to compare them.
+Therefore, a nonliear model is trained on the hidden states of our base model.
+To compare using performance based measures, we calculate the accuracy and F1-score as well.
+The following pseudo algorithm gives a short insight of how the implementaion looks like. 

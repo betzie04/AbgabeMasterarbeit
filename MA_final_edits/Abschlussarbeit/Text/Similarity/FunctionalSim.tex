@@ -1,0 +1,29 @@
+If we measure similarity by the output behavior of neural networks, we refer to \emph{functional similarity measures}.
+To formalize this, let \( f \) be a neural network trained on a set of inputs \( X = \{x_1, \ldots, x_N\} \) to perform a classification task with \( C \) output classes.
+Evaluated on a subset \( Y \subseteq X \), the network produces an output matrix
+\[
+    \mathbf{O} := f(Y) \in \mathbb{R}^{N \times C},
+\]
+where \( N \) denotes the (possibly infinite) number of datapoints and \( C \) the number of classes.
+
+
+\begin{definition}[Functional similarity measure]
+A functional similarity measure is a map 
+\begin{equation*}
+    m: \mathbb{R}^{N\times D} \times \mathbb{R}^{N\times D} \longrightarrow \mathbb{R}, 
+\end{equation*}
+that assigns a similarity score $m(\mathbf{O}, \mathbf{O}')$ to a pair of outputs $\mathbf{O}, \mathbf{O}'$ of different models $f,f'$ that use the same inputs $X$. 
+
+It is assumed that the compared outputs \( \mathbf{O}, \mathbf{O}' \in \mathbb{R}^{N \times C} \) are class-aligned, meaning that the columns of both matrices correspond to the same set of classes in the same order.
+%It is assumed that the compared outputs $\mathbf{O},\mathbf{O}'\in\mathbb{R}^{N\times C}$ are aligned in that the columns $\mathbf{O}_{-,c}$ and $\mathbf{O}_{-,c}$ correspond to the probability score of the same class $c$.
+\end{definition}
+
+We induce an equivalence relation based on that similarity in the following.
+
+\begin{definition}[Equivalence of Functions]
+Let $X$ be a fixed input set, $f,f'$ two neural networks and $m(f(Y),f'(Y))\in \mathbb{R}$ the functional similarity score.
+
+We denote $f$ and $f'$ as equivalent $f \sim_Y f'$, if $m(f(Y),f'(Y))\geq \tau$, where the user defined similarity threshold $\tau \to 0$.
+In the following, we will write for simplicity $f=f'$ if both neural networks produce the same output as both of them are an element of the same equivalence class. 
+    
+\end{definition}

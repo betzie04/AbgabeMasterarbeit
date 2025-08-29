@@ -1,0 +1,61 @@
+In chapter~\ref{ISA}, we extended the concept of extrinsic homotopy to a family of non-linear models and transformations. 
+The goal is to estimate the extrinsic distance between two language encoders $g,h\in \mathcal{E}_V$ via the Hausdorff–Hoare map restricted to the 1-Lipschitz neural networks.
+In doing so, we approximate:
+\[d^\mathcal{H}_{\mathcal{C}_{V,W}} = \sup\limits_{\psi_1 \in\mathcal{C}_{V,W}} \inf\limits_{\psi_2 \in \mathcal{C}_{V,W}}\|\psi_1(h) - \psi_2(g)\|_\infty,\] 
+where $\mathcal{C}_{V,W}$ denotes the set of continuous functions.
+Building on the properties discussed in Section~\ref{ExtrinsicHomotopyonNonlinTransf}, and since Chan et al.~\cite{chan_affine_2024} have already examined the affine case, we restrict our analysis to \emph{nonlinear 1-Lipschitz continuous neural networks}.  
+As a result, $\psi_1$ and $\psi_2$ are modelled as nonlinear neural networks.  
+This leads to a \emph{non-convex} and \emph{nonlinear} optimization problem, which in general does \emph{not admit a guaranteed global solution}.
+
+To nevertheless obtain a \emph{practical approximation} of the min-max problem, we adopt an approach inspired by the training procedure of \ac{GAN}. 
+As explained by Goodfellow et al. \cite{goodfellow_generative_2014} in \ac{GAN} training, a non-convex optimization problem of the form
+\[
+\min_G \max_D \mathcal{L}(D, G)
+\]
+is solved via \emph{alternating optimization}.
+The solution is approached through an \emph{iterative procedure}, in which the discriminator $D$ and the generator $G$ are updated in turns using gradient-based methods.
+Although convergence to a global optimum cannot be guaranteed due to the non-convexity of the problem, such \emph{adversarial training strategies have proven effective in practice} for closely related tasks.
+
+
+
+Analogously, we optimize $\psi_1$ and $\psi_2$ in an \emph{adversarial manner}:
+\begin{itemize}
+    \item In the \emph{inner loop}, we fix $\psi_1$ and minimize over $\psi_2$; that is, we train $\psi_2$ to best approximate $\psi_1(h)$ by $\psi_2(g)$.
+    \item In the \emph{outer loop}, we update $\psi_1$ to \emph{maximize} the resulting supremum; that is, to increase the discrepancy $\|\psi_1(h) - \psi_2(g)\|_\infty$.
+\end{itemize}
+
+In the sense of our problem, does this mean, that we perform an alternating training task, where we train in one loop $\varphi$ on the predictions of $\psi$, as we want to maximize this neural network, we use gradient ascent that is realize by the negative gradient descent.
+In the next loop, we train $\psi$ on the predictions of $\varphi$ and minimize it.
+This process is visualized in the following algorithm \ref{alg:alternating-training}.
+
+In the context of our problem, we perform an alternating training procedure: in one iteration, we train $\varphi$ on the predictions of $\psi$, aiming to maximize its output using gradient ascent, which is implemented via negative gradient descent. In the next iteration, we train $\psi$ on the predictions of $\varphi$, minimizing the corresponding loss.
+This process is illustrated in Algorithm~\ref{alg:alternating-training}.
+
+%            \Comment{\textit{detach() prevents gradients from flowing into \(\varphi\)}}
+
+
+\begin{algorithm}[H]
+\caption{Alternating Training of Neural Networks \(\psi\) and \(\varphi\)}
+\label{alg:alternating-training}
+\begin{algorithmic}[1]
+\State Initialize neural networks \(\psi\) and \(\varphi\)
+\State Initialize optimizers \(\text{opt}_\psi\) and \(\text{opt}_\varphi\)
+\For{each training epoch}
+    \For{each batch index \(i\), and inputs \(x_g\) and \(x_h\)}
+        \If{\(i \bmod 2 = 0\)} \Comment{Even batch: train \(\psi\)}
+            \State \(\hat{y}_\psi \gets \psi(x_g)\) \Comment{ Compute prediction}
+            \State \(y_\varphi \gets \varphi(x_h).\text{detach()}\)\Comment{Get target}
+            \State $\mathcal{L}_\psi \gets \text{MSE}(\hat{y}_\psi, y_\varphi)$ \Comment{Compute loss}
+            \State Perform \textbf{gradient ascent} on \(-\mathcal{L}_\psi\)
+            \Comment{\textit{Maximize the transformation to \(\varphi\)}}
+        \Else \Comment{Odd batch: train \(\varphi\)}
+            \State\(\hat{y}_\varphi \gets \varphi(x_h)\)\Comment{ Compute prediction}
+            \State \(y_\psi \gets \psi(x_g).\text{detach()}\) \Comment{Get target}
+            \State\(\mathcal{L}_\varphi \gets \text{MSE}(\hat{y}_\varphi, y_\psi)\)\Comment{Compute loss}
+            \State Perform \textbf{gradient descent} on \(\mathcal{L}_\varphi\)
+        \EndIf
+    \EndFor
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+

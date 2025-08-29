@@ -1,0 +1,82 @@
+%Within this section, we define the \textit{representational measure similarity}, that measures the difference between the activations of intermediate layers.
+%Afterwards, we give an overview about representational similarity of neural networks which is determined by a similarity measure $m$. 
+
+In order to compare neural networks, representational similarity methods typically assess how similar the internal representations of a fixed set of inputs are across different models or layers.  
+We will focus in the following on comparing activations at specific layers, but alternative approaches may also consider other components, such as weights or gradients.
+
+
+%In order to compare neural networks, representational similarity measurements examine how similar the activations of a fixed set of inputs at any pair of layers are.
+Therefore, we consider a representation of the model $f$ at layer $l$:
+\begin{equation*}
+    R:=R^{(l)}=(f^{(l)} \circ f^{(l-1)} \circ ... \circ f^{(1)}) \in \mathbb{R}^{N\times D}.
+\end{equation*}
+Here, \( N \) denotes the (possibly infinite) number of datapoints, and \( D \) the number of neurons in a single layer.
+
+
+\begin{definition}[Representational similarity measures] A representational similarity measure is a map 
+\begin{equation*}
+    m: \mathbb{R}^{N\times D} \times \mathbb{R}^{N\times D} \longrightarrow \mathbb{R},
+\end{equation*} 
+that assigns a similarity score $m(R, R')$ to a pair of representations $R,R'$ of different models $f,f'$ that use the same inputs $\mathcal{X}$.    
+\end{definition}
+
+Nevertheless, we can consider two representation matrices \( R, R' \in \mathbb{R}^{N \times D} \) to be equivalent, even if they are not identical element-wise.
+This is particularly relevant when comparing language encoders whose outputs may differ due to arbitrary linear transformations, such as sign flips (e.g., \( R = -R' \)) or rotations.
+Such transformations do not necessarily alter the underlying structure or information content of the representations.
+Hence, comparing representations up to such equivalence classes allows us to focus on their functional behavior rather than their raw numerical values.
+
+The specific type of transformation used to define equivalence depends on the context and intended application.  
+For instance, some analyses may permit any orthogonal transformation, while others restrict equivalence to affine or even task-informed transformations.
+
+%Nevertheless, we can consider two representation matrices $R,R'\in \mathbf{R}^{N\times D}$ to be equivalent, even if they are not identical on an element-per-element basis.
+%This is the case, if we consider representations that differ in their sign i.e. $R=-R'$, or when we rotate onto another. 
+
+By using terms of bijective mappings (transformations), we can formalize the notions of equivalence as follows:
+\begin{align*}
+    \psi:\mathbb{R}^{N\times D} &\to \mathbb{R}^{N\times D}\\
+    \psi(R)&=R'.
+\end{align*}
+
+
+\begin{definition}[Equivalence of Representations]
+    Let $R,R' \in\mathbb{R}^{N\times D}$ be two representations and $\mathcal{T}:=\mathcal{T}(N,D)$ a group. 
+    We denote $R$ and $R'$ as equivalent with respect to a group $\mathcal{T}$, written as $R \sim_\mathcal{T}R'$ if there is a $\psi\in \mathcal{T}$, such that $\psi(R)=R'$
+\end{definition}
+The group of transformations under which representations should be considered equivalent is of crucial importance in practice, since equivalent representations should be indistinguishable for the chosen similarity measure.
+In contrast, non-equivalent representations must be distinguishable for a similarity measure.
+Formally, this means that a measure must be invariant to exactly those groups of transformations under which the underlying representations are equivalent.
+
+%\begin{definition}[Invariant Representational Similarity Measure]
+%    Let $R,R' \in\mathbb{R}^{N\times D}$ be two representations, $\mathcal{T}(N,D)$ a group and $\varphi\in \mathcal{T}(N,D), \varphi'\in \mathcal{T}(N,D)$.
+%    A similarity measure $m$ is called invariant to a group of transformations $\mathcal{T}$ if it holds:
+%    \[m(R,R')=m(\varphi(R),\varphi'(R)) \quad  \forall R,R' \text{ and } \forall\varphi, \varphi'\]  
+%    \[\Longrightarrow m(R,R)=m(R,R') \text{ if } R \sim_\mathcal{T} R'\]
+%\end{definition}
+
+\begin{definition}[Invariant Representational Similarity Measure]
+Let $\mathcal{T}(N, D)$ be a group of transformations acting on representation matrices in $\mathbb{R}^{N \times D}$.  
+A similarity measure \( m: \mathbb{R}^{N \times D} \times \mathbb{R}^{N \times D} \to \mathbb{R} \) is called \emph{invariant under} \( \mathcal{T}(N, D) \) if for all \( R, R' \in \mathbb{R}^{N \times D} \) and all \( \varphi, \varphi' \in \mathcal{T}(N, D) \), it holds that
+\[
+    m(R, R') = m(\varphi(R), \varphi'(R')).
+\]
+In particular, if \( R \sim_{\mathcal{T}} R' \), then \( m(R, R) = m(R, R') \).
+\end{definition}
+
+Using this definition, we will later examine whether the similarity measures considered satisfy the axioms of a distance metric.  
+In the context of representational similarity, however, one of these axioms—namely the \emph{identity of indiscernibles}, can be relaxed.  
+Rather than requiring that \( m(R, R') = 0 \) if and only if \( R = R' \), it is sufficient to require that
+\[
+m(R, R') = 0 \iff R \sim_{\mathcal{T}} R',
+\]
+where \( \mathcal{T} \) is a group of transformations under which the measure \( m \) is invariant~\cite{williams_generalized_2021}.  
+This allows the similarity measure to capture equivalence of representations up to transformations that preserve their functional or structural meaning.
+
+
+
+
+%Using this definition, we can analyse later in the thesis, whether the measures meet the criteria of a distance metric.
+%In the sense of representational similarity the criteria can be relaxed to only require $m(R,R')= 0$ if and only if $R\sim_\mathcal{T}R'$ for a group of transformations $\mathcal{T}$ that $m$ is invariant to \cite{williams_generalized_2021}.
+
+
+
+%An instance representation $R_i=((f^{(l)} \circ f^{(l-1)} \circ ... \circ f^{(1)})(\mathbf{X_i}\in \mathbb{R}^D$ represents the activations of instances $i \in \{1,...,N\}$, which corresponds to the $i$-th row. of $R$

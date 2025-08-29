@@ -1,0 +1,48 @@
+The technique of \ac{ML}, which improves the performance of a system by using computational methods, is used to learn from the data. 
+We denote the process of using \ac{ML} algorithms to build models from data as training or learning.
+%Machine Learning is a technique that improves the performance of systems by learning from experience using computational methods.
+By feeding the learning algorithm with experience data, we obtain a model that can make predictions for new observations \cite{zhou_machine_2021}. 
+Inspired by the human brain, artificial neural networks are developed and have gained a lot of popularity in different fields like Imaging, Generative Artificial Intelligence and \acf{NLP}.
+
+%However, we will use this chapter to give an overview about Machine Learning \ref{OML} first. 
+%Afterwards, we will introduce Neural Networks in Section \ref{NN} and discuss different activation and loss functions.
+%Then, we formalize the trainings process.
+%Finally, in Section \ref{ToNN} we present different kinds of neural networks.
+
+To provide the necessary foundations for this work, we begin with an overview of fundamental concepts in machine learning in Section~\ref{OML}.
+This sets the stage for Section~\ref{NN}, where we introduce neural networks as a central model class, together with commonly used activation and loss functions.
+Building on these components, we then formalize the training process and explain how neural networks learn from data.
+Finally, in Section~\ref{ToNN}, we present different types of neural networks that are relevant for the analysis in later chapters.
+
+\section{Overview of Machine Learning}\label{OML}
+Depending on how \ac{ML} methods perform the prediction task, there are three main types of \ac{ML}. 
+We distinguish between supervised, unsupervised, and reinforcement learning, which are introduced in the following:
+\begin{enumerate}
+    \item \textbf{Supervised Learning} uses a training set that contains input data along with the corresponding outputs.
+    These known outputs provide the information needed for learning, and are commonly referred to as labels \cite{MachLearnFoundation}.
+    Depending on whether the outputs are discrete or continuous, the task is called a \textbf{classification} or \textbf{regression problem}, respectively \cite{zhou_machine_2021}.
+    \item \textbf{Unsupervised Learning}: uses input data without any known output values.
+    The goal is to discover hidden patterns or structures in the data without relying on predefined target information.
+    A common example of unsupervised learning is \textit{clustering}, where the model groups similar data points based on their features \cite{DataMining}.
+    \item \textbf{Self-Supervised Learning} is a subcategory of unsupervised learning in which the system generates its own supervisory signal from the input data \cite{jing_self_supervised_2021}.
+    Instead of relying on human-annotated labels, the model formulates auxiliary tasks, called \emph{pretext tasks}, whose targets can be derived automatically.
+    A prominent example is \emph{masked language modeling}, where certain tokens in a sentence are masked and the model is trained to predict the missing parts.
+    This training paradigm plays a central role in transformer-based language models and will be revisited in later chapters.
+
+
+    %\item \textbf{Unsupervised Learning} uses training data, which is unlabeled. 
+    %Within this learning task, the model identifies hidden patterns or structures in unlabeled data without predefined labels.
+    %At unsupervised learning, clustering is part of it. 
+    %\textbf{Clustering} involves grouping data objects and dividing them into few subsets also called cluster or groups. Objects that are very similar are grouped into one cluster, whereas objects in different clusters are different from each other \cite{DataMining}.
+    \item \textbf{Reinforcement Learning} ist a paradigm of \ac{ML} in which an \textit{agent} learns to make decisions by interacting with an \textit{environment}.  
+    At each time step, the agent observes the current state of the environment, takes an action, and receives a \textit{reward} as feedback.  
+    The reward is computed based on the new state of the environment and reflects the quality of the action taken \cite{zhou_machine_2021, ReInfLearning}.  
+    Over time, the agent adapts its behavior in order to maximize the cumulative reward and solve the task at hand.
+
+    %\item \textbf{Reinforcement Learning}:
+    %Reinforcement learning is a method of \ac{ML} where no lables are used.
+    %The learner determines what action it should take in a given state \cite{zhou_machine_2021} and adapts to an existing task based on reward data. 
+    %The reward provides information to evaluate the current state of the system \cite{ReInfLearning}.
+\end{enumerate}
+
+

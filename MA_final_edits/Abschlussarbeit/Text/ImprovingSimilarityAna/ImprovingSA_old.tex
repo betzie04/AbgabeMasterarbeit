@@ -1,0 +1,182 @@
+Within this chapter, we will formalize the mathematical methods, to analyse the influence of continuous nonlinear transformations on the approach, introduced in chapter \ref{EA}.
+First, we will modify the definition of intrinsic homotopy.
+Afterwards, the definition of extrinsic homotopy is redefined. 
+Therefore, we will consider the set of continuous maps, which includes the set of affine maps and the set nonlinear maps and extend those homotopies on a set of continuous maps.
+Further, as Chan et al. \cite{chan_affine_2024} already presented an approach for affine maps.
+We will focus on nonlinear maps, which are represented by a neural network in practice, as it is one of the most used state of the art approaches for nonlinear transformations.
+
+
+\section{Intrinsic Homotopy on nonlinear Transformations}
+As Chan et al. \cite{chan_affine_2024} we consider $\mathcal{E}_V$, the vectorspace of language encoders.
+
+To redefine an intrinsic homotopy, we use definition \ref{def:Hemi_Metr_Func_Space} to introduce a map from one encoder to another one, using a continuous transformation.
+%As nonlinear transformations are a subset of continuous maps, we will first consider the set of continuous maps to define a preorder. 
+Based on the required properties of definition \ref{def:Hemi_Metr_Func_Space}, we consider a subset of the set of continuous maps $S\subset \mathcal{C}(V)$ and as previously defined \[d_S(h,g):=d_\infty^\mathcal{H}(h,S(g)):= \inf_{\psi \in S} \|h-\psi(g)\|_\infty,\] where $\psi \in \mathcal{C}(V)$. 
+
+Let's remember the defined preorder in section \ref{IH}, as an reflexive and transitive relation. 
+
+\begin{definition}[Intrinsic Continuous Preorder] For two encoder $h,g \in \mathcal{E}_V$, we define the relation:
+\[  h \gtrsim_\mathcal{C} g \quad \Leftrightarrow \quad d_\mathcal{C}(h,g)=0 \]
+\end{definition}
+
+Further, we need to prove, that the relation $h \gtrsim_{\text{cnt}} g$ is a preorder on $\mathcal{E}_V$.
+
+Therefore, we verify first, that $d_\mathcal{C}$ is a hemi-metric on $\mathcal{E}_V$ and confirm the axioms from section \ref{HMS}.\\
+\begin{itemize}
+    \item [1.] \textbf{Non-negativity:} $d_\mathcal{C}(h,g)\geq 0$
+    \item [] By definition $\|\cdot\|_\infty$ is a norm, so $\inf\|h-\psi(g)\|_\infty\geq0$ for any $\psi$ and $h,g\in \mathcal{E}_V$
+    \item [2.] \textbf{Identity of indiscernible:} $d_\mathcal{C}(h,g)= 0$
+    \item [] For $h=g$, chose $\psi=id$. Then:\[
+    d_\mathcal{C}(h,g) = \inf\|h-\psi(g)\|_\infty\leq\|h-id(g)\|_\infty = 0.
+    \]
+    Since $d_\mathcal{C}(h,g)\geq 0$, we have $d_\mathcal{C}(h,g) = 0$.
+    \item [3.] \textbf{Triangle inequality:} Let $h,g,f\in\mathcal{E}_V$.
+    We want to proof:
+    \[d_\mathcal{C}(h,f) \leq d_\mathcal{C}(h,g)+d_\mathcal{C}(g,f)\]
+    \item [] Let $\psi_1$ denote the alignment from $g$ to $h$ and $\psi_2$ the alignment from $f$ to $g$ and the composition of $\psi_1\circ \psi_2$ aligns $f$ to h:
+    \[
+        d_\mathcal{C}(h,f)\leq \|h-\psi_1\circ \psi_2(f)\|_\infty\leq \underbrace{\|h-\psi_1(g)\|_\infty}_\text{bounded by $d_\mathcal{C}(h,g)$} +\underbrace{\|\psi_1(g)-\psi_1\circ\psi_2(f)\|_\infty}_\text{not directly related to $d_\mathcal{C}(g,f)$}.
+    \]
+       To get a relation to $d_\mathcal{C}(g,f)$ consider $\psi_1$ as Lipschitz map.
+    Then it holds:
+    \[\|\psi_1(g)-\psi_1\circ\psi_2(f)\|_\infty \leq L \cdot\|g-\psi_2(f)\|_\infty\leq L\cdot d_\mathcal{C}(g,f)\]
+    \[\Longrightarrow \quad  d_\mathcal{C}(h,f)\leq  d_\mathcal{C}(h,g) + L\cdot d_\mathcal{C}(g,f) \underbrace{\leq}_{L \leq 1}  d_\mathcal{C}(h,g) +  d_\mathcal{C}(g,f).\]
+\end{itemize}
+
+Consequently, $d_\mathcal{C}(h,g) := \inf_{\psi\in\text{Lip}_1}\|h-\psi(g)\|_\infty$ and the compact metric space $\mathcal{E}_V$ form a hemi-metric space. 
+
+
+\section{Extrinsic Homotopy on nonlinear Transformations}
+
+Further, we redefine extrinsic homotopy on a family of nonlinear models and nonlinear transformations.
+    
+Let $W$ be the vector space $\mathbb{R}^N$ and set $\mathcal{C}_{V,W}$ as set of all nonlinear maps from $V$ to $W$. 
+Consequently, $\mathcal{E}_W$ denotes the vector space of continuously transformed language encoder, which represents a map from the Kleene Closure into the vector space $W$.
+We set $\mathcal{E}_{\Delta^{N-1}}$ as map from the Kleene Closure into the $N-1$ dimensional probability simplex represented by $\Delta^{N-1}$.
+A transfer learning task as construction a classifier that useses language encoders string can be formalized.
+Therefore, we set $\mathcal{V}_N$ to be the family of nonlinear-models and formalize the notion as follows:
+
+\begin{align*}
+\mathcal{V}_N \colon \mathcal{E}_V &\to \mathcal{P}(\mathcal{E}_{\Delta^{N-1}}) \setminus \{\emptyset\}, \\
+h &\mapsto \operatorname{softmax}_\lambda(\mathcal{C}_{V,W}(h)), \\
+\end{align*}
+Where $h \in \mathcal{E}_V$ and $\operatorname{softmax}$ as defined in the previous section.
+
+
+$\mathcal{C}_{V,W}$ denotes the map:
+
+\begin{align*}
+\mathcal{C}_{V,W}:\mathcal{E}_V &\to \mathcal{P(E_\text{W}})\setminus\{\emptyset\}
+\\
+h &\mapsto \{\psi\circ h \quad | \quad \psi \in \mathcal{C}_{V,W}\}
+\end{align*}
+
+Using definition \ref{def:Hemi_Metr_Func_Space} we define the following hemi-metrics on $\mathcal{E}_V$.
+
+\begin{align*}
+d^\mathcal{H}_{\mathcal{C}(V,W)}(h,g):=d^\mathcal{H}_{\infty,W}(\mathcal{C}_{V,W}(h), \mathcal{C}_{V,W}(g))\\
+d^\mathcal{H}_{\mathcal{V}(V,\Delta)}:= d^\mathcal{H}_{\infty,\Delta^{N-1}}(\mathcal{V}_N(h),\mathcal{V}_N(g)).
+\end{align*}
+
+The map $d^\mathcal{H}_{\mathcal{C}(V,W)}$ compares all possible affine transformations of two encoder, by answering how badly does the best nonlinear transformation of $g$ fail to match the transinformation of $h$.
+The map $d^\mathcal{H}_{\mathcal{V}(V,\Delta)}$ considers how different two encoder behave on any downstream classification tast after a nonlinear transformation. k
+%As we want to measure how close we can bring $h$ and $g$ if we transform both nonlinear, we rather use $d^\mathcal{H}$, as Chan et al. \cite{chan_affine_2024} did. 
+%This corresponds to independently transform the encoder nonlinear on the same transfer learning task. 
+
+As above, we want to define a extrinsic preorder using $d^\mathcal{H}_{\mathcal{V}(V,\Delta)}$.
+
+\begin{definition}[Extrinsic Continuous Preorder]
+For two encoder $h,g\in \mathcal{E}_V$, we define the relation 
+\[h \gtrsim_{\mathcal{C}_\text{Ext}} g \quad \Leftrightarrow \quad d^\mathcal{H}_{\mathcal{V}(V,\Delta)}(h,g)=0. \]
+\end{definition}
+
+Further, we need to prove, that the relation $h \gtrsim_{\mathcal{C}_\text{Ext}} g$ is a preorder on $\mathcal{E}_V.$
+
+As in the previous, we verify that $d^\mathcal{H}_{\mathcal{C}_{V,W}} := \sup_{x\in V}\inf_{y\in W}d(x,y)$ is a hemi-metric on $\mathcal{E}_V$.
+
+\begin{enumerate}
+    \item \textbf{Non-negativity:} $d^\mathcal{H}_{\mathcal{C}_{V,W}} \geq 0$.
+    \item[] Since $d_{\infty,W}$ is a metric, the Hausdorff-Hoare-map inherits non-negativity
+    \item \textbf{Identity of indiscernible} $d^\mathcal{H}_{\mathcal{C}_{V,W}}(h,h) =  0 \quad \forall h \in \mathcal{E}_V$. 
+    \item[] For $h=g$ we have $\mathcal{C}_{V,W}(h)=\mathcal{C}_{V,W}(g)$ and the infimum becomes zero.
+    \item \textbf{Triangle inequality} Let $h,g,f \in \mathcal{E}_V$. We aim to proof:
+     \[d^\mathcal{H}_{\mathcal{C}_{V,W}}(h,f) \leq d^\mathcal{H}_{\mathcal{C}_{V,W}}(h,g) + d^\mathcal{H}_{\mathcal{C}_{V,W}}(g,f)\]
+     \item[]
+\end{enumerate}
+
+To prove the triangle inequailty, we construct an approximate map between $h\to g$ and $g \to f$. 
+Further, we combine them using triangle inequality of the $\infty$-distance.
+By using an $\epsilon>0$ we can approximate the infimum via an arbitrary closeness. 
+
+Based on the definition \ref{def:hausdorffHoareMap} of the Hausdorff-Hoare map, 
+\[d^\mathcal{H}_{\mathcal{C}_{V,W}}(h,f):= \sup_{\psi_h\in \mathcal{C}_{V,W}}\inf_{\psi_f\in \mathcal{C}_{V,W}}d_{\infty,W}(\psi_h\circ h, \psi_f\circ f),\] where $d_{\infty,W}$ is the distance \[d_{\infty,W}(u,v)=\sup_{y\in\Sigma^*}\|\psi_h\circ h(y)-\psi_f\circ f(y)\|_W\]
+
+
+Let $\epsilon > 0$.
+Based on the definition of  supreme and infimum, by definition of the infimum, for every $\epsilon>0$ and $\psi_h \in \mathcal{C}_{V,W}$, there exists a map $\psi_g\in \mathcal{C}_{V,W}$, such that
+\[d_{\infty,W}(\psi_h\circ h, \psi_g \circ g)\leq \inf_{\tilde{\psi}_g\in \mathcal{C}_{V,W}}d_{\infty,W}(\psi_h\circ h, \tilde{\psi}_g\circ g) +\epsilon.\]
+As well as, there exists a map $\psi_f\in\mathcal{C}_{V,W}$ for this $\psi_g$ where
+\[d_{\infty, W}(\psi_g\circ g, \psi_f \circ f) \leq \inf_{\tilde{\psi}_f\in \mathcal{C}_{V,W}}d_{\infty,W}(\psi_g\circ g, \tilde{\psi}_f\circ f) +\epsilon.\]
+
+Because of $d_{\infty, W}$ definition and the triange inequality it holds: 
+Since the second term $\inf_{\tilde{\psi}_f\in \mathcal{C}_{V,W}}d_{\infty,W}(\psi_g\circ g, \tilde{\psi}_f\circ f)$ depends on $\psi_g$ which depends on $\psi_h$, we can upper-bound this by taing the supremum over all $\psi_g\in \mathcal{C}_{V,W}$.
+We can justifie this by subadditivity of the supremum:
+\[\sup_x(f(x) +g(x))\leq \sup_x f(x) + \sup_y g(y)\]
+\[d_{\infty, W}(\psi_h\circ h, \psi_f \circ f)\leq d_{\infty, W}(\psi_h\circ h, \psi_g \circ g) +d_{\infty, W}(\psi_g\circ g, \psi_f \circ f).\]
+
+As $\psi_f$ is chosen depending on $\psi_g$, which depends on $\psi_h$ we can upper bound $\psi_f$; too.
+
+Consequently, it follows:
+\[d_{\infty, W}(\psi_h\circ h, \psi_f \circ f)\leq \left(\inf_{\tilde{\psi}_g\in \mathcal{C}_{V,W}}(d_{\infty, W}(\psi_h\circ h, \tilde{\psi}_g \circ g) + \epsilon\right)+\left(\inf_{\tilde{\psi}_f\in \mathcal{C}_{V,W}}d_{\infty, W}(\psi_g\circ g, \tilde{\psi}_f \circ f)+\epsilon\right).\]
+
+\[\Longrightarrow d_{\infty, W}(\psi_h\circ h, \psi_f \circ f)\leq \inf_{\tilde{\psi}_g\in \mathcal{C}_{V,W}}d_{\infty, W}(\psi_h\circ h, \tilde{\psi}_g \circ g)+\inf_{\tilde{\psi}_f\in \mathcal{C}_{V,W}}d_{\infty, W}(\psi_g\circ g, \tilde{\psi}_f \circ f)+2\epsilon.\]
+Now consider the supremum on all $\psi_h\in \mathcal{C}_{V,W}$
+
+\[\sup_{\psi_h\in\mathcal{C}_{V,W}} \inf_{\psi_f\in\mathcal{C}_{V,W}} d_{\infty, W}(\psi_h\circ h, \psi_f \circ f)\leq \]\[\left(\sup_{\psi_h\in\mathcal{C}_{V,W}}\inf_{\tilde{\psi}_g\in \mathcal{C}_{V,W}}d_{\infty, W}(\psi_h\circ h, \tilde{\psi}_g \circ g)+\inf_{\tilde{\psi}_f\in \mathcal{C}_{V,W}}d_{\infty, W}(\psi_g\circ g, \tilde{\psi}_f \circ f)+2\epsilon\right).\]
+Because of monotonies and the upper claims we get: 
+
+\[\sup_{\psi_h\in\mathcal{C}_{V,W}} \inf_{\psi_f\in\mathcal{C}_{V,W}} d_{\infty, W}(\psi_h\circ h, \psi_f \circ f)\leq \]\[\sup_{\psi_h\in\mathcal{C}_{V,W}}\inf_{\tilde{\psi}_g\in \mathcal{C}_{V,W}}d_{\infty, W}(\psi_h\circ h, \tilde{\psi}_g \circ g)+\sup_{\psi_h\in\mathcal{C}_{V,W}}\inf_{\tilde{\psi}_f\in \mathcal{C}_{V,W}}d_{\infty, W}(\psi_g\circ g, \tilde{\psi}_f \circ f)+2\epsilon.\]
+
+Consequently it holds:
+\[d^\mathcal{H}_{\mathcal{C}_{V,W}}(h,f) \leq d^\mathcal{H}_{\mathcal{C}_{V,W}}(h,g) + d^\mathcal{H}_{\mathcal{C}_{V,W}}(g,f)+2\epsilon\]
+
+For $\epsilon \to 0$ we get:
+$d^\mathcal{H}_{\mathcal{C}_{V,W}}(h,f) \leq d^\mathcal{H}_{\mathcal{C}_{V,W}}(h,g) + d^\mathcal{H}_{\mathcal{C}_{V,W}}(g,f)$
+
+
+As the Hausdorff-Hoare map $d_{\mathcal{C}_{V,W}}^\mathcal{H}$ satisfies the required hemi-metric properties, it is proved, that it is a hemi-metric on $\mathcal{E}_V$
+
+Further, let us consider the softmax-transformed image in the probability simplex $\Delta^{N-1}$ i.e.
+
+\[\mathcal{V}_N(g) := \text{softmax}_\lambda(\mathcal{C}_{V,W}(h)) \subset \mathcal{E}_{\Delta^{N-1}},\]
+and the hemi-metric $d^\mathcal{H}_{\mathcal{V}(V,\Delta)}:= d^\mathcal{H}_{\infty,\Delta^{N-1}}(\mathcal{V}_N(h),\mathcal{V}_N(g))$ as defined above.
+
+We will use the general results of Lipschitz stability of the Hausdorff metric under Lipschitz maps.
+
+
+Let $h\in\mathcal{E}_V$ be a language encoder $h:\Sigma^*\to V$ and let $\psi\in\mathcal{C}_{V,W}$ be a continuous map $\psi: V \to W$.
+We define the composed map
+\begin{align*}
+    &p_\psi:\Sigma^*\to \Delta^{N-1}\\
+    &p_\psi:=\text{softmax}_\lambda\circ \psi(h(y)),
+\end{align*}
+that can be seen as a probability distribution over $N$. 
+It yields the composition:
+\[p_\psi:\Sigma^*\xrightarrow{h} V \xrightarrow{\psi} W \xrightarrow{\text{softmax}_\lambda} \Delta^{N-1}\]
+
+Let us consider the Lipschitz continuous map $T:= \text{softmax}_\lambda:W \to \Delta^{N-1}$ with constant $L$.
+
+We can apply the fact of Lipschitz continuous maps with constant $L$.
+For any function sets $h,g \in \mathcal{E}_V$ the Hausdorff-Hoare map satisfies:
+\[d_{\infty,\Delta^{N-1}}^\mathcal{H}(\text{softmax}(\psi\circ h), \mathcal{V}_N(g))\leq L\cdot d_{\infty, W}^\mathcal{H}(\mathcal{C}_{V,W}(h),\mathcal{C}_{V,W}(g)).\]
+Consequently, the triangle inequation holds for all $1-$Lipschitz continuous maps if the family of neural networks $\mathcal{V}_N$ is $1-$Lipschitz continuous.
+
+
+%Now, we use that the Hausdorff-Hoare metric is non-expansive under Lipschitz maps.
+%\[d_{\infty,\Delta^{N-1}}(\mathcal{V}_N\circ\mathcal{C}_{V,W}(h), \mathcal{V}_N\circ\mathcal{C}_{V,W}(f))\leq L\cdot d_{\infty,W}(\mathcal{C}_{V,W}(h), \mathcal{C}_{V,W}(f))\]
+
+
+
+\section{Relation of Intrinsic and Extrinsic Homotopy}
+Within this section, we will focus on the relation of intrinsic and extrinsic homotopy.
+Therefore, we relate $d_\mathcal{C}(h,g)$ and $d_{\mathcal{C}_{V,W}}^\mathcal{H}$

@@ -1,0 +1,174 @@
+In this chapter, we present the framework developed by Chan et al.~\cite{chan_affine_2024}, which introduces two notions of homotopy to compare language encoders in a principled way.
+ 
+ These two notions, \emph{intrinsic} and \emph{extrinsic homotopy}, capture distinct perspectives on model similarity.  
+ Intrinsic homotopy focuses on representational similarity: it compares models solely based on their internal hidden representations, typically using the final encoder layer, and does not rely on any downstream task.  
+ 
+ In contrast, extrinsic homotopy assesses models in a task-specific context. Here, a classification head is trained on top of each encoder, and similarity is measured via alignment of outputs or task performance.
+ 
+ At the core of the intrinsic and extrinsic perspective lies a \emph{specialization quasi-ordering} induced by a hemi-metric.  
+ This preorder expresses directional approximability between encoders and serves as the formal backbone for defining intrinsic and extrinsic homotopy.  
+ By separating intrinsic and extrinsic views, this framework enables a comprehensive analysis of model similarity from both structural and functional perspectives.
+ 
+
+
+Based on the Prelimiaries in Chapter~\ref{Preliminaries} a general recipe for defining hemi-metric spaces on function spaces can be defined.
+
+\begin{definition}[Hemi-metric on Function Spaces]\label{def:Hemi_Metr_Func_Space}
+Let \( X \) be a set, and let \( (Y, d) \) be a hemi-metric space. Furthermore, let 
+\[
+S : X \to \mathcal{P}(Y) \setminus \{ \emptyset \}, \quad x \mapsto E_x
+\]
+be a mapping that assigns to each \( x \in X \) a non-empty subset \( E_x \subseteq Y \).
+
+We define a hemi-metric \( d_S^{\mathcal{H}} \) on \( X \) by setting
+\[
+d_S^{\mathcal{H}}(x, y) := d^{\mathcal{H}}(E_x, E_y) := \sup_{y_1 \in E_y} \inf_{x_1 \in E_x} d(x_1, y_1),
+\]
+which is sometimes called the Hausdorff hemi-distance from \( E_x \) to \( E_y \).
+
+Optionally, we can symmetrize this to define an extended pseudo-metric by
+\[
+d^{\text{sym}}_S(x, y) := \max\big( d_S^{\mathcal{H}}(x, y),\ d_S^{\mathcal{H}}(y, x) \big).
+\]
+\end{definition}
+
+We now define a notion of alignment between two encoders via a class of affine transformations. Let \( S \subset \mathrm{Aff}(V) \) be a set of affine maps acting on a vector space \( V \). For two encoders \( h, g: X \to V \), we define the \( S \)-alignment from \( g \) to \( h \) by
+\[
+d_S(h, g) := d_\infty^{\mathcal{H}}(h, S(g)) := \inf_{\psi \in S} \| h - \psi \circ g \|_\infty,
+\]
+where \( S(g) := \{ \psi \circ g \mid \psi \in S \} \).
+
+This captures how well the encoder \( g \) can be transformed into \( h \) via elements of \( S \). 
+Note that \( d_S(h, g) \) is generally asymmetric: it measures the alignment from \( g \) to \( h \), but not necessarily the other way around.
+
+We further define the \( S \)-norm of an encoder \( h \) as
+\[
+\| h \|_S := d_S(0_{\mathcal{E}_V}, h),
+\]
+which measures how well \( h \) can be approximated by an \( S \)-transformation of the zero encoder.
+
+\medskip
+
+This concept of affine alignment can be seen as a special case of the construction in Definition~\ref{def:Hemi_Metr_Func_Space}, where we set \( X = Y = \mathcal{E}_V \), and use the uniform convergence hemi-metric from Subsection~\ref{ND}.
+
+
+
+
+
+
+
+
+
+\section{Intrinsic Homotopy}\label{IH}
+Chan et al.~\cite{chan_affine_2024} developed the notion of \emph{intrinsic homotopy}, which aims to compare language encoders independently of any downstream task.  
+The key idea is to define similarity intrinsically, based solely on the internal representations produced by the models.  
+This is formalized using the structure of a hemi-metric space and a directional relation derived from it.
+
+A central component of this framework is the \emph{specialization quasi-ordering} \( \gtrsim_d \), introduced on a hemi-metric space \( (X, d) \) as in Definition~\ref{def:quasi-ordering}.  
+It captures whether one encoder can approximate another via a structure-preserving transformation.  
+Since such transformations may exist in only one direction, the relation is defined as a \emph{preorder}, i.e., it is reflexive and transitive but not necessarily symmetric.
+
+This asymmetric relation provides a principled way to compare encoders in terms of representational similarity.  
+If mutual approximability holds, i.e., both \( h \gtrsim_d g \) and \( g \gtrsim_d h \), the encoders are said to be \emph{exactly intrinsically affinely homotopic}.
+
+In practice, intrinsic homotopy is based on the output of the final hidden layer, which aggregates semantic information and serves as the default input to downstream classifiers.  
+Accordingly, this notion aligns closely with the concept of representational similarity discussed in Section~\ref{RMS}.
+
+We begin this chapter by examining how the specialization preorder arises from the hemi-metric structure and serves as the foundation for intrinsic homotopy.
+
+\begin{lemma}\label{lemma:quasi-ordering}
+Let $(X, d)$ be a hemi-metric space, and let $\gtrsim_d$ denote the specialization quasi-ordering with respect to the open ball topology. Then, for all $x, y \in X$,
+\[
+x \gtrsim_d y \quad \Longleftrightarrow \quad d(x, y) = 0.
+\]
+\end{lemma}
+
+
+
+\begin{proof}
+\glqq$\Rightarrow $\grqq  Suppose $x \gtrsim_d y$.
+Then, for all $\varepsilon > 0$, we have $y \in B(x, \varepsilon)$, which implies $d(x, y) < \varepsilon$. 
+Since this holds for all $\varepsilon > 0$, we must have $d(x, y) = 0$.
+
+\glqq$\Leftarrow$\grqq Now suppose $d(x, y) = 0$. Let $U$ be any open set containing $x$. 
+By Lemma~\ref{lemma:open_balls_form_base}, there exists $\varepsilon > 0$ such that $B(x, \varepsilon) \subseteq U$.
+Since $d(x, y) = 0 < \varepsilon$, it follows that $y \in B(x, \varepsilon) \subseteq U$, so $x \gtrsim_d y$.
+\end{proof}
+
+
+We consider two encoders \( f, g \) in the real vector space of language encoders \( \mathcal{E}_V := V^{\Sigma^*} \), and define an affine intrinsic pre-order \( \gtrsim_{\mathrm{Aff}} \) on this space.
+
+\begin{definition}[Exact Intrinsic Affine Homotopy]
+Two encoders \( h, g \in \mathcal{E}_V \) are said to be \textit{exactly intrinsically affinely homotopic}, written \( h \simeq_{\mathrm{Aff}} g \), if both \( g \gtrsim_{\mathrm{Aff}} h \) and \( h \gtrsim_{\mathrm{Aff}} g \) hold.
+\end{definition}
+
+In the original formulation, two encoders \( h, g \in \mathcal{E}_V \) are defined to be exactly intrinsically affinely homotopic if
+\[
+d_{\mathrm{Aff}(V)}(h, g) = 0 \quad \text{and} \quad \mathrm{rank}(h) = \mathrm{rank}(g).
+\]
+Chan et al.~\cite{chan_affine_2024} showed that this condition is equivalent to the ladder-based formulation presented above, which is more convenient for our purpose as it avoids the need to explicitly define \(\mathrm{rank}\).
+
+
+\section{Extrinsic Homotopy}\label{EH}
+Compared to intrinsic homotopy, which evaluates language encoders based on their internal structure, \emph{extrinsic homotopy} focuses on their observable behavior in downstream tasks.  
+It captures \emph{functional similarity}, as discussed in Section~\ref{FMS}, by assessing how similarly two encoders perform when composed with task-specific classifiers.
+
+Formally, two encoders \( h \) and \( g \) are considered extrinsically homotopic if they yield similar performance across all downstream tasks in which they could serve as feature extractors.  
+To make this precise, each encoder is composed with affine classifiers, yielding complete prediction pipelines.  
+This setup allows us to define a hemi-metric that quantifies behavioral divergence between encoders across tasks.
+
+If this distance is zero, the encoders are said to be \emph{exactly extrinsically homotopic}.  
+In practice, this notion can be approximated using a finite set of input strings and optimization techniques such as gradient descent.  
+Finally, we explore how extrinsic and intrinsic homotopy relate, and how functional similarity can complement representational alignment.
+
+
+Let $\Sigma$ be a finite alphabet and let $\Sigma^*$ denote the set of all finite strings over $\Sigma$, i.e., the Kleene closure of $\Sigma$.  
+Let $V$ be a vector space of intermediate representations, and let $W := \mathbb{R}^C$ denote the output space for a classification task with $C$ classes.
+
+An affine map $f: V \to W$ is given by a linear map $A \in \mathcal{L}(V, W)$ and a bias vector $b \in W$, such that
+\[
+f(v) = A \cdot v + b \quad \text{for all } v \in V.
+\]
+We denote the set of all affine maps from $V$ to $W$ by $\operatorname{Aff}(V, W)$.
+
+We define the following sets of encoder functions:
+\begin{itemize}
+	\item $\mathcal{E}_V := \operatorname{Map}(\Sigma^*, V)$ – encoders mapping strings to vector representations,
+	\item $\mathcal{E}_W := \operatorname{Map}(\Sigma^*, W)$ – classifiers mapping strings to class scores,
+	\item $\mathcal{E}_{\Delta^{C-1}} := \operatorname{Map}(\Sigma^*, \Delta^{C-1})$ – classifiers returning probability distributions over $C$ classes.
+\end{itemize}
+
+Given an encoder $h \in \mathcal{E}_V$, we define the set of affine classifiers based on $h$ as
+\[
+\operatorname{Aff}_{V,W}(h) := \left\{ \psi \circ h \mid \psi \in \operatorname{Aff}(V, W) \right\} \subset \mathcal{E}_W.
+\]
+Applying the softmax function with inverse temperature $\lambda > 0$ yields the associated family of log-linear classifiers:
+\[
+\mathcal{V}_C(h) := \left\{ \operatorname{softmax}_\lambda \circ f \mid f \in \operatorname{Aff}_{V,W}(h) \right\} \subset \mathcal{E}_{\Delta^{C-1}}.
+\]
+
+Based on this construction, we define a hemi-metric that quantifies the difference between two encoders $h, g \in \mathcal{E}_V$ in terms of their downstream classification behavior:
+\[
+d^{\mathcal{H}}_{\mathcal{V}_C}(h, g) := \sup_{\psi \in \mathcal{V}_C(h)} \inf_{\varphi \in \mathcal{V}_C(g)} \| \psi \circ h - \varphi \circ g \|_\infty.
+\]
+
+This metric captures how differently two encoders behave when composed with affine classification heads and applied to the same string input.  
+It forms the basis for the definition of \emph{extrinsic homotopy}, as introduced in the following section.
+
+
+%\begin{definition}[Exact extrinsic Homotopy]
+%    Two encoder $g,h\in\mathcal{E}_V$ are called \textit{exactly extrinsically homotopic}, if $d^\mathcal{H}_\mathcal{V}(V,\Delta)(h,g)=0$.
+%\end{definition}
+\begin{definition}[Exact Extrinsic Homotopy]
+Two encoders \( g, h \in \mathcal{E}_V \) are called \emph{exactly extrinsically homotopic} if
+\[
+d^{\mathcal{H}}_{\mathcal{V}(V,\Delta)}(h, g) = 0.
+\]
+\end{definition}
+
+
+Furthermore, Chan et al. \cite{chan_affine_2024} defined an extrinsic affine preorder and showed, that affine instrinsic preorder is contained in the extrinsic preorder. 
+This connects the internal structure of encoders to their external behavior.
+
+In the practical concern two language encoders are not considered over the entire $\Sigma^*$, only over a finite set of strings $X=\{x_i\}^N_{i=1}$.
+Then, the encoders are considered as matrices and the notion of similarity is approximated by optimizing over the affine maps, for example by using gradient descent. 

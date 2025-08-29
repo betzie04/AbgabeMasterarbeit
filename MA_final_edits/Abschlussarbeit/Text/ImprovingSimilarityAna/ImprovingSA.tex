@@ -1,0 +1,587 @@
+In this chapter we formalize the mathematical methods of our novel approach.
+We focus on continuous non-linear transformations instead of affine ones, as presented by Chan et al. \cite{chan_affine_2024}.
+The non-linear transformations are represented by a neural network in practice, as it is one of the most used state-of-the-art approaches for non-linear transformations.
+We will formalize the mathematical methods to analyse the influence of continuous non-linear transformations on the approach presented in the chapter \ref{EA}.
+First, we will modify the definition of intrinsic and extrinsic homotopy. 
+%Therefore, we consider the set of continuous maps, which includes the set of affine maps and the set of non-linear maps, and extend these homotopies to a set of continuous maps.
+Therefore, we extend the notion of homotopy by considering the set of continuous maps, which includes both linear and non-linear functions, as long as they are continuous.
+Furthermore, we define an approach, where the similarity will be measured by the models performance. 
+
+
+\section{Intrinsic Homotopy on Non-linear Transformations}\label{InrinsicHomotopyonNonlinTransf}
+Inspired by the framework of Chan et al.~\cite{chan_affine_2024}, we consider a space of language encoders \( \mathcal{E}_V \), viewed as a subset of the space of continuous functions from sequences \( \Sigma^* \) to a finite-dimensional vector space \( V \subset \mathbb{R}^d \), where \( \Sigma \) denotes a finite alphabet and \( \Sigma^* \) its Kleene closure.
+
+%Inspired by the framework of Chan et al. \cite{chan_affine_2024}, we consider a space of language encoders \( \mathcal{E}_V \), viewed as a subset of the space of continuous functions from sequences \( \Sigma^* \) to a finite-dimensional vector space \( V \subset \mathbb{R}^d \). 
+Equipped with the uniform norm
+\[
+\|h\|_\infty := \sup_{x \in \Sigma^*} |h(x)|_V,
+\]
+the space \( (\mathcal{E}_V, \|\cdot\|_\infty) \) becomes a complete metric space with distance \( d_\infty(h, g) := \|h - g\|_\infty \), due to the completeness of \( V \).
+
+The goal of this section is to define an intrinsic, nonlinear notion of homotopy between language encoders.  
+While Chan et al. \cite{chan_affine_2024} define such a structure using affine maps, we extend this approach to a more expressive class of transformations: namely, general nonlinear maps.  
+In principle, we are interested in the full range of nonlinear structure-preserving transformations.  
+However, in order to ensure that the induced distance satisfies the triangle inequality, and thus defines a valid hemi-metric, we restrict ourselves to 1-Lipschitz continuous functions.  
+This technical constraint is essential in the proof of Proposition~\ref{eq:intrinsic_equation}, where we rely on the fact that 1-Lipschitz functions are closed under composition and do not increase the \( \ell^\infty \)-distance.
+
+
+Intuitively, we say that an encoder \( h \) is intrinsically related to another encoder \( g \) if there exists a well-behaved transformation that maps \( g \) closely to \( h \). 
+To formalize this idea, we define an asymmetric notion of distance \( d_{\mathcal{F}_{\text{Lip}_1}}(h, g) \), which quantifies how well \( h \) can be approximated by transformed versions of \( g \) under a class of admissible maps. The smaller this distance, the more intrinsically related the models are. If the distance is zero, we consider the two encoders intrinsically similar.
+
+We now make this precise using the notion of a hemi-metric as introduced in Definition~\ref{def:Hemi_Metr_Func_Space}. 
+
+Let \( \mathcal{F} \subset \mathcal{C}(V, V) \) denote a class of admissible transformations, where \( V \subset \mathbb{R}^d \) is a finite-dimensional vector space.  
+Each transformation \( \psi \in \mathcal{F} \) maps encoder outputs from \( V \) into \( V \), and induces a new encoder \( \psi \circ g \colon \Sigma^* \to V \).
+
+In the following, we will focus on the case where \( \mathcal{F} = \mathcal{F}_{\mathrm{Lip}_1} \), the set of 1-Lipschitz continuous functions from \( V \) to itself.
+
+
+Then, for any pair of encoders \( h,  g \in \mathcal{E}_V \), we define the hemi-metric, as in Definition ~\ref{def:Hemi_Metr_Func_Space} %directed distance
+\[
+d_{ \mathcal{F}_{\mathrm{Lip}_1}}(h, g) := \inf_{\psi \in \mathcal{F}_{\mathrm{Lip}_1}} \| h - \psi \circ g \|_\infty,
+\]
+which measures how well \( h \) can be approximated by transformed versions of \( g \). 
+This construction induces a preorder \( h \gtrsim_{\mathrm{Intr}} g \) on the space of encoders.
+ 
+\begin{definition}[Intrinsic Relation]\label{eq:intrinsic_equation}
+Let \( h, g \in \mathcal{E}_V \), and let \(  \mathcal{F}_{\mathrm{Lip}_1} \subset \mathcal{C}(V, V) \) be a class of admissible transformations.
+We say that \( h \) is intrinsically related to \( g \), written
+\[
+h \gtrsim_{\mathrm{Intr}} g,
+\]
+if the induced distance satisfies
+\[
+d_{\mathcal{F}_{\text{Lip}_1}}(h, g) = \inf_{\psi \in \mathcal{F}_{\mathrm{Lip}_1}} \| h - \psi \circ g \|_\infty = 0.
+\]
+\end{definition}
+
+As we need to restrict ourselves to 1-Lipschitz continuous functions, we will introduce the Lipschitz Continuty in the following.   
+
+\begin{definition}[Lipschitz Continuity]
+	A function \( \psi \colon V \to W \) between two normed vector spaces is called \emph{Lipschitz continuous} \cite{forster_analysis_2025} if there exists a constant \( L \geq 0 \) such that for all \( v_1, v_2 \in V \), we have
+	\[
+	\| \psi(v_1) - \psi(v_2) \|_W \leq L \cdot \| v_1 - v_2 \|_V.
+	\]
+	The smallest such constant \( L \) is called the \emph{Lipschitz constant} of \( \psi \). If \( L \leq 1 \), we say that \( \psi \) is \emph{1-Lipschitz}.
+\end{definition}
+
+
+\begin{proposition}\label{prop:complete_F_Lip}
+Let \(  \mathcal{F}_{\mathrm{Lip}_1} \subset \mathcal{C}(V, V) \) denote the set of 1-Lipschitz continuous functions from \( V \) to \( W \), where \( V \) and \( W \) are finite-dimensional normed vector spaces over \( \mathbb{R} \).
+Then \( \mathcal{F}_{\text{Lip}_1} \) is a closed subset of the complete metric space \( (\mathcal{C}(V, V),d_{\mathcal{F}_{\text{Lip}_1}}) \), and hence itself complete.
+\end{proposition}
+
+\begin{proof}
+Let \( (\psi_n) \subset \mathcal{F}_{\text{Lip}_1} \) be a sequence that converges uniformly to some function \( \psi \in \mathcal{C}(V, V) \) with respect to the supremum norm
+\[
+\|\psi_n - \psi\|_\infty := \sup_{x \in V} \|\psi_n(x) - \psi(x)\|_W.
+\]
+
+We show that \( \psi \) is also 1-Lipschitz:
+for any \( x, y \in V \),
+\[
+\|\psi(x) - \psi(y)\|_W \leq \|\psi(x) - \psi_n(x)\|_W + \|\psi_n(x) - \psi_n(y)\|_W + \|\psi_n(y) - \psi(y)\|_W.
+\]
+Using the triangle inequality and the fact that \( \psi_n \in \mathcal{F}_{\text{Lip}_1} \), we get
+\[
+\|\psi(x) - \psi(y)\|_W \leq 2\|\psi - \psi_n\|_\infty + \|x - y\|_V.
+\]
+Taking the limit \( n \to \infty \), the first term vanishes and we obtain
+\[
+\|\psi(x) - \psi(y)\|_W \leq \|x - y\|_V,
+\]
+so \( \psi \) is 1-Lipschitz and thus \( \psi \in \mathcal{F}_{\text{Lip}_1} \). Therefore, \( \mathcal{F}_{\text{Lip}_1} \) is closed.
+
+Since \( (\mathcal{C}(V, V), d_\infty) \) is a complete metric space (by completeness of \( W \) \cite{werner_funktionalanalysis_2005}), it follows that \( \mathcal{F}_{\text{Lip}_1} \) is complete as a closed subset of a complete space.
+\end{proof}
+
+
+
+To formalize how well an encoder \( h \) can be approximated by another encoder \( g \) via a transformation from a given function class, we define the \emph{intrinsic approximation distance}
+\[
+d_{\mathcal{F}_{\text{Lip}_1}}(h, g) := \inf_{\psi \in  \mathcal{F}_{\mathrm{Lip}_1}} \| h - \psi \circ g \|_\infty,
+\]
+where \(\mathcal{F}_{\mathrm{Lip}_1}\subset \mathcal{C}(V, V) \) denotes a set of admissible transformations – for instance, the class of 1-Lipschitz continuous maps.
+This defines a \emph{hemi-metric} on the space of encoders \( \mathcal{E}_V \), as it may fail to be symmetric.
+
+The \emph{specialization quasi-ordering} induced by this hemi-metric is given by
+\[
+h \gtrsim_{ \mathcal{F}_{\mathrm{Lip}_1}} g \quad \Leftrightarrow \quad d_{\mathcal{F}_{\text{Lip}_1}}(h, g) = 0.
+\]
+Intuitively, this means that \( h \) can be approximated arbitrarily well by applying some transformation \( \psi \in  \mathcal{F}_{\mathrm{Lip}_1} \) to \( g \). That is, for any error tolerance \( \varepsilon > 0 \), there exists a transformation \( \psi \in \mathcal{F}_{\mathrm{Lip}_1} \) such that \( \| h - \psi \circ g \|_\infty < \varepsilon \). The relation \( \gtrsim_{ \mathcal{F}_{\mathrm{Lip}_1}} \) is thus a \emph{preorder}: it is reflexive and transitive, but not necessarily antisymmetric.
+
+%\begin{proposition}[Intrinsic Preorder]
+%Let \( \mathcal{F}_{\text{Lip}_1} \subset \mathcal{C}(V, V) \) denote the class of 1-Lipschitz continuous transformations from \( V \) to itself.
+%Then the relation \( \gtrsim_{\mathrm{Intr}} \) defined by
+%\[
+%h \gtrsim_{\mathrm{Intr}} g \quad \Leftrightarrow \quad \inf_{\psi \in \mathcal{F}_{\text{Lip}_1}} \| h - \psi \circ g \|_\infty = 0
+%\]
+%is a preorder on \( \mathcal{E}_V \); that is, it is reflexive and transitive.
+%\end{proposition}
+
+\begin{proposition}[Intrinsic Preorder]
+	Let \( \mathcal{F}_{\text{Lip}_1} \subset \mathcal{C}(V, V) \) denote the class of 1-Lipschitz continuous functions from \( V \) to itself, and define the map
+	\[
+	d_{\mathcal{F}_{\text{Lip}_1}} : \mathcal{E}_V \times \mathcal{E}_V \to \mathbb{R}, \quad (h, g) \mapsto \inf_{\psi \in \mathcal{F}_{\text{Lip}_1}} \| h - \psi \circ g \|_\infty.
+	\]
+	Then \( d_{\mathcal{F}_{\text{Lip}_1}} \) is a hemi-metric, and the induced specialization quasi-ordering
+	\[
+	h \gtrsim_{ \mathcal{F}_{\mathrm{Lip}_1}} g \quad \Longleftrightarrow \quad d_{\mathcal{F}_{\text{Lip}_1}}(h, g) = 0
+	\]
+	defines a preorder on \( \mathcal{E}_V \), by Lemma~\ref{lemma:quasi-ordering}.
+\end{proposition}
+
+
+\begin{proof}
+	We verify that \(  d_{\mathcal{F}_{\mathrm{Lip}_1}} \) is a hemi-metric on \( \mathcal{E}_V \), as required by the axioms of Definition~\ref{def:hemi_metric}.
+	
+	\begin{itemize}
+		\item[H1:]
+		For any \( h \in \mathcal{E}_V \), we have \( \mathrm{id} \in  \mathcal{F}_{\mathrm{Lip}_1} \), so
+		\[
+		d_{ \mathcal{F}_{\mathrm{Lip}_1}}(h, h) \leq \| h - \mathrm{id} \circ h \|_\infty = 0.
+		\]
+		Since the infimum is non-negative, it follows that \( 	d_{ \mathcal{F}_{\mathrm{Lip}_1}}(h, h) = 0 \).
+		
+		\item[H2:] Let \( h, g, f \in \mathcal{E}_V \). We want to show:
+		\[
+			d_{ \mathcal{F}_{\mathrm{Lip}_1}}(h,f) \leq 	d_{ \mathcal{F}_{\mathrm{Lip}_1}}(h,g) + 	d_{ \mathcal{F}_{\mathrm{Lip}_1}}(g,f).
+		\]
+		
+		Since \( \mathcal{F}_{\text{Lip}_1} \subset \mathcal{C}(V, V) \) is the set of 1-Lipschitz continuous maps acting on the complete metric space \( (\mathcal{E}_V, d_\infty) \), we can approximate the infimum arbitrarily well.
+		
+		That is, for any \( \varepsilon > 0 \), there exist alignments:
+		\begin{itemize}
+			\item \( \psi_g \in \mathcal{F}_{\text{Lip}_1} \) such that
+			\[
+			\| h - \psi_g(g) \|_\infty \leq 	d_{ \mathcal{F}_{\mathrm{Lip}_1}}(h, g) + \varepsilon,
+			\]
+			\item \( \psi_f \in \mathcal{F}_{\text{Lip}_1} \) such that
+			\[
+			\| g - \psi_f(f) \|_\infty \leq 	d_{ \mathcal{F}_{\mathrm{Lip}_1}}(g, f) + \varepsilon.
+			\]
+		\end{itemize}
+		
+		Such approximations exist because the infimum in \( 	d_{ \mathcal{F}_{\mathrm{Lip}_1}} \) is taken over a set of continuous functions, and \( \mathcal{E}_V \) is complete. In particular, minimizing sequences \( (\psi_n) \subset \mathcal{F}_{\text{Lip}_1} \) with \( \| h - \psi_n(g) \|_\infty \to	d_{ \mathcal{F}_{\mathrm{Lip}_1}}(h, g) \) converge (up to subsequences) to a map in \( \mathcal{F}_{\text{Lip}_1} \), so approximations up to \( \varepsilon \) are always available.
+		
+		Since \( \mathcal{F}_{\text{Lip}_1} \) is closed under composition (composition of 1-Lipschitz maps is again 1-Lipschitz), we can define
+		\[
+		\psi := \psi_g \circ \psi_f \in \mathcal{F}_{\text{Lip}_1}.
+		\]
+		Then
+		\[
+			d_{ \mathcal{F}_{\mathrm{Lip}_1}}(h, f) \leq \| h - \psi(f) \|_\infty = \| h - \psi_g(\psi_f(f)) \|_\infty.
+		\]
+		
+		We estimate this norm using the triangle inequality:
+		\[
+		\| h - \psi_g(\psi_f(f)) \|_\infty 
+		\leq \| h - \psi_g(g) \|_\infty + \| \psi_g(g) - \psi_g(\psi_f(f)) \|_\infty.
+		\]
+		
+		The first term is bounded by \(	d_{\mathcal{F}_{\mathrm{Lip}_1}}(h, g) + \varepsilon \) by construction. To bound the second term, we use the fact that \( \psi_g \) is 1-Lipschitz, i.e., has Lipschitz constant \( L = 1 \):
+		\[
+		\| \psi_g(g) - \psi_g(\psi_f(f)) \|_\infty \leq L \cdot \| g - \psi_f(f) \|_\infty \leq 	d_{\mathcal{F}_{\mathrm{Lip}_1}}(g, f) + \varepsilon.
+		\]
+		
+		Putting it all together:
+		\[
+		d_{\mathcal{F}_{\mathrm{Lip}_1}}(h, f) \leq \| h - \psi_g(g) \|_\infty + \| g - \psi_f(f) \|_\infty 
+		\leq d_{\mathcal{F}_{\mathrm{Lip}_1}}(h, g) +  d_{\mathcal{F}_{\mathrm{Lip}_1}}(g, f) + 2\varepsilon.
+		\]
+		
+		Since \( \varepsilon > 0 \) was arbitrary, the triangle inequality follows:
+		\[
+		 d_{\mathcal{F}_{\mathrm{Lip}_1}}(h, f) \leq  d_{\mathcal{F}_{\mathrm{Lip}_1}}(h, g) +  d_{\mathcal{F}_{\mathrm{Lip}_1}}(g, f).
+		\]
+		
+	\end{itemize}
+
+	
+	Note that the triangle inequality in this form relies on the fact that all transformation functions in \( \mathcal{F}_{\text{Lip}_1} \) have Lipschitz constant \( L = 1 \).  
+	If we allowed larger constants \( L > 1 \), the second term 
+	\[
+	\| \psi_g(g) - \psi_g(\psi_f(f)) \|_\infty \leq L \cdot \| g - \psi_f(f) \|_\infty
+	\]
+	would scale the second distance term by \(L\), and we would only obtain the weaker inequality
+	\[
+	 d_{\mathcal{F}_{\mathrm{Lip}_1}}(h, f) \leq  d_{\mathcal{F}_{\mathrm{Lip}_1}}(h, g) + L \cdot  d_{\mathcal{F}_{\mathrm{Lip}_1}}(g, f),
+	\]
+	which does not satisfy the standard triangle inequality unless \(L = 1\).  
+	Hence, the restriction to 1-Lipschitz maps is essential to ensure that \(  d_{\mathcal{F}_{\mathrm{Lip}_1}} \) defines a hemi-metric.
+	
+	Consequently, \(  d_{\mathcal{F}_{\mathrm{Lip}_1}} \) satisfies the axioms of a hemi-metric on \( \mathcal{E}_V \) in the sense of Definition~\ref{def:hemi_metric}.
+	
+	To complete the proof, we verify that the relation
+	\[
+	h \gtrsim_{\mathrm{Intr}} g \quad \Longleftrightarrow \quad  d_{\mathcal{F}_{\mathrm{Lip}_1}}(h, g) = 0
+	\]
+	is a preorder on \( \mathcal{E}_V \):
+	
+	\begin{itemize}
+		\item Reflexivity: For all \( h \in \mathcal{E}_V \), we have \(  d_{\mathcal{F}_{\mathrm{Lip}_1}}(h, h) = 0 \) by axiom (H1), so \( h \gtrsim_{\mathrm{Intr}} h \).
+		\item Transitivity: Let \( h \gtrsim_{\mathrm{Intr}} g \) and \( g \gtrsim_{\mathrm{Intr}} f \), i.e., \(  d_{\mathcal{F}_{\mathrm{Lip}_1}}(h, g) = 0 \) and \(  d_{\mathcal{F}_{\mathrm{Lip}_1}}(g, f) = 0 \). Then by the triangle inequality:
+		\[
+		 d_{\mathcal{F}_{\mathrm{Lip}_1}}(h, f) \leq  d_{\mathcal{F}_{\mathrm{Lip}_1}}(h, g) +  d_{\mathcal{F}_{\mathrm{Lip}_1}}(g, f) = 0,
+		\]
+		hence \(  d_{\mathcal{F}_{\mathrm{Lip}_1}}(h, f) = 0 \), so \( h \gtrsim_{\mathrm{Intr}} f \).
+	\end{itemize}
+	
+	Thus, \( \gtrsim_{\mathrm{Intr}} \) is reflexive and transitive, i.e., a preorder.
+\end{proof}
+
+
+\begin{definition}[Exact Intrinsic Non-Linear Homotopy]
+Let \( h, g \in \mathcal{E}_V \), and let \( \mathcal{F}_{\text{Lip}_1} \subset \mathcal{C}(V, V) \) denote the class of admissible 1-Lipschitz continuous transformations.  
+We say that \( h \) and \( g \) are \emph{exactly intrinsically non-linearly homotopic}, written
+\[
+h \gtrsim_{\mathcal{F}_{\text{Lip}_1}} g,
+\]
+if both directional distances vanish:
+\[
+d_{\mathcal{F}_{\text{Lip}_1}}(h, g) := \inf_{\psi \in \mathcal{F}_{\text{Lip}_1}} \| h - \psi \circ g \|_\infty = 0
+\quad \text{and} \quad
+d_{\mathcal{F}_{\text{Lip}_1}}(g, h) := \inf_{\phi \in \mathcal{F}_{\text{Lip}_1}} \| g - \phi \circ h \|_\infty = 0.
+\]
+That is, each encoder can be approximated arbitrarily well (in the \( \ell^\infty \)-norm) by applying admissible transformations to the other.
+\end{definition}
+
+
+
+
+\section{Extrinsic Homotopy on Non-linear Transformations}
+\label{ExtrinsicHomotopyonNonlinTransf}
+In this section, we extend the notion of homotopy to incorporate extrinsic structure, focusing not only on the encoder representations themselves, but also on their behavior when composed with downstream classifiers.
+
+Whereas intrinsic homotopy compares encoder functions directly via transformations in function space, extrinsic homotopy evaluates the functional output of composite systems, such as encoder–classifier pipelines.
+
+The key idea is to assess whether one encoder can emulate another by applying suitable post-processing transformations e.g., neural classifiers, followed by normalization.
+
+To formalize this, let \( V \subset \mathbb{R}^d \) denote the output space of an encoder and \( W = \mathbb{R}^C \) the target space of classifier outputs (e.g., logits).
+We fix a class of admissible transformations \( \mathcal{C}_{V,W} \subset \mathcal{C}(V,W) \), consisting of continuous, potentially non-linear maps that preserve relevant structure (e.g., Lipschitz continuity or smoothness). 
+These transformations model classifiers applied to encoder outputs.
+
+Let $\Sigma$ be a finite alphabet and let $\Sigma^*$ denote the set of all finite strings over $\Sigma$, i.e., the Kleene closure of $\Sigma$.  
+Let $V$ be a vector space of intermediate representations, and let $W := \mathbb{R}^C$ denote the output space for a classification task with $C$ classes.
+
+We fix a class of admissible transformations \( \mathcal{C}_{V,W} \subset \mathcal{C}(V, W) \), consisting of continuous, potentially nonlinear functions (e.g., neural networks) that map encoder representations into classifier logits. These functions model downstream classifiers.
+
+We define the following sets of functions:
+\begin{itemize}
+	\item $\mathcal{E}_V := \operatorname{Map}(\Sigma^*, V)$ – encoders mapping strings to vector representations,
+	\item $\mathcal{E}_W := \operatorname{Map}(\Sigma^*, W)$ – classifiers mapping strings to class scores (logits),
+	\item $\mathcal{E}_{\Delta^{C-1}} := \operatorname{Map}(\Sigma^*, \Delta^{C-1})$ – classifiers returning class probability distributions.
+\end{itemize}
+
+Given an encoder $h \in \mathcal{E}_V$, we define the set of classifier functions applied to $h$ as
+\[
+\mathcal{C}_{V,W}(h) := \left\{ \psi \circ h \mid \psi \in \mathcal{C}_{V,W} \right\} \subset \mathcal{E}_W.
+\]
+Applying the softmax function with inverse temperature $\lambda > 0$ yields the associated family of nonlinear logit-to-probability classifiers:
+\[
+\mathcal{V}_C(h) := \left\{ \operatorname{softmax}_\lambda \circ f \mid f \in \mathcal{C}_{V,W}(h) \right\} \subset \mathcal{E}_{\Delta^{C-1}}.
+\]
+Here, $\operatorname{softmax}_\lambda: W \to \Delta^{C-1}$ is defined as
+\[
+\operatorname{softmax}_\lambda(x)_i := \frac{\exp(\lambda x_i)}{\sum_{j=1}^C \exp(\lambda x_j)} \quad \text{for } x \in \mathbb{R}^C,\; i = 1,\dots,C.
+\]
+
+
+This framework allows us to compare encoders extrinsically by measuring how closely the outputs of their composed pipelines align. 
+Following Definition~\ref{def:Hemi_Metr_Func_Space}, we define the extrinsic hemi-metric as:
+%\[
+%d^{\mathcal{H}}_{\mathcal{C}_{V,W}}(h, h) := \sup_{\psi \in \mathcal{C}_{V,W}} \inf_{\varphi \in \mathcal{C}_{V,W}} \| \operatorname{softmax}_\lambda ( \psi \circ g) - \operatorname{softmax}_\lambda( \varphi \circ h )\|_\infty,
+%\]
+\[
+d^{\mathcal{H}}_{\mathcal{C}_{V,W}}(h, g) := \sup_{\psi \in \mathcal{C}_{V,W}} \inf_{\varphi \in \mathcal{C}_{V,W}} \|  \psi \circ h - \varphi \circ g \|_\infty,
+\]
+
+which quantifies how well the output of encoder \( g \) can be aligned to that of \( h \) through admissible post-transformations in \( \mathcal{C}_{V,W} \).  
+
+
+\begin{definition}[Norm-induced Distance Functions]
+Using the hemi-metric framework introduced in Definition~\ref{def:Hemi_Metr_Func_Space}, we define two norm-induced distance functions on the encoder space \( \mathcal{E}_V \):
+
+\begin{align*}
+d^\mathcal{H}_{\mathcal{C}_{V,W}}(h,g) &:= d^\mathcal{H}_{\infty, W}\left( \mathcal{C}_{V,W}(h), \mathcal{C}_{V,W}(g) \right), \\
+d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h,g) &:= d^\mathcal{H}_{\infty, \Delta^{C-1}}\left( \mathcal{V}_C(h), \mathcal{V}_C(g) \right).
+\end{align*}
+\end{definition}
+The first distance \( d^\mathcal{H}_{\mathcal{C}_{V,W}} \) compares the representations of \( h \) and \( g \) after all admissible nonlinear transformations, and quantifies how closely \( g \) can approximate \( h \) via such transformations.
+
+The second distance \( d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}} \) measures how differently two encoders behave under downstream classification tasks, modeled via post-composition with a classifier followed by softmax normalization.
+
+Both distances capture extrinsic discrepancies: the former in terms of raw feature transformations, the latter in terms of final classification behavior.
+
+
+\begin{proposition}[Triangle Inequality for \( d^\mathcal{H}_{\mathcal{C}_{V,W}} \)]
+Let \( h, g, f \in \mathcal{E}_V \). 
+Then the following triangle inequality holds:
+\[
+d^\mathcal{H}_{\mathcal{C}_{V,W}}(h,f) \leq d^\mathcal{H}_{\mathcal{C}_{V,W}}(h,g) + d^\mathcal{H}_{\mathcal{C}_{V,W}}(g,f).
+\]
+\end{proposition}
+
+
+\begin{proof}
+We prove the inequality using the definition of \( d^\mathcal{H}_{\mathcal{C}_{V,W}} \) and the triangle inequality of the \( \infty \)-norm.
+
+Let \( \epsilon > 0 \) be arbitrary.
+Fix any \( \psi_h \in \mathcal{C}_{V,W} \). 
+
+By the definition of the infimum, there exists \( \psi_g \in \mathcal{C}_{V,W} \) such that:
+\[
+d_{\infty,W}(\psi_h \circ h, \psi_g \circ g) \leq \inf_{\tilde{\psi}_g \in \mathcal{C}_{V,W}} d_{\infty,W}(\psi_h \circ h, \tilde{\psi}_g \circ g) + \epsilon.
+\]
+Likewise, for this fixed \( \psi_g \), there exists \( \psi_f \in \mathcal{C}_{V,W} \) such that:
+\[
+d_{\infty,W}(\psi_g \circ g, \psi_f \circ f) \leq \inf_{\tilde{\psi}_f \in \mathcal{C}_{V,W}} d_{\infty,W}(\psi_g \circ g, \tilde{\psi}_f \circ f) + \epsilon.
+\]
+
+Applying the triangle inequality of \( d_{\infty,W} \), we obtain:
+\begin{align*}
+d_{\infty,W}(\psi_h \circ h, \psi_f \circ f) 
+&\leq d_{\infty,W}(\psi_h \circ h, \psi_g \circ g) + d_{\infty,W}(\psi_g \circ g, \psi_f \circ f) \\
+&\leq \inf_{\tilde{\psi}_g \in \mathcal{C}_{V,W}} d_{\infty,W}(\psi_h \circ h, \tilde{\psi}_g \circ g) + \inf_{\tilde{\psi}_f \in \mathcal{C}_{V,W}} d_{\infty,W}(\psi_g \circ g, \tilde{\psi}_f \circ f) + 2\epsilon.
+\end{align*}
+
+Now take the infimum over \( \psi_f \) on the left-hand side and then the supremum over all \( \psi_h \in \mathcal{C}_{V,W} \) to obtain:
+%\begin{align*}
+%d^\mathcal{H}_{\mathcal{C}_{V,W}}(h,f) 
+%&= \sup_{\psi_h \in \mathcal{C}_{V,W}} \inf_{\psi_f \in \mathcal{C}_{V,W}} d_{\infty,W}(\psi_h \circ h, \psi_f \circ f) \\
+%&\leq \sup_{\psi_h \in \mathcal{C}_{V,W}} \left( \inf_{\tilde{\psi}_g \in \mathcal{C}_{V,W}} d_{\infty,W}(\psi_h \circ h, \tilde{\psi}_g \circ g) + \inf_{\tilde{\psi}_f \in \mathcal{C}_{V,W}} d_{\infty,W}(\psi_g \circ g, \tilde{\psi}_f \circ f) \right) + 2\epsilon \\
+%&\leq d^\mathcal{H}_{\mathcal{C}_{V,W}}(h,g) + d^\mathcal{H}_{\mathcal{C}_{V,W}}(g,f) + %2\epsilon.
+%\end{align*}
+
+\begin{align*}
+&d^\mathcal{H}_{\mathcal{C}_{V,W}}(h,f) 
+= \sup_{\psi_h \in \mathcal{C}_{V,W}} \inf_{\psi_f \in \mathcal{C}_{V,W}} d_{\infty,W}(\psi_h \circ h, \psi_f \circ f) \\
+&\leq \sup_{\psi_h \in \mathcal{C}_{V,W}} \left( \inf_{\tilde{\psi}_g \in \mathcal{C}_{V,W}} d_{\infty,W}(\psi_h \circ h, \tilde{\psi}_g \circ g) + \inf_{\tilde{\psi}_f \in \mathcal{C}_{V,W}} d_{\infty,W}(\tilde{\psi}_g \circ g, \tilde{\psi}_f \circ f) \right) + 2\epsilon \\
+&\leq \sup_{\psi_h \in \mathcal{C}_{V,W}} \inf_{\tilde{\psi}_g \in \mathcal{C}_{V,W}} d_{\infty,W}(\psi_h \circ h, \tilde{\psi}_g \circ g) 
++ \sup_{\tilde{\psi}_g \in \mathcal{C}_{V,W}} \inf_{\tilde{\psi}_f \in \mathcal{C}_{V,W}} d_{\infty,W}(\tilde{\psi}_g \circ g, \tilde{\psi}_f \circ f) 
++ 2\epsilon \\
+&= d^\mathcal{H}_{\mathcal{C}_{V,W}}(h,g) + d^\mathcal{H}_{\mathcal{C}_{V,W}}(g,f) + 2\epsilon.
+\end{align*}
+
+
+Since \( \epsilon > 0 \) was arbitrary, the result follows.
+\end{proof}
+
+
+
+\begin{proposition}\label{prop:softmax_lip}
+The temperature-scaled softmax function
+\[
+\operatorname{softmax}_\lambda(z)_i := \frac{e^{\lambda z_i}}{\sum_{j=1}^n e^{\lambda z_j}}
+\]
+is Lipschitz continuous with respect to the $\ell^\infty$ norm with Lipschitz constant at most $\frac{\lambda}{2}$.
+\end{proposition}
+
+\begin{proof}
+The softmax function is continuously differentiable, and its Jacobian matrix \\ \(J(z) \in \mathbb{R}^{n \times n}\) has entries
+\[
+J_{ij}(z) = \lambda \cdot s_i \cdot (\delta_{ij} - s_j),
+\quad \text{where } s_i = \operatorname{softmax}_\lambda(z)_i.
+\]
+The row sums of the absolute values are
+\[
+\sum_{j=1}^n |J_{ij}(z)| = \lambda \cdot s_i \left( |1 - s_i| + \sum_{j \ne i} s_j \right)
+= 2\lambda \cdot s_i(1 - s_i).
+\]
+The product $s_i(1 - s_i)$ is maximized at $s_i = \frac{1}{2}$, hence
+\[
+\sum_j |J_{ij}(z)| \le \frac{\lambda}{2} \quad \text{for all } i.
+\]
+Therefore, the operator norm satisfies $\|J(z)\|_\infty \le \frac{\lambda}{2}$, and the function $\operatorname{softmax}_\lambda$ is \\ $\frac{\lambda}{2}$~-Lipschitz with respect to the $\ell^\infty$ norm.
+\end{proof}
+
+
+%\begin{proposition}[Extrinsic Preorder]
+	%Let \( \mathcal{F}_{\text{Lip}_1} \subset \mathcal{C}(V, W) \) denote the class of 1-Lipschitz continuous functions from \( V \) to itself, and define the map
+	%\[
+	%d_{\mathcal{F}_{\text{Lip}_1}} : \mathcal{E}_V \times \mathcal{E}_V \to \mathbb{R}, \quad (h, g) \mapsto \inf_{\psi \in \mathcal{F}_{\text{Lip}_1}} \| h - \psi \circ g \|_\infty.
+	%\]
+	%Then \( d_{\mathcal{F}_{\text{Lip}_1}} \) is a hemi-metric, and the induced specialization quasi-ordering
+	%\[
+	%h\gtrsim_{\mathcal{C}_\text{Ext}} g \quad \Longleftrightarrow \quad d_{\mathcal{F}_{\text{Lip}_1}}(h, g) = 0
+	%\]
+	%defines a preorder on \( \mathcal{E}_V \), by Lemma~\ref{lemma:quasi-ordering}.
+%\end{proposition}
+
+
+\begin{definition}[Extrinsic Relation]
+	Let $h, g \in \mathcal{E}_V$. 
+	We define the extrinsic relation as:
+	\[
+	h \gtrsim_{\mathrm{Ext}} g \quad \Leftrightarrow \quad d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h,g) = 0.
+	\]
+\end{definition}
+
+\begin{proposition}[Extrinsic Preorder]
+	Let \( \mathcal{F}_{\mathrm{Lip}_1} \subset \mathcal{C}(V, W) \) denote the class of 1-Lipschitz continuous functions from \( V \) to \( W \).  
+	Define the extrinsic approximation distance by
+	\[
+	d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h, g) := \sup_{\psi \in \mathcal{F}_{\mathrm{Lip}_1}} \inf_{\varphi \in \mathcal{F}_{\mathrm{Lip}_1}} \| \psi \circ h - \varphi \circ g \|_\infty,
+	\]
+	for \( h, g \in \mathcal{E}_V \), where \( \mathcal{E}_V \subset \operatorname{Map}(\Sigma^*, V) \) is the space of encoders into \( V \).
+	
+	Then \( d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}} \) is a hemi-metric on \( \mathcal{E}_V \), and the induced relation
+	\[
+	h \gtrsim_{\mathrm{Ext}} g \quad \Longleftrightarrow \quad d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h, g) = 0
+	\]
+	defines a preorder on \( \mathcal{E}_V \).
+\end{proposition}
+
+
+
+
+
+\begin{proof}
+We show first, that $d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}$ is a hemi-metric as defined in Definition~\ref{def:hemi_metric}. 
+%This implies that the induced relation is a preorder.
+
+
+\begin{itemize}
+    \item [H1:] $d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}} \geq 0$.
+    \item[] Since $d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}$ is a metric, the Hausdorff-Hoare-map inherits non-negativity
+    \item [] $d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h,h) =  0 \quad \forall h \in \mathcal{E}_V$.
+    %\item \textbf{Identity of Indiscernible} $d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h,h) =  0 \quad \forall h \in \mathcal{E}_V$.
+    \item[] For $h=g$ we have $\mathcal{C}_{V,W}(h)=\mathcal{V}(V,\Delta)(g)$ and the infimum becomes zero.
+    \item [H2:] Let \( h, g, f \in \mathcal{E}_V \).
+    We show that
+    %\item \textbf{Triangle Inequality:} Let \( h, g, f \in \mathcal{E}_V \). We show that
+    \[
+    d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h,f) \leq d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h,g) + d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(g,f).
+    \]
+    To do so, consider the following setup: Let \( h \in \mathcal{E}_V \) be a language encoder \( h: \Sigma^* \to V \), and let \( \psi \in \mathcal{C}_{V,W} \) be a transformation \( \psi: V \to W \). We define the composed map
+    \[ p_\psi := \operatorname{softmax}_\lambda(\psi \circ h ): \Sigma^* \to \Delta^{C-1},
+    \]
+    which can be interpreted as assigning probability distributions over \( C \) classes. This yields the compositional structure
+    \[
+    \Sigma^* \xrightarrow{h} V \xrightarrow{\psi} W \xrightarrow{\operatorname{softmax}_\lambda} \Delta^{C-1}.
+    \]
+
+   % Since \( \operatorname{softmax}_\lambda \) is a Lipschitz-continuous map with constant \( L = \frac{1}{\lambda} \), the Lipschitz property carries over to the composition with any function \( \psi \in \mathcal{C}_{V,W} \). 
+    
+Since Proposition~\ref{prop:softmax_lip} shows, \( \operatorname{softmax}_\lambda \colon \mathbb{R}^N \to \Delta^{N-1} \) is differentiable with bounded Jacobian entries, it is Lipschitz continuous with respect to the \( \ell^\infty \)-norm. In particular, there exists a constant \( L > 0 \) such that for all \( x, y \in \mathbb{R}^N \),
+\[
+\|\operatorname{softmax}_\lambda(x) - \operatorname{softmax}_\lambda(y)\|_\infty \leq L \cdot \|x - y\|_\infty.
+\]
+This Lipschitz continuity extends to function composition: for any \( \psi \in \mathcal{C}_{V,W} \), the composed function \( \operatorname{softmax}_\lambda( \psi) \in \mathcal{C}_{V,\Delta^{C-1}} \) satisfies
+\[
+\| \operatorname{softmax}_\lambda(\psi(h)) - \operatorname{softmax}_\lambda(\psi(g)) \|_\infty \leq L \cdot \| \psi(h) - \psi(g) \|_\infty.
+\]
+
+In particular, the Hausdorff–Hoare distances satisfy
+\[
+d_{\infty, \Delta^{C-1}}^\mathcal{H}(\operatorname{softmax}_\lambda( \mathcal{C}_{V,W}(h)), \operatorname{softmax}_\lambda (\mathcal{C}_{V,W}(g)) )
+\leq L \cdot d^\mathcal{H}_{\infty, W}(\mathcal{C}_{V,W}(h), \mathcal{C}_{V,W}(g)),
+\]
+where the Hausdorff–Hoare distance is computed with respect to the supremums norm over \( V \) and the \( \ell^\infty \)-norm on the codomain.
+
+As a result, the triangle inequality for \( d^\mathcal{H}_{\mathcal{C}_{V,W}} \) implies the triangle inequality for the softmax-composed version,
+\[
+d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h,f) \leq d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h,g) + d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(g,f),
+\]
+provided that \( L = 1 \).  
+If \( L > 1 \), the inequality remains valid after rescaling the distance function accordingly.
+
+    
+%    In particular, the Hausdorff–Hoare distances satisfy:
+%    \[
+%    d_{\infty, \Delta^{C-1}}^\mathcal{H}(\operatorname{softmax }_\lambda( \mathcal{ C}_{V,W}(h)), \operatorname{softmax}_\lambda (\mathcal{C}_{V,W}(g)) )\leq L \cdot d^\mathcal{H}_{\infty, W}(\mathcal{C}_{V,W}(h), \mathcal{C}_{V,W}(g)).
+%    \]
+
+    %As a result, the triangle inequality for \( d^\mathcal{H}_{\mathcal{C}_{V,W}} \) implies the triangle inequality for the softmax-composed version:
+    %\[
+    %d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h,f) \leq d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h,g) + d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(g,f)
+    %\]
+    %provided \( \operatorname{softmax}_\lambda \) is 1-Lipschitz or the constants are appropriately absorbed.
+\end{itemize}
+
+Hence, \( d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}} \) is a hemi-metric.%, and the induced relation \( \gtrsim_{\mathcal{C}_\text{Ext}} \) is a preorder.
+
+%Now define a binary relation \( \gtrsim_d \) on \( \mathcal{E}_V \) by
+%\[
+%h \gtrsim_d g \quad \Leftrightarrow \quad d(h, g) = 0.
+%\]
+
+We show that this relation $\gtrsim_{\mathrm{Ext}}$ is a preorder:
+\begin{itemize}
+    \item[]Reflexivity: For all \( h \in \mathcal{E}_V \), \( d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h, h) = 0 \), so \( h \gtrsim_{\mathrm{Ext}} h \).
+    \item[]Transitivity: If \( h \gtrsim_{\mathrm{Ext}} g \) and \( g \gtrsim_{\mathrm{Ext}} f \), then
+    \[
+    d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h, f) \le d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h, g) + d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(g, f) = 0 + 0 = 0,
+    \]
+    so \( h \gtrsim_{\mathrm{Ext}} f \).
+\end{itemize}
+Based on Lemma~\ref{lemma:quasi-ordering}, the relation \( \gtrsim_{\mathrm{Ext}} \) defined by
+\[
+h \gtrsim_{\mathrm{Ext}} g \quad \Longleftrightarrow \quad d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h, g) = 0
+\]
+is a preorder on the encoder space \( \mathcal{E}_V \).  
+This coincides with our definition of the extrinsic approximation relation \( \gtrsim_{\mathrm{Ext}} \),  
+as both are defined by the vanishing of the approximation distance \( d_{\mathcal{F}_{\text{Lip}_1}} \).
+
+\end{proof}
+
+%\begin{definition}[Extrinsic Preorder]
+%For two encoders \( h, g \in \mathcal{E}_V \), we define the relation
+%\[
+%h \gtrsim_{\mathcal{C}_\text{Ext}} g \quad \Leftrightarrow \quad %d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h,g) = 0.
+%\]
+%\end{definition}
+
+\begin{definition}[Exact Extrinsic Nonlinear Homotopy]
+An encoder \( h \in \mathcal{E}_V \) is said to be \emph{exactly extrinsically non-linearly homotopic to} \( g \in \mathcal{E}_V \), written
+\[
+h \gtrsim_\text{Ext} g,
+\]
+if
+\[
+d_{\mathcal{F}_{\mathrm{Lip}_1}}^{\mathcal{H}}(h,g) = 0.
+\]
+\end{definition}
+
+Note that this relation is generally not symmetric; it only expresses that \( h \) can be approximated arbitrarily well by applying admissible transformations to \( g \), not necessarily the other way around.
+This directional behavior reflects the asymmetric notion of homotopy proposed in \cite{chan_affine_2024}, where similarity is understood in terms of functional approximation from one model to another.
+
+
+\section{Performance-Based Similarity Measure}\label{sec:PBSM}
+
+As explained in Chapter~\ref{SoNN}, functional similarity measures compare the outputs \( \mathbf{O}, \mathbf{O}' \in \mathbb{R}^{N\times C} \), where each element \( \mathbf{O}_{i,c} \) denotes the predicted probability or score for class \( c \) on input \( x_i \). The predicted class label is given by
+\[
+\hat{y}_i = \arg \max_c \mathbf{O}_{i,c}.
+\]
+
+In this work, we focus exclusively on \emph{classification agreement} as a performance-based similarity measure. This captures how often two models assign the same predicted label to the same input, independent of confidence scores or loss values.
+
+Let \( \mathbf{O}^{(h)} \) and \( \mathbf{O}^{(g)} \) be the class score matrices of models \( h \) and \( g \), respectively. Their predicted labels are defined as
+\[
+\hat{y}^{(h)}_i = \arg\max_c \mathbf{O}^{(h)}_{i,c}, \quad
+\hat{y}^{(g)}_i = \arg\max_c \mathbf{O}^{(g)}_{i,c}.
+\]
+
+The agreement score is then computed as
+\[
+\operatorname{Agreement}(h, g) = \frac{1}{N} \sum_{i=1}^N \mathds{1} \left[ \hat{y}^{(h)}_i = \hat{y}^{(g)}_i \right],
+\]
+where \( \mathds{1} \) denotes the indicator function.
+
+This simple yet interpretable metric reflects functional alignment in terms of model decisions and is well suited for classification tasks.
+
+
+%In this work, we focus on \emph{Spearman's rank correlation} as a performance-based similarity measure. It evaluates how well two models agree in the relative ordering of class scores for each input, regardless of the absolute values.
+
+%\paragraph{Spearman's Rank Correlation}
+%Spearman's rank correlation measures the strength and direction of a monotonic relationship between two ranked variables~\cite{sammut_encyclopedia_2017}.
+%Given ranks \( x_i \) and \( y_i \) for $N$ paired observations, it is computed as:
+%\[
+%\rho = 1 - \frac{6 \sum_{i=1}^N (x_i - y_i)^2}{N(N^2 - 1)},
+%\]
+%assuming no tied ranks. In practice, ties can occur, especially with discrete prediction scores or limited numerical precision.
+%In such cases, a corrected version of the Spearman correlation should be used, e.g., via Pearson correlation applied to the ranks. 
+%Most statistical libraries apply these corrections automatically.
+
+%In the context of model comparison, Spearman's correlation is computed between the class score vectors predicted by two models for each input.
+%It captures the consistency in confidence structures and is especially useful when the ranking of predictions matters more than their absolute magnitude.

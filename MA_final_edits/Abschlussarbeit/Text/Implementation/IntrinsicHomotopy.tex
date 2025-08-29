@@ -1,0 +1,98 @@
+In Chapter~\ref{ISA}, we extended the concept of intrinsic homotopy to a family of non-linear models and transformations.  
+In this context, we consider the distance map between two language encoders \( g, h \in \mathcal{E}_V \) defined in Definition ~\ref{eq:intrinsic_equation} as
+\[
+d_{\mathcal{F}_{\mathrm{Lip}_1}}(h, g) = \inf_{\psi \in \mathcal{F}_{\mathrm{Lip}_1}} \|h - \psi(g)\|_\infty,
+\]
+where \( \mathcal{F}_{\mathrm{Lip}_1} \subset \mathcal{C}_{V,W} \) denotes a subset of continuous functions, restricted in our case to non-linear neural networks.
+
+Building on the theoretical considerations in Section~\ref{InrinsicHomotopyonNonlinTransf} and following the affine setting analyzed by Chan et al.~\cite{chan_affine_2024}, we constrain our analysis to \emph{non-linear 1-Lipschitz continuous neural networks}.  
+This restriction ensures functional comparability and regularity of the learned transformations. The transformation \( \psi \in \mathcal{F}_{\mathrm{Lip}_1} \) is thus implemented as a neural network with architectural constraints that tries to enforce the Lipschitz property.
+
+This setup allows us to compare encoder representations \( g(x) \) and \( h(x) \) by asking whether one can be mapped into the other in a structure-preserving way.  
+If such a mapping exists in both directions (i.e., \( h \approx \psi(g) \) and \( g \approx \psi^{-1}(h) \)), we refer to \( g \) and \( h \) as \emph{exactly intrinsically affinely homotopic}.
+
+Importantly, this notion of similarity is defined independently of any particular downstream task. Therefore, we analyze the final hidden layer representation of each language encoder, as it captures the model's abstract understanding before task-specific heads are applied.
+
+\paragraph{Model Architecture.}
+To estimate the intrinsic homotopy distance, we train transformation models that map representations from one encoder space into another. For each pair of encoders \( g \) and \( h \), we learn a mapping \( \psi \) such that
+\[
+\psi(g(x)) \approx h(x).
+\]
+We consider two types of transformation models:
+\begin{itemize}
+    \item a linear mapping (\texttt{LinearMap}), replicating the affine baseline from Chan et al.~\cite{chan_affine_2024} and
+    \item a non-linear neural network (\texttt{NonLinearNetwork}) composed of fully-connected (dense) layers with ReLU activations. 
+    Each layer is equipped with spectral normalization to ensure a controlled Lipschitz constant (i.e., \( \leq 1 \)).
+\end{itemize}
+This architectural flexibility enables controlled comparisons between linear and non-linear function classes under Lipschitz constraints.
+
+\paragraph{Data Handling and Model Input.}
+Each transformation model operates on precomputed hidden state representations \( g(x) \) and \( h(x) \), extracted from the final encoder layer for each input sample.  
+These representations are stored on disk and loaded via \texttt{DataLoader} objects during training and evaluation.  
+Training is supervised using the Huber loss.
+
+\paragraph{Training Procedure.}
+Models are trained using the Adam optimizer, as shown in Listing~\ref{lst:train-func} with early stopping based on validation loss.  
+Training is performed on the same predefined training split that was previously used for extracting hidden representations, with the corresponding validation split used to monitor convergence.  
+We explore multiple learning rates and record the corresponding loss trajectories.  
+To ensure reproducibility across random seeds and tasks, all training runs are logged using process-specific log files.
+
+
+\paragraph{Evaluation.}
+As defined in Section~\ref{ISA}, the intrinsic homotopy distance is the infimum of the \( \ell^\infty \)-norm between \( h(x) \) and \( \psi(g(x)) \) over all admissible transformations \( \psi \in \mathcal{F}_{\mathrm{Lip}_1} \subset \mathcal{C}_{V,W} \).  
+After training, the learned transformation \( \psi^* \) approximates this infimum within the class of nonlinear 1-Lipschitz neural networks.
+
+To evaluate the quality of this approximation, we compute the maximum deviation between the transformed and target representations over a held-out test set:
+\[
+\max_{x \in \mathcal{D}_{\mathrm{test}}} \| h(x) - \psi^*(g(x)) \|_\infty.
+\]
+This value serves as a practical estimate of the intrinsic homotopy distance.
+
+In addition, we compute the Pearson and Spearman correlation coefficient between the transformed and target representations over the test set.  
+These metrics capture whether the transformation \( \psi^* \) preserves linear or monotonic structure between the input and output representations:
+\begin{itemize}
+	\item The \emph{Pearson correlation coefficient} measures the linear correlation between components of \( h(x) \) and \( \psi^*(g(x)) \).
+	\item The \emph{Spearman rank correlation} captures the strength of any monotonic (not necessarily linear) relationship between the two vectors.
+\end{itemize}
+High correlation values indicate that \( \psi^* \) not only minimizes pointwise distances but also aligns structural trends in the representation space.
+
+Formally, the \emph{Pearson correlation coefficient} between the target and predicted representations is defined as
+\[
+\rho_{\mathrm{Pearson}} = \frac{\operatorname{Cov}(h(x), \psi^*(g(x)))}{\sigma_{h(x)} \, \sigma_{\psi^*(g(x))}},
+\]
+where \( \operatorname{Cov}(\cdot, \cdot) \) denotes the empirical covariance and \( \sigma \) the standard deviation computed over the test set.
+
+The \emph{Spearman rank correlation} is defined analogously, but computed on the rank-transformed data:
+\[
+\rho_{\mathrm{Spearman}} = \rho_{\mathrm{Pearson}}(\operatorname{rank}(h(x)), \operatorname{rank}(\psi^*(g(x)))).
+\]
+
+
+
+\begin{lstlisting}[language=Python, caption={Computation of $\|h(x) - \psi(g(x))\|_\infty$ in PyTorch}, label={lst:linf-computation}]
+with torch.no_grad():
+    for g_batch, h_batch in test_dataloader:
+        output = model(g_batch)
+        diff = h_batch - output
+        dist = torch.max(torch.abs(diff)) # ||h - \psi(g)||_\infty
+        all_dist.append(dist.item())
+\end{lstlisting}
+
+The maximum deviation across all batches is then used as an estimate for the distance:
+\begin{lstlisting}[language=Python]
+overall_max = max(all_dist)
+\end{lstlisting}
+
+This value corresponds to the right-hand side of Definition~\ref{eq:intrinsic_equation}, and serves as an empirical approximation to the intrinsic homotopy distance \( d_{\mathcal{F}_{\mathrm{Lip}_1}}(g, h) \).
+
+In addition, we compute the following metrics to enable a quantitative comparison between linear and non-linear transformations (see Section~\ref{exp:IntrinsicHOm} for detailed analysis):
+
+\begin{itemize}
+    \item the Spearman rank correlation between predicted and target representations,
+    \item the Pearson correlation between input and output representations (averaged over all features),
+    \item an upper bound on the Lipschitz constant via the product of spectral norms of the network's weight matrices,
+    %\item a lower bound estimate using Monte Carlo sampling of Jacobians on random Gaussian input vectors.
+\end{itemize}
+
+All hyperparameters, including learning rate, number of epochs, batch size, and network type, are configurable via command-line arguments. 
+Results are stored in structured directories, and summary metrics are exported in JSON format for subsequent analysis.

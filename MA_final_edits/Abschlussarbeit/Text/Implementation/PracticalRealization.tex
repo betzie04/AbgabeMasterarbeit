@@ -1,0 +1,11 @@
+This chapter discusses the practical implementation of the theoretically formalized approaches from Chapter~\ref{ISA}.
+Since we are dealing with a non-linear and non-convex bi-level structure, it is not possible to solve the optimization with classical methods.
+Instead, an iterative approach is employed: the lower-level problem is addressed via a neural network, while the upper-level problem is handled through implicit optimization and adaptation of the training process.
+
+To ensure computational efficiency, especially in view of the large number of datasets, random seeds, and model comparisons, all core components of the experimental pipeline for intrinsic and extrinsic homotopy were implemented in \texttt{Python} and parallelized using Python's \texttt{multiprocessing} library. 
+In particular, this parallelization was applied to the computation of similarity measures, the training of transformation networks, and the evaluation across tasks and model configurations.
+
+
+In the following, we give an overview about the implementation that focuses on how models are loaded, processed, and evaluated for intrinsic, extrinsic and performance-based similarity.
+
+

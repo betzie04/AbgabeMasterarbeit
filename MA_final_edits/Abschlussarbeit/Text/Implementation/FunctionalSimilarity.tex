@@ -1,0 +1,29 @@
+%To analyze the performance-based similarity measure (see Section~\ref{sec:PBSM}), we first train each language encoder on a nonlinear classification task. 
+%Specifically, we use a neural network as described in Listing~\ref{lst:train-func}, which takes as input the hidden state representations produced by the language encoder and their corresponding class labels.
+%These hidden states and labels are obtained by processing the dataset through the respective encoder.
+%During training, we record both the predicted outputs and the ground truth labels in order to evaluate the classification performance.
+%After training, we compare the performance of all models on the same classification task to assess their similarity
+To analyze the performance-based similarity measure (see Section~\ref{sec:PBSM}), we evaluate how well different language encoders support nonlinear classification tasks. 
+The goal is to assess how informative the internal representations of each model are for downstream prediction.
+
+To this end, we train a neural classifier on top of the hidden state representations produced by each encoder. 
+The architecture of the classifier is shown in Listing~\ref{lst:train-func}.
+It takes as input the fixed-size hidden representations as represented in Algorithm ~\ref{alg:hiddenStateExtractAbstract} (obtained via mean pooling or another aggregation strategy) and the corresponding class labels.
+
+These hidden representations and labels are obtained by running the input data through the respective language encoder. 
+During training, we record the predicted class outputs and compare them to the ground-truth labels using standard classification metrics, such as accuracy and Spearman rank correlation.
+
+Once the classifier is trained for each model, we evaluate its performance on a held-out test set.
+By comparing the classification performance across models on the same task, we obtain a coarse-grained similarity signal: if two models achieve similar performance, their internal representations may be considered functionally similar from a task-oriented perspective.
+
+To refine this view, we additionally compare the actual predictions made by the classifiers.
+Specifically, we compute:
+\begin{itemize}
+    \item the percentage of agreeing predictions between two models on the test set, and
+    \item the Spearman rank correlation between their prediction confidence scores.
+\end{itemize}
+
+These metrics allow us to assess not only how well each model performs individually, but also how similarly they behave in terms of decision-making. 
+High prediction alignment, beyond accuracy, can indicate that two models encode similar decision boundaries or representational structures.
+
+This comparison forms the basis for our performance-based similarity metric (see Section~\ref{sec:PBSM}), which integrates both task-level accuracy and prediction-level agreement.

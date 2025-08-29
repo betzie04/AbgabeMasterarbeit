@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Abschlussarbeit.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: plain.bst
+Reallocating 'name_of_file' (item size: 1) to 31 items.
+Database file #1: Abschlussarbeit/Text/Literatur.bib
+Warning--empty publisher in dieck_mengentheoretische_top
+Warning--empty booktitle in GPT
+You've used 37 entries,
+            2118 wiz_defined-function locations,
+            721 strings with 11402 characters,
+and the built_in function-call counts, 13261 in all, are:
+= -- 1236
+> -- 776
+< -- 9
++ -- 309
+- -- 270
+* -- 930
+:= -- 2219
+add.period$ -- 122
+call.type$ -- 37
+change.case$ -- 237
+chr.to.int$ -- 0
+cite$ -- 39
+duplicate$ -- 494
+empty$ -- 993
+format.name$ -- 270
+if$ -- 2776
+int.to.chr$ -- 0
+int.to.str$ -- 37
+missing$ -- 42
+newline$ -- 187
+num.names$ -- 74
+pop$ -- 307
+preamble$ -- 1
+purify$ -- 209
+quote$ -- 0
+skip$ -- 347
+stack$ -- 0
+substring$ -- 546
+swap$ -- 109
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 128
+warning$ -- 2
+while$ -- 100
+width$ -- 39
+write$ -- 407
+(There were 2 warnings)

@@ -1,0 +1,63 @@
+Neural networks are widely used in research, industry, and a broad range of application domains, including anomaly detection, image analysis, pattern recognition, and natural language processing~\cite{pedrycz_deep_2020}.  
+Their popularity stems from their ability to approximate complex, non-linear functions~\cite{antiga_deep_2020}, which enables them to model intricate patterns in high-dimensional data.
+
+Given this flexibility, a key question in modern deep learning research is how different neural networks represent information internally, and how similar these representations are across different architectures, training procedures, or random initializations.  
+Understanding these similarities is important not only for model interpretability but also for transfer learning, model selection, and robustness analysis.
+
+To this end, various similarity measures have been proposed in the literature~\cite{klabunde_similarity_2024}.
+We can distinguish, for example, between \textit{representational measure similarity}, where we calculate the difference in the activation of intermediate layers and the \textit{functional measure similarity}, where we calculate the difference in the models output data. 
+
+\paragraph{Related Work.}
+Most existing methods for comparing neural networks are based on linear transformations, such as permutations, orthogonal mappings, or affine projections~\cite{kornblith_similarity_2019, williams_generalized_2021, li_convergent_2016}.  
+These methods aim to identify structural correspondences between learned representations but are limited in expressiveness due to their linear nature.
+
+A recent contribution by Chan et al.~\cite{chan_affine_2024} introduces a homotopy-based framework for comparing language encoders via affine transformations.  
+They formalize two types of similarity:
+\begin{itemize}
+    \item \textit{Intrinsic similarity}, based on how well one model’s representation can be transformed into another’s, and
+    \item \textit{Extrinsic similarity}, based on how well the output behavior can be matched via task-specific heads.
+\end{itemize}
+
+While this affine homotopy framework is elegant and mathematically grounded, it is inherently limited to linear transformations.  
+Given the non-linear nature of modern neural networks, this restricts the ability to fully capture complex functional relationships between models.
+
+\paragraph{Motivation and Research Questions.}
+This thesis extends a framework based on homotopy by incorporating 
+\emph{non\-linear} transformations subject to a 1-Lipschitz constraint.
+
+ 
+Our goal is to explore whether this generalization leads to more expressive and informative measures of similarity between language encoders.
+
+Specifically, we address the following research questions:
+\begin{itemize}
+    \item How are intrinsic and extrinsic homotopy defined for nonlinear transformations?
+    \item Do non-linear transformations yield more accurate or meaningful similarity measures than affine ones?
+    \item Is there a consistent relationship between intrinsic and extrinsic homotopy in the non-linear setting?
+    \item Do similar encoders also show similar performance and training behavior?
+\end{itemize}
+
+By investigating these questions, we aim to contribute to a deeper understanding of model similarity and functional alignment in modern neural architectures.
+
+To address the research questions, we begin in Chapter~\ref{NN_RW} by formally introducing neural networks.
+We define key components such as activation functions, loss functions, and training procedures, and provide an overview of common architectures.
+
+Building on this foundation, Chapter~\ref{NLP} focuses on Natural Language Processing.
+We introduce the concept of language encoders and present an overview of state-of-the-art transformer models and their applications.
+
+Chapter~\ref{Preliminaries} introduces mathematical basics such as norms, distances, and homotopy.
+
+Chapter~\ref{SoNN} addresses the topic of similarity between neural networks.
+We distinguish between representational and functional similarity measures.
+
+In Chapter~\ref{EA}, we describe the existing affine homotopy approach proposed by Chan et al.~\cite{chan_affine_2024}, and explain and explain how it measures similarity between language encoders.
+
+Chapter~\ref{ISA} presents our novel extension of this framework, in which we use non-linear transformations to obtain a more expressive and flexible notion of model similarity.
+
+In Chapter~\ref{sec:PRaI}, we describe the practical implementation of this extended framework, including details on model design, training procedure, and evaluation metrics.
+
+To validate our approach, Chapter~\ref{exp} presents a series of experiments using three language encoders with identical architecture to BERT-BASE~\cite{BERT}. %, pretrained on different random seeds.
+We evaluate the effectiveness of our method across multiple tasks and discuss the experimental findings.
+
+Finally, Chapter~\ref{conc} concludes the thesis by summarizing the main contributions and insights, identify current limitations, and suggest directions for future research.
+
+The language model ChatGPT (OpenAI) was used to support the linguistic revision of individual text passages in order to make formulations more precise and improve the style.

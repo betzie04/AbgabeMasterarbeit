@@ -1,0 +1,13 @@
+
+During \textbf{self-supervised learning}, the models inputs are used to automatically computes the labels.
+This implies that the data does not require a human labelling.
+Even though it isn't very helpful for specific practical tasks, as this kind of model builds a statistical understanding of the language it has been trained on.
+This is why the general pretrained model undergoes a procedure known as transfer learning.
+This approach fine-tunes the model in a supervised way on a given task, where human annotated labels are used.
+
+During a \textbf{transfer learning task}, the model is pretrained from the scratch, the weights are randomly initialized and the training starts without any prior knowledge, further a very large amount of data is used and the training can take up to several weeks.
+After the model has been pretrained, a fine-tuning tasked is performed, where a additional training with a dataset specific to the required task is performed.
+For example, a pretrained model trained on English language can be fine-tuned on an arXiv corpus and and we get as result a science/research-based model.
+During fine-tuning we will only need a limited amount of data and the knowledge of the pretrained model has acquired is transferred.
+This leads to a lower training time, data, financial and environmental costs.
+Further two different models can be finetuned on the same pretrained model.

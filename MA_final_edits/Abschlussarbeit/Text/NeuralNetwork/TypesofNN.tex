@@ -1,0 +1,18 @@
+In the previous sections, we discussed artificial neural networks in general.  
+There exist various types of neural networks, distinguished by their architecture and typical use cases.  
+The following list gives a brief overview of some common types, as presented by Goyal et al.~\cite{goyal_deep_2018}:
+
+\begin{enumerate}
+    \item[(a)] \textbf{Feedforward Neural Networks (FNNs)} are the simplest type of neural network.  
+    Data flows in one direction—from the input layer, through one or more hidden layers, to the output layer—without cycles or loops.
+
+    \item[(b)] \textbf{Convolutional Neural Networks (CNNs)} are commonly used for image and handwriting recognition.  
+    They apply convolutional filters to local regions of the input to extract features, which are then used to build hierarchical representations.
+
+    \item[(c)] \textbf{Recurrent Neural Networks (RNNs)} are designed to process sequential data.  
+    Each time step receives an input and the output of the previous step, allowing the network to retain a form of memory.  
+    This makes RNNs particularly suitable for time series, language, and other temporally dependent data.
+
+    \item[(d)] \textbf{Transformers} \cite{vaswani_attention_2023} are modern neural network architectures that rely entirely on attention mechanisms rather than recurrence or convolution.  
+    They allow parallel processing of sequences and have achieved state-of-the-art performance in natural language processing tasks such as translation, summarization, and question answering.
+\end{enumerate}
